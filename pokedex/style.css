@@ -1,0 +1,209 @@
+body{
+        
+    padding-top: 150px;
+    margin: 0px;
+    min-height: 100vh;
+    border-left: 25px solid red;
+    border-right: 25px solid red;
+    box-sizing: border-box;
+    background-image: url("./assets/imagem1.jpeg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+* {
+    color: white;
+    font-family: "Jersey 20", sans-serif;
+}
+
+nav{
+    display: flex;
+    top: 0px;
+    background-color: red;
+    margin: 0px;
+    padding-bottom: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+}
+nav ul{ list-style:none; margin:0; padding:0; display:flex; margin-left: 10px; margin-top: 20px; font-size:70px; } 
+nav a{transition: 300ms; color:rgb(0, 0, 0); text-decoration:none; display: flex;} 
+nav a:hover{transition: 300ms; color:rgb(255, 255, 255);}
+
+nav img {
+    display: flex;
+    width: 200px;
+    height: auto;
+}
+
+.linha-nav {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100px;
+
+    pointer-events: none;
+}
+
+.linha-footer {
+    position: relative;
+
+    right:-25px;
+    bottom: 0;
+    margin: 0px;
+    width: 100%;
+    height: 70px;
+
+    pointer-events: none;
+}
+
+.size{
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+    font-size: 50px;
+}
+
+.kanto{
+    margin-top: 0px;
+    margin: 0px;
+    margin-bottom: 70px;
+    margin-left: 50px;
+    padding: 0px;
+    font-size: 115px;
+}
+
+.texto{
+    font-size: 35px;
+    justify-content: center;
+    display: flex;
+    margin-right: 490px;
+    margin-left: 80px;
+    padding: 0px;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+footer{
+    background-color: red;
+    padding-top: 10px;
+    display: flex;
+
+}
+
+footer img{
+    display: flex;
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.sub{
+    position: relative;
+    top: 25px;
+    font-size: 50px;
+    margin-left: 400px;
+}
+
+.enfi{
+    color: black;
+}
+
+#pokemon-cards {
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 30px;
+    border: 3px solid white;
+    gap: 24px;
+    padding: 20px;
+    background-image: url("./assets/imagem2.jpeg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.card {
+    transition: 300ms;
+    text-align: center;
+    margin: 15px;
+    padding: 10px; /* DiminuÃ­mos o padding interno para encurtar o card */
+    border-radius: 20px;
+    background-color: rgb(211, 211, 211);
+    
+    /* Definimos a largura e altura iguais para virar um quadrado */
+    width: 200px;
+    height: 200px; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribui os elementos para preencher o quadrado perfeitamente */
+    box-sizing: border-box; /* Garante que o padding nÃĢo estoure o tamanho */
+}
+
+.card:hover {
+    transition: 300ms;
+    background-color: rgb(165, 165, 165);
+    transform: scale(1.1);
+    box-shadow: 10px 10px black;
+    cursor: pointer;
+}
+
+.card img {
+    width: 80px;  /* Reduzimos um pouco a imagem para caber no quadrado */
+    height: 80px;
+    object-fit: contain;
+}
+
+.card h2 {
+    font-size: 30px; /* DiminuÃ­mos um pouco a fonte do nome */
+    margin: 0;       /* Removemos margens extras para nÃĢo esticar o card */
+}
+
+.card p {
+    font-size: 24px;
+    margin: 0;
+}
+
+.localDoBotao {
+    display: flex;
+    justify-content: start;
+}
+
+#botaoDeCarregarMais {
+    transition: 300ms;
+    padding: 1vw;
+    border: none;
+    border-radius: 15px;
+    font-size: 120%;
+    margin: 30px;
+    background-color: red;
+    color: black;
+}
+
+#botaoDeCarregarMais:hover {
+    color: white;
+    transition: 300ms;
+    transform: scale(1.2);
+    background-color: red
+    cursor pointer;
+    box-shadow: 10px 10px black;
+}
+
+.mew{
+    width: 240px;
+    right: 150px;
+    position: absolute;
+}
+
+.mew2{
+    display: flex;
+    align-items: center;
+}
