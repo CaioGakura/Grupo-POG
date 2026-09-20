@@ -6,7 +6,7 @@ body{
     border-left: 25px solid red;
     border-right: 25px solid red;
     box-sizing: border-box;
-    background-image: url("./assets/imagem1.jpeg");
+    background-image: url("./assets/pagina/imagem1.jpeg");
     background-size: contain;
     background-position: center;
     background-repeat: repeat;
@@ -123,7 +123,7 @@ footer img{
     border: 3px solid white;
     gap: 24px;
     padding: 20px;
-    background-image: url("./assets/imagem2.jpeg");
+    background-image: url("./assets/pagina/imagem2.jpeg");
     background-size: contain;
     background-position: center;
     background-repeat: repeat;
@@ -206,4 +206,55 @@ footer img{
 .mew2{
     display: flex;
     align-items: center;
+}
+
+#ginasios-cards {
+    margin: 19px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 30px;
+    border: 3px solid white;
+    gap: 24px;
+    padding: 30px;
+    background-image: url("./assets/pagina/imagem2.jpeg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.card-ginasio {
+    width: 250px;
+    min-height: 350px;
+
+    background-color: rgb(211, 211, 211);
+
+    border-radius: 20px;
+    padding: 20px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    transition: 300ms;
+}
+
+.card-ginasio:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px black;
+    cursor: pointer;
+}
+
+.lider-img {
+    width: 150px;
+    height: 180px;
+
+    object-fit: contain;
+}
+
+.insignia-img {
+    width: 60px;
+    height: 60px;
+
+    object-fit: contain;
 }

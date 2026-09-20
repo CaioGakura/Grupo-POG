@@ -8,7 +8,7 @@ const botaoPegarDados = document.getElementById('botaoDeCarregarMais');
 let offset = 0;
 
 // Variável 'limit' define quantos Pokémon serão trazidos por vez a cada clique/requisição
-let limit = 50;
+let limit = 10;
 
 
 /**
@@ -139,3 +139,122 @@ botaoPegarDados.addEventListener('click', carregarPokemons);
 
 // Executa a função pela primeira vez assim que a página abre para carregar os primeiros Pokémon
 carregarPokemons();
+
+const lideresKanto = [
+    {
+        nome: "Brock",
+        cidade: "Cidade de Pewter",
+        tipo: "Pedra",
+        insignia: "Insígnia: Rocha",
+        imagem: "./assets/lideres/brock.png",
+        imagemInsignia: "./assets/insignias/rocha.png",
+        cor:"#B6A136"
+    },
+
+    {
+        nome: "Misty",
+        cidade: "Cidade de Cerulean",
+        tipo: "Água",
+        insignia: "Insígnia: Cascata",
+        imagem: "./assets/lideres/misty.png",
+        imagemInsignia: "./assets/insignias/cascata.png",
+        cor:"#6390F0"
+    },
+
+    {
+        nome: "Lt. Surge",
+        cidade: "Cidade de Vermilion",
+        tipo: "Elétrico",
+        insignia: "Insígnia: Trovão",
+        imagem: "./assets/lideres/surge.png",
+        imagemInsignia: "./assets/insignias/trovao.png",
+        cor:"#F7D02C"
+    },
+
+    {
+        nome: "Erika",
+        cidade: "Cidade de Celadon",
+        tipo: "Planta",
+        insignia: "Insígnia: Arco-Íris",
+        imagem: "./assets/lideres/erika.png",
+        imagemInsignia: "./assets/insignias/arcoiris.png",
+        cor:"#7AC74C"
+    },
+
+    {
+        nome: "Koga",
+        cidade: "Cidade de Fuchsia",
+        tipo: "Veneno",
+        insignia: "Insígnia: Alma",
+        imagem: "./assets/lideres/koga.png",
+        imagemInsignia: "./assets/insignias/alma.png",
+        cor:"#A33EA1"
+    },
+
+    {
+        nome: "Sabrina",
+        cidade: "Cidade de Saffron",
+        tipo: "Psíquico",
+        insignia: "Insígnia: Pântano",
+        imagem: "./assets/lideres/sabrina.png",
+        imagemInsignia: "./assets/insignias/pantano.png",
+        cor:"#F95587"
+    },
+
+    {
+        nome: "Blaine",
+        cidade: "Ilha Cinnabar",
+        tipo: "Fogo",
+        insignia: "Insígnia: Vulcão",
+        imagem: "./assets/lideres/blaine.png",
+        imagemInsignia: "./assets/insignias/vulcao.png",
+        cor:"#EE8130"
+    },
+
+    {
+        nome: "Giovanni",
+        cidade: "Cidade de Viridian",
+        tipo: "Terra",
+        insignia: "Insígnia: Terra",
+        imagem: "./assets/lideres/giovanni.png",
+        imagemInsignia: "./assets/insignias/terra.png",
+        cor:"#E2BF65"
+    }
+];
+
+const containerGinasios = document.getElementById("ginasios-cards");
+
+function renderizarGinasios() {
+
+    lideresKanto.forEach(lider => {
+
+        const card = document.createElement("article");
+
+        card.classList.add("card-ginasio");
+
+        card.style.backgroundColor = lider.cor;
+
+        card.innerHTML = `
+
+            <p>${lider.cidade}</p>
+
+            <img class="lider-img" src="${lider.imagem}" alt="${lider.nome}">
+
+            <h2>${lider.nome}</h2>
+
+            <p>Tipo: ${lider.tipo}</p>
+
+            <img 
+                class="insignia-img"
+                src="${lider.imagemInsignia}"
+                alt="${lider.insignia}"
+            >
+
+            <p>${lider.insignia}</p>
+        `;
+
+        containerGinasios.appendChild(card);
+    });
+}
+
+renderizarGinasios();
