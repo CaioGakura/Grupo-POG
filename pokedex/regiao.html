@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pokédex</title>
+
+    <link rel="stylesheet" href="regiao.css">
+
+    <link rel="icon" type="image/jpeg" href="./assets/pagina/pokemon individual.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+    
+    <nav>
+        <img src="./assets/pagina/download.png" alt="Logo">
+
+        <ul>
+    
+            <li><a href="navegacao.html">INíCIO</a></li>
+    
+        </ul>
+
+        <ul class="sub">
+    
+            <li><a href="#inicio">REGIÃO</a></li>
+            <li class="enfi">|</li>
+            <li><a href="#ginasio">GINÁSIOS</a></li>
+            <li class="enfi">|</li>
+            <li><a href="#pokemon">POKÉMONS</a></li>
+    
+        </ul>
+
+         <svg class="linha-nav"
+         viewBox="0 0 1000 70"
+         preserveAspectRatio="none">
+
+        <polyline
+            points="0,60 390,60 430,15 1000,15"
+            fill="none"
+            stroke="black"
+            stroke-width="7"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+        />
+
+        <polyline
+            points="0,60 390,60 430,15 1000,15"
+            fill="none"
+            stroke="red"
+            stroke-width="3"
+        />
+
+    </svg>
+
+    </nav>
+</head>
+
+<body id="inicio">  
+
+
+    <main>
+
+        <div id="regiao"></div>
+        <h1 class="kanto" id="regioesPiedade"></h1>
+
+        <h2 class="size">GEOGRAFIA</h2>
+
+    <div class="mew2">
+
+        <div class="texto">
+            <p class="sizeMini" id="geografiaPiedade"></p>
+                
+            </div>
+            
+            <img class="mew" id="geografiaImagem" src="" alt="">
+            
+    
+        </div>
+
+            <h2 class="size">HISTÓRIA</h2>
+
+     <div class="mew2">
+
+        <div class="texto">
+            <P class="sizeMini" id="historiaPiedade"></P>
+        </div>
+
+            <img class="mew" id="historiaImagem" src="" alt="">
+
+    </div>
+
+        <h2 class="size">FAUNA E FLORA</h2>
+
+    <div class="mew2">
+
+        <div class="texto">
+            <P class="sizeMini" id="faflPiedade"></P>
+        </div>
+
+            <img class="mew" id="fnflPiedade" src="" alt="">
+
+    </div>
+
+    <div id="ginasio"></div>
+    <h1 class="kanto">GINÁSIOS</h1>
+
+    <div id="ginasios-cards"></div>
+
+    <div id="pokemon"></div>
+    <h1 class="kanto">POKÉMONS</h1>
+
+    <div id="pokemon-cards"></div>
+
+        <div class="localDoBotao">
+            <button id="botaoDeCarregarMais">CARREGAR MAIS...</button>
+        </div>
+
+    </main>
+    <footer>
+
+        <img src="./assets/pagina/pokemon individual.jpg" alt="Logo">
+
+        <svg class="linha-footer"
+         viewBox="0 0 1000 70"
+         preserveAspectRatio="none">
+
+        <polyline
+            points="0,15 390,15 430,60 1000,60"
+            fill="none"
+            stroke="black"
+            stroke-width="7"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+        />
+
+        <polyline
+            points="0,15 390,15 430,60 1000,60"
+            fill="none"
+            stroke="red"
+            stroke-width="3"
+        />
+
+    </svg>
+
+    </footer>
+
+    <script src="regiao.js"></script>
+</body>
+</html>
+
