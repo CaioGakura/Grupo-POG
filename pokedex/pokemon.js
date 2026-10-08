@@ -2,7 +2,11 @@ const container = document.getElementById('PRX');
 puxarNomePokemon();
 
 function puxarNomePokemon(){
-    const pokemon = localStorage.getItem('pokemonAtual');
+    const urlParams = new URLSearchParams(window.location.search);
+    const pokemon = urlParams.get('nome');
+    if(!pokemon){
+        alert("Erro ao pegar nome no URL");
+    }   
     pegarDados(pokemon);
 }
 async function pegarDados(id) {

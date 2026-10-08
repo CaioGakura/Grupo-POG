@@ -1413,9 +1413,8 @@ function renderizarCard(pokemon) {
     // Adiciona o card pronto dentro do container principal na tela
     container.appendChild(card);
 }
-function abrirPokemon(n){
-    localStorage.setItem('pokemonAtual',n);
-    window.open('http://127.0.0.1:5500/pokedex/pokemon.html', '_self')
+function abrirPokemon(nome){
+    window.open(`/pokedex/pokemon.html?nome=${nome}`, '_self');
 }
 
 // Adiciona um evento de clique no botão para disparar a função de carregar mais Pokémon
