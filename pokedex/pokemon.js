@@ -23,19 +23,31 @@ async function pegarDados(id) {
 async function mostrarPokemon(pokemon){
     const idFormatado = `#${String(pokemon.id).padStart(3, '0')}`;
     const tipoPrincipal = pokemon.types[0].type.name;
-
-    const descricao = await obterDescricao(pokemon);
-    
+    const status = puxarStatus(pokemon);
+    console.log(status);
+    const descricao = await puxarDescricao(pokemon.name);
+    console.log(descricao);
 
     const urlImagem = pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default;
      container.innerHTML = `
-     <div class='numeroNomeTipo'>
-        <p>${idFormatado} | ${pokemon.name}</p>
-        <p>${tipoPrincipal}</p>
+     <div class='informacoesGerais'>
+        <div class='numeroNomeTipo'>
+            <p>${idFormatado} | ${pokemon.name}</p>
+            <p>${tipoPrincipal}</p>
+        </div>
+
+        <div class='alturaPeso'>
+            <p>Altura: ${pokemon.height/10} metros</p>
+            <p>Peso: ${pokemon.weight/10} Kg</p>
+        </div>
     </div>
-    <div class='alturaPeso'>
-        <p>Altura: ${pokemon.height/10} metros</p>
-        <p>Peso: ${pokemon.weight/10} Kg</p>
+    <div class='areaStatus'>
+        <h1>Status:</h1>
+        <p>HP: ${status.hp} </p>
+        <p>Ataque: ${status.attack} </p>
+        <p>Defesa: ${status.defense} </p>
+        <p>espe. Ataque: ${status.specialAttack} </p>
+        <p>espe. Defesa: ${status.specialDefense} </p>
     </div>
     <div class='areaDescricao'>
         <p>${descricao}</p>
@@ -43,23 +55,33 @@ async function mostrarPokemon(pokemon){
     `
 }
 
-async function obterDescricao(pokemon){
- try {
-        const resp = await fetch(`https://pokeapi.co${pokemon}`);
-        const dadosEspecie = await resp.json();
+async function puxarDescricao(nome) {
+  const respostaSpecies = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${nome}/`);
+  const dadosSpecies = await respostaSpecies.json();
+  
+  // Encontra a primeira entrada onde o idioma seja inglês ('en')
+  const entradaIngles = dadosSpecies.flavor_text_entries.find(
+    (entrada) => entrada.language.name === 'en'
+  );
 
-        const entradaDescricao = dadosEspecie.flavor_text_entries.find(
-            (entrada) => entrada.language.name === 'en'
-        );
+  // Retorna o texto formatado (removendo quebras de linha estranhas que a PokeAPI costuma ter)
+  return entradaIngles ? entradaIngles.flavor_text.replace(/[\n\f]/g, ' ') : 'Descrição não encontrada.';
+}
+function puxarStatus(dados){
+ const statusMapeados = {};
 
-        const descricao = entradaDescricao 
-            ? entradaDescricao.flavor_text.replace(/[\n\f]/g, ' ') 
-            : "Descrição não encontrada.";
+    dados.stats.forEach(item => {
+        // O nome original vem em kebab-case (ex: special-attack), 
+        // vamos converter para camelCase para facilitar o uso no JS
+        if (item.stat.name === 'special-attack') {
+            statusMapeados.specialAttack = item.base_stat;
+        } else if (item.stat.name === 'special-defense') {
+            statusMapeados.specialDefense = item.base_stat;
+        } else {
+            statusMapeados[item.stat.name] = item.base_stat;
+        }
+    });
 
-        return descricao;
-
-    } catch (erro) {
-        console.error("Erro ao buscar a descrição:", erro);
-        return "Descrição indisponível.";
-    }
-    }
+    // Retorna o objeto com todos os status prontos para uso
+    return statusMapeados; 
+}

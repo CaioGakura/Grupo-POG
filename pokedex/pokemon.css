@@ -106,7 +106,36 @@ nav a:hover{transition: 300ms; color:rgb(255, 255, 255);}
     width: 50vw;
     height: 100vh;
 }
+.informacoesGerais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    gap: 2vh;
 
+}
+p{
+    color: black;
+}
+.numeroNomeTipo, .alturaPeso{
+    display: flex;
+    flex-direction: column;
+    background-color: #D6D6D6;
+    padding: 2vh;
+    border-radius: 20px;
+    align-items: center;
+    font-size: large;
+}
+
+.areaStatus{
+    display: flex;
+    flex-direction: column;
+    background-color: #D6D6D6;
+    border-radius: 20px;
+    align-items: center;
+    width: fit-content;
+}
 main{
     display: flex;
 }
