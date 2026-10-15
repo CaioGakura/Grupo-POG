@@ -225,6 +225,7 @@ function adicionarAoDropDownContent(abilities){
 function mostrarCombate(pokemon, status, tipo ){
     const listaAtaques = pokemon.moves.map(item => item.move.name);
     const idFormatado = `#${String(pokemon.id).padStart(3, '0')}`;
+    const tabelaDeAtaques = tabelaAtaques(listaAtaques);
     let htmlDoCombate = `
     <div class='informacoesGerais'>
         <div class='numeroNomeTipo'>
@@ -235,17 +236,19 @@ function mostrarCombate(pokemon, status, tipo ){
 
         </div>
     </div>
-        <div class='areaStatus'>
-            <h1>Status:</h1>
-            <p>HP: ${status.hp} </p>
-            <p>Ataque: ${status.attack} </p>
-            <p>Defesa: ${status.defense} </p>
-            <p>espe. Ataque: ${status.specialAttack} </p>
-            <p>espe. Defesa: ${status.specialDefense} </p>
-        </div>
+    <div class='areaStatus'>
+        <h1>Status:</h1>
+        <p>HP: ${status.hp} </p>
+        <p>Ataque: ${status.attack} </p>
+        <p>Defesa: ${status.defense} </p>
+        <p>espe. Ataque: ${status.specialAttack} </p>
+        <p>espe. Defesa: ${status.specialDefense} </p>
+    </div>
+    ${tabelaDeAtaques}
+    <div class='fraquezasEResistencias'>
+    
     `
     ladoDireito.innerHTML = htmlDoCombate;
-    tabelaAtaques(listaAtaques);
 }
 function tabelaAtaques(ataques){
     let htmlAtaques = [];
@@ -264,5 +267,5 @@ function tabelaAtaques(ataques){
         </table>
     </div>
     `
-    ladoDireito.innerHTML = htmlDaTabela
+    return htmlDaTabela;
 }
