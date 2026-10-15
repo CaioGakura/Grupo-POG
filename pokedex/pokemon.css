@@ -147,3 +147,24 @@ p{
     display: flex;
     justify-content: space-evenly;
 }
+.areaTabela{
+    overflow-y: auto;
+    max-height: 200px;
+    background-color: #D6D6D6;
+    margin: 2vh;
+}
+th{
+    background-color: red;
+    padding: 15px;
+    margin: 0;
+    width: 100vw;
+}
+tbody{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+tr{
+    background-color: rgb(0, 0, 0);
+    margin: 0px 3px;
+}

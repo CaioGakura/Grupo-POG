@@ -1,6 +1,8 @@
 // 1. ÁREAS DO HTML
 let ladoDaFoto = document.getElementById('LOUD');
 let ladoDireito = document.getElementById('PRX');
+const ulDoDropDown = document.getElementById('ulDoDropDownContent');
+
 
 const container = document.getElementById('containerPrincipal');
 
@@ -79,6 +81,7 @@ async function mostrarPokemon(pokemon){
     const status = puxarStatus(pokemon);
     const abilities = pokemon.abilities;
     const nomesAbilities = abilities.map(item => item.ability.name);
+    adicionarAoDropDownContent(nomesAbilities);
     console.log(nomesAbilities);
     console.log(status);
     const descricao = await puxarDescricao(pokemon.name);
@@ -116,7 +119,7 @@ async function mostrarPokemon(pokemon){
         <img src="${gifDoPokemon}" alt="Gif do ${pokemon.name}" height="200px">
         <img src="${urlImagem}" alt="Foto do ${pokemon.name}" >
     `
-    
+    linkCombate.addEventListener('click', () => mostrarCombate(pokemon, status, tipoPrincipal));  
 }
 
 async function puxarDescricao(nome) {
@@ -175,7 +178,7 @@ const promessas = pokemons.map(async (nome) => {
     const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
     const dados = await resposta.json();
 
-    return dados.sprites.front_default;
+    return dados.sprites.other['official-artwork'].front_default || dados.sprites.front_default;;
 });
 
 const imagens = await Promise.all(promessas);
@@ -214,5 +217,52 @@ function mostrarLinhaImagemDaLinhaEvolutiva(UrlsDasImagens, nomes){
     
     console.log(HtmlDasImagens);
 }
+function adicionarAoDropDownContent(abilities){
+    for (let i = 0; i < abilities.length; i++) {
+        ulDoDropDown.innerHTML += `<li><p>${abilities[i]}</p></li>`;
+    }
+}
+function mostrarCombate(pokemon, status, tipo ){
+    const listaAtaques = pokemon.moves.map(item => item.move.name);
+    const idFormatado = `#${String(pokemon.id).padStart(3, '0')}`;
+    let htmlDoCombate = `
+    <div class='informacoesGerais'>
+        <div class='numeroNomeTipo'>
+                <p>${idFormatado} | ${pokemon.name}</p>
+                <p>${tipo}</p>
+        </div>
+        <div id='tabela-container'>
 
-
+        </div>
+    </div>
+        <div class='areaStatus'>
+            <h1>Status:</h1>
+            <p>HP: ${status.hp} </p>
+            <p>Ataque: ${status.attack} </p>
+            <p>Defesa: ${status.defense} </p>
+            <p>espe. Ataque: ${status.specialAttack} </p>
+            <p>espe. Defesa: ${status.specialDefense} </p>
+        </div>
+    `
+    ladoDireito.innerHTML = htmlDoCombate;
+    tabelaAtaques(listaAtaques);
+}
+function tabelaAtaques(ataques){
+    let htmlAtaques = [];
+    for (const i in ataques) {
+        htmlAtaques.push(`<tr><td>${ataques[i]}</td></tr>`);
+    }
+    let htmlDaTabela = `
+    <div class="areaTabela">
+        <table>
+            <thead>
+                <th>Ataques disponiveis:</th>
+            </thead>
+            <tbody>
+                ${htmlAtaques.join('')}
+            </tbody>
+        </table>
+    </div>
+    `
+    ladoDireito.innerHTML = htmlDaTabela
+}
