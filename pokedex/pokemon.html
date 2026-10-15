@@ -8,6 +8,7 @@
 
     <title >Pokédex</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="pokemon.css">
 
     <link rel="icon" type="image/jpeg" href="./assets/pagina/pokemon individual.jpg">
@@ -19,7 +20,7 @@
     
     <nav>
 
-        <img src="./assets/pagina/download.png" alt="Logo">
+        <img draggable="false" src="./assets/pagina/download.png" alt="Logo">
 
         <ul>
     
@@ -28,15 +29,13 @@
         </ul>
 
         <ul class="sub">
-    
-            <li><a href="#">GERAL</a></li>
+            <li><a href="#" id="linkGeral">GERAL</a></li>
             <li class="enfi">|</li>
-            <li><a href="#">COMBATE</a></li>
+            <li><a href="#" id="linkCombate">COMBATE</a></li>
             <li class="enfi">|</li>
-            <li><a href="#">EVOLUÇÃO</a></li>
+            <li><a href="#" id="linkEvolucao">EVOLUÇÃO</a></li>
             <li class="enfi">|</li>
-            <li><a href="#">SOBRE</a></li>
-    
+            <li><a href="#" id="linkSobre">SOBRE</a></li>
         </ul>
 
 
@@ -68,23 +67,21 @@
 
 <body>
 
-    <main>
+    <main id="containerPrincipal">
 
-
+    
         <div id="LOUD">
-
         </div>
 
 
 
         <div id="PRX">
-
         </div>
-
-
-
-
-
+        
+        
+        
+        
+        
     </main>
 
     <footer>
@@ -114,7 +111,6 @@
     </svg>
 
     </footer>
-    
     <script src="pokemon.js"></script>
 </body>
 </html>

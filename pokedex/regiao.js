@@ -1414,7 +1414,7 @@ function renderizarCard(pokemon) {
     container.appendChild(card);
 }
 function abrirPokemon(nome){
-    window.open(`/pokedex/pokemon.html?nome=${nome}`, '_self');
+    window.open(`http://127.0.0.1:5500/pokemon.html?nome=${nome}`, '_self');
 }
 
 // Adiciona um evento de clique no botão para disparar a função de carregar mais Pokémon
@@ -1422,7 +1422,7 @@ botaoPegarDados.addEventListener('click', carregarPokemons);
 
 // Executa a função pela primeira vez assim que a página abre para carregar os primeiros Pokémon
 carregarPokemons();
-
+z
 const containerGinasios = document.getElementById("ginasios-cards");
 
 const lideres = regiaoAtual.lideres;
