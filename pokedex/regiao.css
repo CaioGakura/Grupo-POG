@@ -228,7 +228,8 @@ footer img{
     background-repeat: repeat;
 }
 
-.card-ginasio {
+.card-ginasio-front {
+    transition: 300ms;
     width: 250px;
     min-height: 350px;
 
@@ -244,12 +245,21 @@ footer img{
     transition: 300ms;
 }
 
-.card-ginasio:hover {
+.card-ginasio-front:hover {
     transform: scale(1.05);
     box-shadow: 10px 10px black;
     cursor: pointer;
 }
+.card-ginasio-front.virado{
+    transition: 300ms;
+    transform: rotate3d(0, 1, 0, 180deg);
+    box-shadow: -10px 10px black;
 
+
+}
+.descricao-do-lider{
+    transform: rotate3d(0, 1, 0, 180deg);
+}
 .lider-img {
     width: 150px;
     height: 180px;

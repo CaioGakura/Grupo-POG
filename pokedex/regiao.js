@@ -60,7 +60,8 @@ const regioes = {
                 insignia: "Insígnia: Cascata",
                 imagem: "./assets/lideres/misty.png",
                 imagemInsignia: "./assets/insignias/cascata.png",
-                cor: "#6390F0"
+                cor: "#6390F0",
+                descricao: "alguem bota por favor"
             },
 
             {
@@ -1428,17 +1429,33 @@ const containerGinasios = document.getElementById("ginasios-cards");
 
 const lideres = regiaoAtual.lideres;
 
-function mostrarDescricao(texto){
-    alert(texto);
+function mostrarDescricao(texto, card, lider){
+    if(card.classList.contains('virado')){
+        card.innerHTML = `
+        <p>${lider.cidade}</p>
+        <img class="lider-img" src="${lider.imagem}"alt="${lider.nome}" >
+            <h2>${lider.nome}</h2>
+            <p>Tipo: ${lider.tipo}</p>
+            <img class="insignia-img" src="${lider.imagemInsignia}" alt="${lider.insignia}">
+            <p>${lider.insignia}</p>
+            `;
+        card.classList.remove('virado');
+        return;
+    }
+
+    card.classList.toggle('virado');
+    card.innerHTML = `
+    <p class='descricao-do-lider'>${texto}</p>
+    `
 }
 function renderizarGinasios() {
 
     lideres.forEach(lider => {
 
         const card = document.createElement("article");
-        card.addEventListener('click', () => mostrarDescricao(lider.descricao));
+        card.addEventListener('click', () => mostrarDescricao(lider.descricao, card, lider));
 
-        card.classList.add("card-ginasio");
+        card.classList.add("card-ginasio-front");
 
         card.style.backgroundColor = lider.cor;
 
