@@ -1422,7 +1422,7 @@ botaoPegarDados.addEventListener('click', carregarPokemons);
 
 // Executa a função pela primeira vez assim que a página abre para carregar os primeiros Pokémon
 carregarPokemons();
-z
+
 const containerGinasios = document.getElementById("ginasios-cards");
 
 const lideres = regiaoAtual.lideres;
