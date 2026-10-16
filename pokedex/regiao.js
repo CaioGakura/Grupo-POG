@@ -49,7 +49,8 @@ const regioes = {
                 insignia: "Insígnia: Rocha",
                 imagem: "./assets/lideres/brock.png",
                 imagemInsignia: "./assets/insignias/rocha.png",
-                cor: "#B6A136"
+                cor: "#B6A136",
+                descricao: "Brock é o ex-Líder de Ginásio da Cidade de Pewter e o companheiro de viagem mais duradouro de Ash no anime Pokémon. Especialista no tipo Pedra e parceiro de um Onix, ele atua como o 'irmão mais velho' do grupo devido à sua maturidade e habilidade na cozinha. Seu visual marcante traz os icônicos olhos semicerrados e, como alívio cômico, ele se apaixona por qualquer mulher bonita que vê. Ao longo da jornada, seu objetivo mudou de Criador para Médico Pokémon."
             },
             
             {
@@ -1427,36 +1428,26 @@ const containerGinasios = document.getElementById("ginasios-cards");
 
 const lideres = regiaoAtual.lideres;
 
+function mostrarDescricao(texto){
+    alert(texto);
+}
 function renderizarGinasios() {
 
     lideres.forEach(lider => {
 
         const card = document.createElement("article");
+        card.addEventListener('click', () => mostrarDescricao(lider.descricao));
 
         card.classList.add("card-ginasio");
 
         card.style.backgroundColor = lider.cor;
 
         card.innerHTML = `
-
         <p>${lider.cidade}</p>
-
-        <img
-                class="lider-img"
-                src="${lider.imagem}"
-                alt="${lider.nome}"
-            >
-
+        <img class="lider-img" src="${lider.imagem}"alt="${lider.nome}" >
             <h2>${lider.nome}</h2>
-
             <p>Tipo: ${lider.tipo}</p>
-
-            <img
-                class="insignia-img"
-                src="${lider.imagemInsignia}"
-                alt="${lider.insignia}"
-            >
-            
+            <img class="insignia-img" src="${lider.imagemInsignia}" alt="${lider.insignia}">
             <p>${lider.insignia}</p>
             `;
             
