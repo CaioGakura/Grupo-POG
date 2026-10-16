@@ -116,8 +116,12 @@ async function mostrarPokemon(pokemon){
     `
     ladoDireito.innerHTML = HtmlLadoDireito
     ladoDaFoto.innerHTML = `
-        <img src="${gifDoPokemon}" alt="Gif do ${pokemon.name}" height="200px">
-        <img src="${urlImagem}" alt="Foto do ${pokemon.name}" >
+    <div class='areaFotoDoPokemon'>
+        <img  src="${urlImagem}" alt="Foto do ${pokemon.name}" >
+    </div>
+    <div class='areaGifDoPokemon'>
+        <img class='gifPokemon'  src="${gifDoPokemon}" alt="Gif do ${pokemon.name}" height="200px">
+    </div>
     `
     linkCombate.addEventListener('click', () => mostrarCombate(pokemon, status, tipoPrincipal));  
 }
@@ -195,7 +199,7 @@ function mostrarLinhaImagemDaLinhaEvolutiva(UrlsDasImagens, nomes){
         HtmlDosNomes.push(`<span>${nomes[i]}</span>`);
         HtmlDasImagens.push(`
                 <img class="FotoDoPokemonNaLinhaEvolutiva" src="${UrlsDasImagens[i]}" alt="Foto do ${i}">
-                
+
             `);
             /*   
              */
