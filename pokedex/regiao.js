@@ -61,7 +61,7 @@ const regioes = {
                 imagem: "./assets/lideres/misty.png",
                 imagemInsignia: "./assets/insignias/cascata.png",
                 cor: "#6390F0",
-                descricao: "alguem bota por favor"
+                descricao: "Misty é a Líder de Ginásio da Cidade de Cerulean e uma das primeiras companheiras de viagem de Ash no anime Pokémon. Especialista no tipo Água, tem Pokémon como Starmie, Staryu e Psyduck. Conhecida por sua personalidade forte, temperamento explosivo e lealdade aos amigos, seu visual marcante inclui cabelos ruivos presos em um rabo de cavalo lateral, regata amarela e shorts vermelhos com suspensórios. Como alívio cômico, vive se irritando com o desajeitado Psyduck. Seu objetivo é se tornar uma grande Mestra Pokémon do tipo Água, conciliando sua jornada com as responsabilidades de Líder de Ginásio."
             },
 
             {
@@ -71,7 +71,9 @@ const regioes = {
                 insignia: "Insígnia: Trovão",
                 imagem: "./assets/lideres/surge.png",
                 imagemInsignia: "./assets/insignias/trovao.png",
-                cor:"#F7D02C"
+                cor:"#F7D02C",
+                descricao: "Lt. Surge é o Líder de Ginásio da Cidade de Vermilion e especialista no tipo Elétrico, conhecido como o “Relâmpago Americano”. Seu principal parceiro é Raichu, com quem utiliza estratégias baseadas em força e poder elétrico. De aparência musculosa, cabelos loiros e uniforme militar, possui uma personalidade confiante e intimidadora. Inicialmente, acredita que Pokémon evoluídos são superiores, mas sua derrota para Ash e Pikachu demonstra a importância da estratégia, da velocidade e da confiança entre treinador e Pokémon."
+                
             },
 
             {
@@ -81,7 +83,9 @@ const regioes = {
                 insignia: "Insígnia: Arco-Íris",
                 imagem: "./assets/lideres/erika.png",
                 imagemInsignia: "./assets/insignias/arcoiris.png",
-                cor:"#7AC74C"
+                cor:"#7AC74C",
+                descricao: "Erika é a Líder de Ginásio da Cidade de Celadon e especialista no tipo Grama. Seus principais Pokémon incluem Gloom e Vileplume. Gentil e elegante, tem paixão por flores e perfumes, administrando sua própria loja de fragrâncias. Seu visual tradicional inclui um quimono verde e cabelos escuros presos. Seu objetivo é aperfeiçoar suas habilidades como treinadora do tipo Grama e continuar cultivando sua paixão pela natureza e pela perfumaria."
+                
             },
 
             {
@@ -91,7 +95,8 @@ const regioes = {
                 insignia: "Insígnia: Alma",
                 imagem: "./assets/lideres/koga.png",
                 imagemInsignia: "./assets/insignias/alma.png",
-                cor:"#A33EA1"
+                cor:"#A33EA1",
+                descricao: "Koga é o Líder de Ginásio de Fuchsia e especialista no tipo Veneno no universo Pokémon. Seus principais parceiros incluem Venomoth e Weezing, que utiliza com estratégias baseadas em veneno, agilidade e ataques surpresa. Com aparência de ninja e personalidade disciplinada e estratégica, valoriza a furtividade e o treinamento rigoroso. Seu objetivo é aperfeiçoar suas habilidades ninjas e fortalecer seus Pokémon, mantendo a tradição de sua família, que também é ligada à arte ninja."
             },
 
             {
@@ -101,7 +106,8 @@ const regioes = {
                 insignia: "Insígnia: Pântano",
                 imagem: "./assets/lideres/sabrina.png",
                 imagemInsignia: "./assets/insignias/pantano.png",
-                cor:"#F95587"
+                cor:"#F95587",
+                descricao: "Sabrina é a Líder de Ginásio da Cidade de Saffron e especialista no tipo Psíquico. Sua principal parceira é Alakazam, conhecido por seu enorme poder mental. De personalidade fria e misteriosa, possui habilidades psíquicas que lhe permitem mover objetos e controlar pessoas, além de um visual marcante com cabelos escuros e roupas vermelhas. Seu objetivo é aperfeiçoar seus poderes psíquicos e provar sua superioridade nas batalhas, embora sua jornada também envolva aprender a lidar melhor com suas emoções e com os outros."
             },
 
             {
@@ -111,7 +117,8 @@ const regioes = {
                 insignia: "Insígnia: Vulcão",
                 imagem: "./assets/lideres/blaine.png",
                 imagemInsignia: "./assets/insignias/vulcao.png",
-                cor:"#EE8130"
+                cor:"#EE8130",
+                descricao: "Blaine é o Líder de Ginásio da Ilha de Cinnabar e especialista no tipo Fogo. Seu principal parceiro é Arcanine, conhecido por sua força e velocidade. De aparência idosa, com cabelos brancos, óculos escuros e personalidade excêntrica, é famoso por seus enigmas e desafios aos treinadores. Seu objetivo é testar as habilidades dos adversários e aperfeiçoar suas estratégias com Pokémon de Fogo, demonstrando seu conhecimento científico e experiência em batalhas."
             },
 
             {
@@ -121,7 +128,8 @@ const regioes = {
                 insignia: "Insígnia: Terra",
                 imagem: "./assets/lideres/giovanni.png",
                 imagemInsignia: "./assets/insignias/terra.png",
-                cor:"#E2BF65"
+                cor:"#E2BF65",
+                descricao: "Giovanni é o Líder de Ginásio da Cidade de Viridian e especialista no tipo Terra, além de ser o poderoso chefe da Equipe Rocket. Seu principal parceiro é Persian, e ele também utiliza Pokémon como Rhydon e Nidoking. De personalidade fria, calculista e ambiciosa, possui aparência elegante, cabelos escuros e postura imponente. Seu objetivo é expandir o domínio da Equipe Rocket, utilizando Pokémon para obter poder, riqueza e controle, enquanto mantém sua identidade como Líder de Ginásio."
             }
         ]
     },
@@ -169,7 +177,8 @@ const regioes = {
                     insignia: "Insígnia: Zéfiro",
                     imagem: "./assets/lideres/falkner.png",
                     imagemInsignia: "./assets/insignias/zefiro.png",
-                    cor: "#A98FF3"
+                    cor: "#A98FF3",
+                    descricao: "Falkner é o Líder de Ginásio da Cidade de Violet e especialista no tipo Voador no anime Pokémon. Filho de um antigo Líder de Ginásio, ele utiliza Pokémon como Pidgeotto e Pidgeot, destacando-se por suas estratégias aéreas e agilidade nas batalhas. Sua personalidade confiante e disciplinada reflete seu orgulho pela tradição de sua família e sua dedicação ao treinamento. Seu visual marcante inclui cabelos azuis e roupas em tons de azul, inspiradas em aves. Ao longo de sua trajetória, Falkner busca aperfeiçoar suas habilidades como treinador e honrar o legado de seu pai, provando que pode se tornar um grande especialista no tipo Voador."
                 },
                 
                 {
@@ -179,7 +188,8 @@ const regioes = {
                     insignia: "Insígnia: Colmeia",
                     imagem: "./assets/lideres/bugsy.png",
                     imagemInsignia: "./assets/insignias/colmeia.png",
-                    cor: "#A6B91A"
+                    cor: "#A6B91A",
+                    descricao: "Bugsy é o Líder de Ginásio da Cidade de Azalea e especialista no tipo Inseto. Seus principais Pokémon incluem Scyther, Metapod e Kakuna. Curioso e dedicado, gosta de estudar os Pokémon insetos. Seu objetivo é aprimorar suas estratégias e demonstrar a força desse tipo nas batalhas."
                 },
 
                 {
@@ -189,7 +199,8 @@ const regioes = {
                     insignia: "Insígnia: Planície",
                     imagem: "./assets/lideres/whitney.png",
                     imagemInsignia: "./assets/insignias/planicie.png",
-                    cor: "#A8A77A"
+                    cor: "#A8A77A",
+                    descricao: "Whitney é a Líder de Ginásio da Cidade de Goldenrod e especialista no tipo Normal. Sua principal parceira é Miltank, conhecida pelo poderoso movimento Rollout. Alegre, competitiva e emotiva, possui cabelos castanhos presos em dois coques. Seu objetivo é fortalecer seus Pokémon e se tornar uma treinadora cada vez mais habilidosa."
                 },
 
                 {
@@ -199,7 +210,8 @@ const regioes = {
                     insignia: "Insígnia: Névoa",
                     imagem: "./assets/lideres/morty.png",
                     imagemInsignia: "./assets/insignias/nevoa.png",
-                    cor: "#735797"
+                    cor: "#735797",
+                    descricao:"Morty é o Líder de Ginásio da Cidade de Ecruteak e especialista no tipo Fantasma no anime Pokémon. Seu principal parceiro é Gengar, além de utilizar outros Pokémon fantasmagóricos. De personalidade tranquila, misteriosa e espiritualizada, possui cabelos roxos e roupas em tons de roxo. Seu objetivo é se tornar um grande especialista no tipo Fantasma e compreender os mistérios dos Pokémon, especialmente os lendários Ho-Oh e as antigas lendas de sua cidade."
                 },
 
                 {
@@ -209,7 +221,8 @@ const regioes = {
                     insignia: "Insígnia: Tempestade",
                     imagem: "./assets/lideres/chuck.png",
                     imagemInsignia: "./assets/insignias/tempestade.png",
-                    cor: "#C22E28"
+                    cor: "#C22E28",
+                    descricao: "Chuck é o Líder de Ginásio da Cidade de Cianwood e especialista no tipo Lutador no anime Pokémon. Seus principais parceiros incluem Poliwrath e Primeape, conhecidos por sua força física e resistência. De personalidade enérgica e dedicada, é um treinador experiente que valoriza o treinamento rigoroso e a disciplina. Seu objetivo é aprimorar as habilidades de seus Pokémon lutadores e formar combatentes cada vez mais fortes, mantendo sua reputação como um Líder de Ginásio exigente."
                 },
 
                 {
@@ -219,7 +232,8 @@ const regioes = {
                     insignia: "Insígnia: Mineral",
                     imagem: "./assets/lideres/jasmine.png",
                     imagemInsignia: "./assets/insignias/mineral.png",
-                    cor: "#B7B7CE"
+                    cor: "#B7B7CE",
+                    descricao: "Jasmine é a Líder de Ginásio da Cidade de Olivine e especialista no tipo Aço no anime Pokémon. Sua principal parceira é Steelix, conhecida por sua resistência e força nas batalhas. De personalidade gentil, tímida e cuidadosa, demonstra grande carinho por seus Pokémon e preocupação com os outros. Seu visual marcante inclui longos cabelos castanhos e roupas em tons claros. Seu objetivo é se tornar uma treinadora cada vez mais habilidosa e proteger seus Pokémon, equilibrando suas responsabilidades como Líder de Ginásio com sua natureza bondosa."
                 },
 
                 {
@@ -229,7 +243,8 @@ const regioes = {
                     insignia: "Insígnia: Geleira",
                     imagem: "./assets/lideres/pryce.png",
                     imagemInsignia: "./assets/insignias/geleira.png",
-                    cor: "#96D9D6"
+                    cor: "#96D9D6",
+                    descricao: "Pryce é o Líder de Ginásio da Cidade de Mahogany e especialista no tipo Gelo no anime Pokémon. Seus principais parceiros incluem Piloswine e Dewgong, conhecidos por sua resistência e poder em ambientes gelados. De personalidade séria, disciplinada e experiente, é um treinador veterano que valoriza a perseverança e o treinamento rigoroso. Seu visual marcante inclui cabelos brancos e aparência de um senhor idoso. Seu objetivo é aperfeiçoar suas habilidades como treinador e demonstrar a força dos Pokémon do tipo Gelo, mantendo sua reputação como um dos especialistas mais experientes de Johto."
                 },
 
                 {
@@ -239,7 +254,8 @@ const regioes = {
                     insignia: "Insígnia: Nascente",
                     imagem: "./assets/lideres/clair.png",
                     imagemInsignia: "./assets/insignias/nascente.png",
-                    cor: "#6F35FC"
+                    cor: "#6F35FC",
+                    descricao: "Clair é a Líder de Ginásio da Cidade de Blackthorn e especialista no tipo Dragão no anime Pokémon. Sua principal parceira é Kingdra, conhecida por sua força e habilidade em batalha. De personalidade orgulhosa, determinada e competitiva, ela possui longos cabelos azuis e roupas em tons de azul, com detalhes que remetem aos dragões. Apesar de sua confiança, pode ser teimosa quando é derrotada. Seu objetivo é aperfeiçoar suas habilidades como treinadora de Pokémon do tipo Dragão e honrar a tradição de sua família, ligada ao treinamento desses poderosos Pokémon."
                 }
             ]
     },
@@ -287,7 +303,8 @@ const regioes = {
             insignia: "Insígnia: Pedra",
             imagem: "./assets/lideres/roxanne.png",
             imagemInsignia: "./assets/insignias/pedra.png",
-            cor: "#B6A136"
+            cor: "#B6A136",
+            descricao: "Roxanne é a Líder de Ginásio da Cidade de Rustboro e especialista no tipo Pedra no anime Pokémon. Seu principal parceiro é Nosepass, conhecido por sua resistência e defesa. Inteligente, dedicada e estudiosa, ela também atua como professora na Escola de Treinadores Pokémon. Seu visual marcante inclui cabelos azuis curtos e um uniforme escolar. Seu objetivo é aprimorar suas habilidades como treinadora e compartilhar seus conhecimentos sobre Pokémon, inspirando novos treinadores a se tornarem cada vez melhores."
         },
         
         {
@@ -297,7 +314,8 @@ const regioes = {
             insignia: "Insígnia: Punho",
             imagem: "./assets/lideres/brawly.png",
             imagemInsignia: "./assets/insignias/punho.png",
-            cor: "#C22E28"
+            cor: "#C22E28",
+            descricao: "Brawly é o Líder de Ginásio da Ilha de Dewford e especialista no tipo Lutador no anime Pokémon. Seu principal parceiro é Hariyama, conhecido por sua força física e resistência. De personalidade energética, descontraída e confiante, é um treinador que gosta de surfar e treinar perto do mar. Seu visual marcante inclui cabelos claros e roupas casuais inspiradas no estilo praiano. Seu objetivo é aperfeiçoar suas habilidades de combate e fortalecer seus Pokémon por meio de treinamentos intensos, buscando se tornar um especialista cada vez mais habilidoso no tipo Lutador."
         },
 
         {
@@ -307,7 +325,8 @@ const regioes = {
             insignia: "Insígnia: Dínamo",
             imagem: "./assets/lideres/wattson.png",
             imagemInsignia: "./assets/insignias/dinamo.png",
-            cor: "#F7D02C"
+            cor: "#F7D02C",
+            descricao:"Wattson é o Líder de Ginásio da Cidade de Mauville e especialista no tipo Elétrico no anime Pokémon. Seu principal parceiro é Manectric, além de utilizar outros Pokémon elétricos em suas batalhas. Alegre, brincalhão e cheio de energia, é um treinador experiente que gosta de testar suas habilidades com desafios divertidos. Seu visual marcante inclui cabelos brancos, bigode volumoso e uma aparência robusta. Seu objetivo é aperfeiçoar suas estratégias e demonstrar o poder dos Pokémon elétricos, mantendo seu Ginásio como um desafio para treinadores de Hoenn."
         },
 
         {
@@ -317,7 +336,8 @@ const regioes = {
             insignia: "Insígnia: Calor",
             imagem: "./assets/lideres/flannery.png",
             imagemInsignia: "./assets/insignias/calor.png",
-            cor: "#EE8130"
+            cor: "#EE8130",
+            descricao: "Flannery é a Líder de Ginásio da Cidade de Lavaridge e especialista no tipo Fogo no anime Pokémon. Sua principal parceira é Torkoal, conhecida por sua resistência e poderosas chamas. De personalidade determinada, impulsiva e um pouco insegura devido à sua inexperiência como líder, ela busca provar seu valor nas batalhas. Seu visual marcante inclui cabelos vermelhos presos em um coque alto e roupas em tons de vermelho e preto. Seu objetivo é se tornar uma Líder de Ginásio respeitada, aperfeiçoando suas habilidades e honrando o legado de seu avô."
         },
 
         {
@@ -327,7 +347,8 @@ const regioes = {
             insignia: "Insígnia: Equilíbrio",
             imagem: "./assets/lideres/norman.png",
             imagemInsignia: "./assets/insignias/equilibrio.png",
-            cor: "#A8A77A"
+            cor: "#A8A77A",
+            descricao: "Norman é o Líder de Ginásio da Cidade de Petalburg e especialista no tipo Normal no anime Pokémon. Seus principais parceiros incluem Slaking e Vigoroth, conhecidos por sua força e resistência. De personalidade séria, disciplinada e dedicada, é também o pai de May e Max, valorizando o equilíbrio entre família e treinamento. Seu visual marcante inclui cabelos castanhos e roupas formais. Seu objetivo é fortalecer seus Pokémon e manter sua reputação como treinador experiente, além de apoiar o desenvolvimento de seus filhos em suas próprias jornadas Pokémon."
         },
 
         {
@@ -337,7 +358,8 @@ const regioes = {
             insignia: "Insígnia: Pena",
             imagem: "./assets/lideres/winona.png",
             imagemInsignia: "./assets/insignias/pena.png",
-            cor: "#A98FF3"
+            cor: "#A98FF3",
+            descricao: "Winona é a Líder de Ginásio da Cidade de Fortree e especialista no tipo Voador no anime Pokémon. Sua principal parceira é Altaria, conhecida por sua elegância e habilidades aéreas. De personalidade calma, graciosa e confiante, demonstra grande conexão com o céu e seus Pokémon. Seu visual marcante inclui longos cabelos azulados e roupas em tons de azul e branco, inspiradas nas aves. Seu objetivo é aperfeiçoar suas estratégias aéreas e fortalecer seus Pokémon, tornando-se uma treinadora cada vez mais habilidosa e respeitada."
         },
 
         {
@@ -347,7 +369,8 @@ const regioes = {
             insignia: "Insígnia: Mente",
             imagem: "./assets/lideres/tate-liza.png",
             imagemInsignia: "./assets/insignias/mente.png",
-            cor: "#F95587"
+            cor: "#F95587",
+            descricao: "Tate e Liza são os Líderes de Ginásio da Cidade de Mossdeep e especialistas no tipo Psíquico no anime Pokémon. Seus principais parceiros incluem Solrock e Lunatone, que utilizam em batalhas em dupla com estratégias coordenadas. Tate é brincalhão e competitivo, enquanto Liza é mais madura e responsável, formando uma dupla com personalidades complementares. Seus visuais marcantes incluem cabelos azuis e vermelhos, respectivamente, e roupas inspiradas no espaço. Seu objetivo é aperfeiçoar suas habilidades em batalhas duplas e fortalecer a conexão entre seus Pokémon, demonstrando o poder da cooperação e da estratégia."
         },
 
         {
@@ -357,7 +380,8 @@ const regioes = {
             insignia: "Insígnia: Chuva",
             imagem: "./assets/lideres/wallace.png",
             imagemInsignia: "./assets/insignias/chuva.png",
-            cor: "#6390F0"
+            cor: "#6390F0",
+            descricao: "Wallace é um renomado treinador Pokémon que já atuou como Líder de Ginásio da Cidade de Sootopolis e é especialista no tipo Água. Seu principal parceiro é Milotic, conhecido por sua beleza e elegância nas batalhas. De personalidade refinada, confiante e carismática, destaca-se também por seu estilo sofisticado e sua paixão pela beleza dos Pokémon. Seu visual marcante inclui longos cabelos azulados e roupas elegantes. Seu objetivo é aperfeiçoar suas habilidades como treinador e Coordenador Pokémon, buscando reconhecimento tanto pela força em combate quanto pela elegância de suas apresentações."
         }
     ]
 },
@@ -407,7 +431,8 @@ sinnoh: {
             insignia: "Insígnia: Carvão",
             imagem: "./assets/lideres/roark.png",
             imagemInsignia: "./assets/insignias/carvao.png",
-            cor: "#B6A136"
+            cor: "#B6A136",
+            descricao: "Roark é o Líder de Ginásio da Cidade de Oreburgh e especialista no tipo Pedra no anime Pokémon. Seu principal parceiro é Cranidos, que posteriormente evolui para Rampardos, conhecido por sua força e poder de ataque. De personalidade determinada, trabalhadora e competitiva, também atua como minerador, seguindo os passos de seu pai, Byron. Seu visual marcante inclui cabelos escuros com detalhes azuis e um capacete de mineração. Seu objetivo é se tornar um treinador cada vez mais forte, aperfeiçoando suas habilidades com Pokémon do tipo Pedra e honrando a tradição de sua família na mineração."
         },
 
         {
@@ -417,7 +442,8 @@ sinnoh: {
             insignia: "Insígnia: Floresta",
             imagem: "./assets/lideres/gardenia.png",
             imagemInsignia: "./assets/insignias/floresta.png",
-            cor: "#7AC74C"
+            cor: "#7AC74C",
+            descricao: "Gardenia é a Líder de Ginásio da Cidade de Eterna e especialista no tipo Grama no anime Pokémon. Sua principal parceira é Roserade, conhecida por sua elegância e força nas batalhas. Alegre, energética e apaixonada pela natureza, demonstra grande entusiasmo por Pokémon do tipo Grama, embora tenha medo de Pokémon do tipo Fantasma. Seu visual marcante inclui cabelos castanhos curtos e roupas em tons de verde e amarelo. Seu objetivo é aperfeiçoar suas habilidades como treinadora e fortalecer seus Pokémon, mostrando todo o potencial do tipo Grama nas batalhas."
         },
 
         {
@@ -427,7 +453,8 @@ sinnoh: {
             insignia: "Insígnia: Pedregulho",
             imagem: "./assets/lideres/maylene.png",
             imagemInsignia: "./assets/insignias/pedregulho.png",
-            cor: "#C22E28"
+            cor: "#C22E28",
+            descricao: "Maylene é a Líder de Ginásio da Cidade de Veilstone e especialista no tipo Lutador no anime Pokémon. Sua principal parceira é Lucario, conhecida por sua força e habilidade em combate. Apesar de ser uma treinadora dedicada e habilidosa, Maylene é insegura e sente muita pressão para corresponder às expectativas de sua posição. Seu visual marcante inclui cabelos azuis curtos e roupas esportivas. Seu objetivo é superar suas inseguranças, aprimorar suas técnicas de batalha e se tornar uma Líder de Ginásio mais confiante, fortalecendo a parceria com seus Pokémon."
         },
 
         {
@@ -437,7 +464,8 @@ sinnoh: {
             insignia: "Insígnia: Pântano",
             imagem: "./assets/lideres/crasher-wake.png",
             imagemInsignia: "./assets/insignias/pantano-sinnoh.png",
-            cor: "#6390F0"
+            cor: "#6390F0",
+            descricao: "Crasher Wake é o Líder de Ginásio da Cidade de Pastoria e especialista no tipo Água no anime Pokémon. Seus principais parceiros incluem Floatzel, Quagsire e Gyarados, conhecidos por sua força e resistência. De personalidade exuberante, confiante e teatral, é apaixonado por luta livre e costuma agir como um verdadeiro lutador dentro e fora das batalhas. Seu visual marcante inclui uma máscara de lutador, roupa colorida e físico musculoso. Seu objetivo é testar suas habilidades, fortalecer seus Pokémon e proporcionar batalhas emocionantes, demonstrando sua paixão pelo combate e pelo entretenimento."
         },
 
         {
@@ -447,7 +475,8 @@ sinnoh: {
             insignia: "Insígnia: Relíquia",
             imagem: "./assets/lideres/fantina.png",
             imagemInsignia: "./assets/insignias/reliquia.png",
-            cor: "#735797"
+            cor: "#735797",
+            descricao: "Fantina é a Líder de Ginásio da Cidade de Hearthome e especialista no tipo Fantasma no anime Pokémon. Sua principal parceira é Mismagius, conhecida por seus poderes misteriosos e habilidades em batalha. De personalidade elegante, artística e carismática, também é uma talentosa Coordenadora Pokémon, apaixonada por dança e apresentações. Seu visual marcante inclui cabelos roxos, maquiagem destacada e roupas sofisticadas. Seu objetivo é aperfeiçoar suas habilidades como treinadora e artista, combinando estratégias de batalha com sua paixão pela dança e pelo espetáculo."
         },
 
         {
@@ -457,7 +486,8 @@ sinnoh: {
             insignia: "Insígnia: Mina",
             imagem: "./assets/lideres/byron.png",
             imagemInsignia: "./assets/insignias/mina.png",
-            cor: "#B7B7CE"
+            cor: "#B7B7CE",
+            descricao: "Byron é o Líder de Ginásio da Cidade de Canalave e especialista no tipo Aço no anime Pokémon. Seus principais parceiros incluem Bastiodon e Steelix, conhecidos por sua resistência e poder defensivo. De personalidade séria, confiante e dedicada, também trabalha como minerador e é pai de Roark, compartilhando com ele a paixão por escavações. Seu visual marcante inclui um corpo robusto, cabelos claros e roupas de trabalhador. Seu objetivo é fortalecer seus Pokémon e aperfeiçoar suas estratégias defensivas, mantendo sua reputação como um Líder de Ginásio experiente e honrando sua profissão de minerador."
         },
 
         {
@@ -467,7 +497,8 @@ sinnoh: {
             insignia: "Insígnia: Geleira",
             imagem: "./assets/lideres/candice.png",
             imagemInsignia: "./assets/insignias/geleira-sinnoh.png",
-            cor: "#96D9D6"
+            cor: "#96D9D6",
+            descricao: "Candice é a Líder de Ginásio da Cidade de Snowpoint e especialista no tipo Gelo no anime Pokémon. Sua principal parceira é Abomasnow, conhecida por sua força em ambientes gelados. Alegre, energética e dedicada, é uma treinadora determinada que acredita na importância do treinamento e da perseverança. Seu visual marcante inclui cabelos loiros presos em dois rabos de cavalo e roupas de inverno em tons de rosa e branco. Seu objetivo é aperfeiçoar suas habilidades com Pokémon do tipo Gelo e se tornar uma treinadora cada vez mais forte, enfrentando desafios com entusiasmo e confiança."
         },
 
         {
@@ -477,7 +508,8 @@ sinnoh: {
             insignia: "Insígnia: Farol",
             imagem: "./assets/lideres/volkner.png",
             imagemInsignia: "./assets/insignias/farol.png",
-            cor: "#F7D02C"
+            cor: "#F7D02C",
+            descricao: "Volkner é o Líder de Ginásio da Cidade de Sunyshore e especialista no tipo Elétrico no anime Pokémon. Seu principal parceiro é Luxray, conhecido por sua força e habilidades elétricas. De personalidade séria, reservada e inteligente, é um treinador extremamente habilidoso que perdeu o entusiasmo pelas batalhas por não encontrar adversários à sua altura. Seu visual marcante inclui cabelos loiros espetados e roupas em tons de preto e amarelo. Seu objetivo é recuperar sua paixão pelas batalhas Pokémon, enfrentando treinadores capazes de desafiá-lo e devolvendo a emoção aos combates."
         }
     ]
 },
@@ -524,7 +556,8 @@ unova: {
             insignia: "Insígnia: Trio",
             imagem: "./assets/lideres/cilan-chili-cress.png",
             imagemInsignia: "./assets/insignias/trio.png",
-            cor: "#7AC74C"
+            cor: "#7AC74C",
+            descricao: "Cilan, Chili e Cress são os Líderes de Ginásio da Cidade de Striaton, especialistas nos tipos Grama, Fogo e Água, respectivamente. Seus principais Pokémon são Pansage, Pansear e Panpour. Irmãos com personalidades distintas, Cilan é analítico, Chili é impulsivo e Cress é calmo. Seu objetivo é aprimorar suas habilidades e testar outros treinadores, enquanto Cilan também busca explorar o mundo Pokémon como especialista."
         },
 
         {
@@ -534,7 +567,8 @@ unova: {
             insignia: "Insígnia: Básica",
             imagem: "./assets/lideres/lenora.png",
             imagemInsignia: "./assets/insignias/basica.png",
-            cor: "#A8A77A"
+            cor: "#A8A77A",
+            descricao: "Lenora é a Líder de Ginásio da Cidade de Nacrene e especialista no tipo Normal no anime Pokémon. Sua principal parceira é Watchog, conhecida por sua habilidade de usar movimentos estratégicos em batalha. Inteligente, séria e dedicada, também trabalha como paleontóloga e administra um museu, demonstrando grande interesse pela história dos Pokémon. Seu visual marcante inclui cabelos escuros presos e roupas elegantes. Seu objetivo é fortalecer seus Pokémon, compartilhar seus conhecimentos e preservar a história do mundo Pokémon por meio de suas pesquisas."
         },
 
         {
@@ -544,7 +578,8 @@ unova: {
             insignia: "Insígnia: Inseto",
             imagem: "./assets/lideres/burgh.png",
             imagemInsignia: "./assets/insignias/inseto.png",
-            cor: "#A6B91A"
+            cor: "#A6B91A",
+            descricao: "Burgh é o Líder de Ginásio da Cidade de Castelia e especialista no tipo Inseto no anime Pokémon. Seu principal parceiro é Leavanny, conhecido por sua agilidade e habilidades em batalha. Criativo, alegre e artístico, também é um talentoso pintor que encontra inspiração na natureza e nos Pokémon. Seu visual marcante inclui cabelos verdes e roupas coloridas. Seu objetivo é aperfeiçoar suas habilidades como treinador e artista, explorando a beleza dos Pokémon do tipo Inseto e demonstrando sua força nas batalhas."
         },
 
         {
@@ -554,7 +589,8 @@ unova: {
             insignia: "Insígnia: Raio",
             imagem: "./assets/lideres/elesa.png",
             imagemInsignia: "./assets/insignias/raio.png",
-            cor: "#F7D02C"
+            cor: "#F7D02C",
+            descricao: "Elesa é a Líder de Ginásio da Cidade de Nimbasa e especialista no tipo Elétrico no anime Pokémon. Sua principal parceira é Zebstrika, conhecida por sua velocidade e poder elétrico. Confiante, carismática e elegante, também é uma famosa modelo que conquista o público com seu estilo e presença marcante. Seu visual inclui longos cabelos loiros e roupas modernas inspiradas na moda. Seu objetivo é fortalecer seus Pokémon e continuar brilhando tanto nas batalhas quanto nas passarelas, equilibrando sua carreira de modelo com suas responsabilidades como Líder de Ginásio."
         },
 
         {
@@ -564,7 +600,8 @@ unova: {
             insignia: "Insígnia: Terremoto",
             imagem: "./assets/lideres/clay.png",
             imagemInsignia: "./assets/insignias/terremoto.png",
-            cor: "#E2BF65"
+            cor: "#E2BF65",
+            descricao: "Clay é o Líder de Ginásio da Cidade de Driftveil e especialista no tipo Terra no anime Pokémon. Seu principal parceiro é Excadrill, conhecido por sua força e habilidade em escavações. De personalidade séria, confiante e pragmática, também atua como empresário do setor de mineração. Seu visual marcante inclui chapéu de cowboy, roupas de fazendeiro e uma postura imponente. Seu objetivo é fortalecer seus Pokémon e manter o sucesso de seus negócios, provando sua experiência tanto nas batalhas quanto no mundo empresarial."
         },
 
         {
@@ -574,7 +611,8 @@ unova: {
             insignia: "Insígnia: Jato",
             imagem: "./assets/lideres/skyla.png",
             imagemInsignia: "./assets/insignias/jato.png",
-            cor: "#A98FF3"
+            cor: "#A98FF3",
+            descricao: "Skyla é a Líder de Ginásio da Cidade de Mistralton e especialista no tipo Voador no anime Pokémon. Sua principal parceira é Swanna, conhecida por sua agilidade e elegância nos combates. Alegre, confiante e aventureira, também trabalha como piloto de avião, demonstrando sua paixão pelos céus. Seu visual marcante inclui longos cabelos azuis e roupas em tons de azul. Seu objetivo é aperfeiçoar suas habilidades com Pokémon voadores e continuar explorando os céus, equilibrando sua carreira de piloto com suas responsabilidades como Líder de Ginásio."
         },
 
         {
@@ -584,7 +622,8 @@ unova: {
             insignia: "Insígnia: Congelamento",
             imagem: "./assets/lideres/brycen.png",
             imagemInsignia: "./assets/insignias/congelamento.png",
-            cor: "#96D9D6"
+            cor: "#96D9D6",
+            descricao: "Brycen é o Líder de Ginásio da Cidade de Icirrus e especialista no tipo Gelo no anime Pokémon. Seus principais parceiros incluem Beartic e Vanillish, conhecidos por sua resistência e poder em ambientes gelados. De personalidade séria, disciplinada e estratégica, também é um antigo ator de filmes de ação, conhecido por interpretar ninjas. Seu visual marcante inclui cabelos escuros e roupas que lembram um traje de combate. Seu objetivo é aperfeiçoar suas habilidades como treinador e enfrentar desafios que exijam estratégia e determinação, mantendo sua dedicação aos Pokémon do tipo Gelo."
         },
 
         {
@@ -594,7 +633,8 @@ unova: {
             insignia: "Insígnia: Lenda",
             imagem: "./assets/lideres/drayden-iris.png",
             imagemInsignia: "./assets/insignias/lenda.png",
-            cor: "#6F35FC"
+            cor: "#6F35FC",
+            descricao: "Drayden é o Líder de Ginásio da Cidade de Opelucid e especialista no tipo Dragão no anime Pokémon. Seu principal parceiro é Haxorus, conhecido por sua força e poder de ataque. Sério, experiente e disciplinado, possui barba branca e aparência imponente. Seu objetivo é formar treinadores habilidosos no tipo Dragão e preservar as tradições de sua cidade, além de orientar Iris em seu desenvolvimento como treinadora. Iris é uma treinadora especialista no tipo Dragão que se torna Líder de Ginásio de Opelucid em algumas versões de Pokémon. Sua principal parceira é Axew, que a acompanha em sua jornada. Alegre, corajosa e aventureira, possui cabelos roxos volumosos e roupas inspiradas na natureza. Seu objetivo é se tornar uma Mestra Pokémon do tipo Dragão, fortalecendo seus Pokémon e aprimorando suas habilidades nas batalhas."
         }
     ]
 },
@@ -641,7 +681,8 @@ kalos: {
             insignia: "Insígnia: Inseto",
             imagem: "./assets/lideres/viola.png",
             imagemInsignia: "./assets/insignias/inseto-kalos.png",
-            cor: "#A6B91A"
+            cor: "#A6B91A",
+            descricao: "Viola é a Líder de Ginásio da Cidade de Santalune e especialista no tipo Inseto no anime Pokémon. Sua principal parceira é Surskit, além de utilizar Vivillon em suas batalhas. Alegre, confiante e criativa, também trabalha como fotógrafa, registrando imagens de Pokémon e da natureza. Seu visual marcante inclui cabelos loiros curtos e roupas elegantes em tons de azul. Seu objetivo é aperfeiçoar suas habilidades como treinadora e fotógrafa, utilizando sua criatividade e estratégia para superar os desafios das batalhas Pokémon."
         },
 
         {
@@ -651,7 +692,8 @@ kalos: {
             insignia: "Insígnia: Penhasco",
             imagem: "./assets/lideres/grant.png",
             imagemInsignia: "./assets/insignias/penhasco.png",
-            cor: "#B6A136"
+            cor: "#B6A136",
+            descricao: "Grant é o Líder de Ginásio da Cidade de Cyllage e especialista no tipo Pedra no anime Pokémon. Seus principais parceiros incluem Tyrunt e Amaura, conhecidos por sua resistência e habilidades defensivas. De personalidade calma, confiante e aventureira, é apaixonado por escalada e utiliza essa experiência para desenvolver sua determinação. Seu visual marcante inclui cabelos azuis e roupas esportivas. Seu objetivo é aprimorar suas habilidades como treinador e superar desafios, demonstrando a força dos Pokémon do tipo Pedra e a importância da perseverança."
         },
 
         {
@@ -661,7 +703,8 @@ kalos: {
             insignia: "Insígnia: Luta",
             imagem: "./assets/lideres/korrina.png",
             imagemInsignia: "./assets/insignias/luta-kalos.png",
-            cor: "#C22E28"
+            cor: "#C22E28",
+            descricao: "Korrina é a Líder de Ginásio da Cidade de Shalour e especialista no tipo Lutador no anime Pokémon. Sua principal parceira é Lucario, com quem possui uma forte conexão e utiliza a Mega Evolução em batalha. Alegre, energética e competitiva, é uma habilidosa patinadora que percorre a cidade sobre seus patins. Seu visual marcante inclui cabelos loiros e roupas esportivas. Seu objetivo é dominar a Mega Evolução e fortalecer sua parceria com Lucario, tornando-se uma treinadora cada vez mais poderosa."
         },
 
         {
@@ -671,7 +714,8 @@ kalos: {
             insignia: "Insígnia: Planta",
             imagem: "./assets/lideres/ramos.png",
             imagemInsignia: "./assets/insignias/planta-kalos.png",
-            cor: "#7AC74C"
+            cor: "#7AC74C",
+            descricao: "Ramos é o Líder de Ginásio da Cidade de Coumarine e especialista no tipo Grama no anime Pokémon. Seu principal parceiro é Gogoat, conhecido por sua força e resistência. De personalidade tranquila, gentil e experiente, é um treinador veterano que valoriza a natureza e o crescimento dos Pokémon. Seu visual marcante inclui longos bigodes brancos, chapéu e roupas tradicionais. Seu objetivo é transmitir sua experiência às novas gerações de treinadores e demonstrar a força dos Pokémon do tipo Grama por meio de batalhas estratégicas."
         },
 
         {
@@ -681,7 +725,8 @@ kalos: {
             insignia: "Insígnia: Voltagem",
             imagem: "./assets/lideres/clemont.png",
             imagemInsignia: "./assets/insignias/voltagem.png",
-            cor: "#F7D02C"
+            cor: "#F7D02C",
+            descricao: "Clemont é o Líder de Ginásio da Cidade de Lumiose e especialista no tipo Elétrico no anime Pokémon. Seu principal parceiro é Heliolisk, além de contar com outros Pokémon elétricos. Inteligente, curioso e apaixonado por ciência, é um inventor que cria máquinas e dispositivos tecnológicos, embora suas invenções nem sempre funcionem como esperado. Seu visual marcante inclui cabelos loiros, óculos e uma mochila tecnológica. Seu objetivo é se tornar um treinador mais forte, aprimorar suas invenções e aprender a usar seu conhecimento para ajudar seus amigos e Pokémon."
         },
 
         {
@@ -691,7 +736,8 @@ kalos: {
             insignia: "Insígnia: Fada",
             imagem: "./assets/lideres/valerie.png",
             imagemInsignia: "./assets/insignias/fada.png",
-            cor: "#D685AD"
+            cor: "#D685AD",
+            descricao: "Valerie é a Líder de Ginásio da Cidade de Laverre e especialista no tipo Fada no anime Pokémon. Sua principal parceira é Sylveon, conhecida por sua elegância e habilidades especiais. De personalidade gentil, misteriosa e artística, é apaixonada por moda e trabalha como designer de roupas. Seu visual marcante inclui cabelos rosa, orelhas pontudas e um vestido inspirado em criaturas mágicas. Seu objetivo é fortalecer seus Pokémon e expressar sua criatividade, buscando compreender a ligação entre humanos e Pokémon do tipo Fada."
         },
 
         {
@@ -701,7 +747,8 @@ kalos: {
             insignia: "Insígnia: Psíquica",
             imagem: "./assets/lideres/olympia.png",
             imagemInsignia: "./assets/insignias/psiquica.png",
-            cor: "#F95587"
+            cor: "#F95587",
+            descricao: "Olympia é a Líder de Ginásio da Cidade de Anistar e especialista no tipo Psíquico no anime Pokémon. Seus principais parceiros incluem Meowstic, conhecidos por seus poderes mentais e habilidades estratégicas. De personalidade séria, misteriosa e enigmática, possui habilidades de previsão que lhe permitem enxergar possíveis acontecimentos futuros. Seu visual marcante inclui cabelos roxos compridos e roupas elegantes com detalhes cósmicos. Seu objetivo é aperfeiçoar seus poderes psíquicos e orientar outros treinadores, utilizando sua conexão com o futuro para compreender os mistérios do mundo Pokémon."
         },
 
         {
@@ -711,7 +758,8 @@ kalos: {
             insignia: "Insígnia: Icebergue",
             imagem: "./assets/lideres/wulfric.png",
             imagemInsignia: "./assets/insignias/icebergue.png",
-            cor: "#96D9D6"
+            cor: "#96D9D6",
+            descricao: "Wulfric é o Líder de Ginásio da Cidade de Snowbelle e especialista no tipo Gelo no anime Pokémon. Seu principal parceiro é Avalugg, conhecido por sua enorme resistência e poder defensivo. De personalidade amigável, paciente e experiente, é um treinador que valoriza a perseverança e a força interior. Seu visual marcante inclui corpo robusto, barba e roupas de inverno. Seu objetivo é fortalecer seus Pokémon e ajudar outros treinadores a superar seus limites, demonstrando que a verdadeira força vem da confiança, da determinação e da parceria entre treinador e Pokémon."
         }
     ]
 },
@@ -760,7 +808,8 @@ alola: {
             insignia: "Cristal Z: Normalium Z",
             imagem: "./assets/lideres/ilima.png",
             imagemInsignia: "./assets/insignias/normalium-z.png",
-            cor: "#A8A77A"
+            cor: "#A8A77A",
+            descricao: "Ilima é um Capitão de Prova da Ilha de Melemele e especialista no tipo Normal no anime Pokémon. Seu principal parceiro é Gumshoos. Elegante, inteligente e educado, é conhecido por sua habilidade estratégica e aparência refinada. Seu objetivo é superar desafios e aprimorar suas habilidades como treinador, demonstrando a força dos Pokémon do tipo Normal."
         },
 
         {
@@ -770,7 +819,8 @@ alola: {
             insignia: "Cristal Z: Waterium Z",
             imagem: "./assets/lideres/lana.png",
             imagemInsignia: "./assets/insignias/waterium-z.png",
-            cor: "#6390F0"
+            cor: "#6390F0",
+            descricao: "Lana é uma Capitã de Prova da Ilha de Akala no anime Pokémon, especialista em Pokémon do tipo Água. Sua principal parceira é Primarina, em algumas fases de sua jornada, além de possuir um forte vínculo com os Pokémon aquáticos. Tranquila, habilidosa e brincalhona, adora pescar e explorar o oceano. Seu objetivo é se tornar uma excelente treinadora de Pokémon do tipo Água e aprimorar suas habilidades nas provas da região de Alola."
         },
 
         {
@@ -780,7 +830,8 @@ alola: {
             insignia: "Cristal Z: Firium Z",
             imagem: "./assets/lideres/kiawe.png",
             imagemInsignia: "./assets/insignias/firium-z.png",
-            cor: "#EE8130"
+            cor: "#EE8130",
+            descricao: "Kiawe é um Capitão de Prova da Ilha de Akala e especialista no tipo Fogo no anime Pokémon. Seu principal parceiro é Marowak de Alola. Sério, dedicado e competitivo, também ajuda sua família na fazenda de dança tradicional. Seu objetivo é se tornar um treinador mais forte, dominar as habilidades dos Pokémon do tipo Fogo e honrar as tradições de sua família."
         },
 
         {
@@ -790,7 +841,8 @@ alola: {
             insignia: "Cristal Z: Grassium Z",
             imagem: "./assets/lideres/mallow.png",
             imagemInsignia: "./assets/insignias/grassium-z.png",
-            cor: "#7AC74C"
+            cor: "#7AC74C",
+            descricao: "Mallow é uma Capitã de Prova da Ilha de Akala e especialista no tipo Grama no anime Pokémon. Sua principal parceira é Tsareena. Alegre, carinhosa e energética, adora cozinhar e trabalha no restaurante de sua família. Seu objetivo é se tornar uma grande cozinheira e treinadora, usando sua paixão pela natureza e pelos Pokémon para criar pratos especiais e fortalecer seus laços com eles."
         },
 
         {
@@ -800,7 +852,8 @@ alola: {
             insignia: "Cristal Z: Electrium Z",
             imagem: "./assets/lideres/sophocles.png",
             imagemInsignia: "./assets/insignias/electrium-z.png",
-            cor: "#F7D02C"
+            cor: "#F7D02C",
+            descricao: "Sophocles é um Capitão de Prova da Ilha de Melemele e especialista no tipo Elétrico no anime Pokémon. Seu principal parceiro é Togedemaru. Inteligente, curioso e apaixonado por tecnologia, adora robótica e invenções. Seu objetivo é aprimorar seus conhecimentos científicos e se tornar um treinador mais habilidoso, fortalecendo seus Pokémon e usando sua inteligência para superar desafios."
         },
 
         {
@@ -810,7 +863,8 @@ alola: {
             insignia: "Cristal Z: Ghostium Z",
             imagem: "./assets/lideres/acerola.png",
             imagemInsignia: "./assets/insignias/ghostium-z.png",
-            cor: "#735797"
+            cor: "#735797",
+            descricao: "Acerola é uma Capitã de Prova da Ilha de Ula’ula e especialista no tipo Fantasma no anime Pokémon. Sua principal parceira é Palossand. Alegre, brincalhona e misteriosa, adora histórias assustadoras e possui uma ligação especial com Pokémon fantasmagóricos. Seu objetivo é superar as provas de Alola e aprimorar suas habilidades como treinadora do tipo Fantasma."
         },
 
         {
@@ -820,7 +874,8 @@ alola: {
             insignia: "Cristal Z: Fairium Z",
             imagem: "./assets/lideres/mina.png",
             imagemInsignia: "./assets/insignias/fairium-z.png",
-            cor: "#D685AD"
+            cor: "#D685AD",
+            descricao: "Mina é uma artista e treinadora da região de Alola no anime Pokémon, conhecida por sua criatividade e talento para a pintura. Sua principal parceira é Ribombee, do tipo Inseto e Fada. Alegre, tranquila e imaginativa, adora criar obras de arte inspiradas no mundo ao seu redor. Seu objetivo é aperfeiçoar sua arte e expressar sua criatividade, mantendo sua ligação com os Pokémon e a cultura de Alola."
         },
 
         {
@@ -830,7 +885,8 @@ alola: {
             insignia: "Cristal Z: Fightinium Z",
             imagem: "./assets/lideres/hala.png",
             imagemInsignia: "./assets/insignias/fightinium-z.png",
-            cor: "#C22E28"
+            cor: "#C22E28",
+            descricao: "Hala é um Kahuna da Ilha de Melemele e especialista no tipo Lutador no anime Pokémon. Seu principal parceiro é Crabrawler, que pode evoluir para Crabominable. Sábio, gentil e experiente, valoriza a tradição e o treinamento disciplinado. Seu objetivo é orientar jovens treinadores e preservar as tradições de Alola, fortalecendo suas habilidades e as de seus Pokémon."
         },
 
         {
@@ -840,7 +896,8 @@ alola: {
             insignia: "Cristal Z: Rockium Z",
             imagem: "./assets/lideres/olivia.png",
             imagemInsignia: "./assets/insignias/rockium-z.png",
-            cor: "#B6A136"
+            cor: "#B6A136",
+            descricao: "Olivia é a Kahuna da Ilha de Akala e especialista no tipo Pedra no anime Pokémon. Sua principal parceira é Lycanroc. Confiante, descontraída e experiente, trabalha como joalheira e é apaixonada por pedras preciosas. Seu objetivo é orientar jovens treinadores e fortalecer seus Pokémon, honrando as tradições da região de Alola."
         },
 
         {
@@ -850,7 +907,8 @@ alola: {
             insignia: "Cristal Z: Darkinium Z",
             imagem: "./assets/lideres/nanu.png",
             imagemInsignia: "./assets/insignias/darkinium-z.png",
-            cor: "#705746"
+            cor: "#705746",
+            descricao: "Nanu é o Kahuna da Ilha de Ula'ula e especialista no tipo Sombrio no anime Pokémon. Seu principal Pokémon é Persian de Alola. Sério, preguiçoso e sarcástico, trabalha como policial e prefere evitar esforços desnecessários. Apesar de sua atitude despreocupada, é um treinador experiente que orienta os desafios da região de Alola."
         },
 
         {
@@ -860,7 +918,8 @@ alola: {
             insignia: "Cristal Z: Groundium Z",
             imagem: "./assets/lideres/hapu.png",
             imagemInsignia: "./assets/insignias/groundium-z.png",
-            cor: "#E2BF65"
+            cor: "#E2BF65",
+            descricao: "Hapu é a Kahuna da Ilha de Poni e especialista no tipo Terra no anime Pokémon. Sua principal parceira é Mudsdale. Determinada, séria e independente, vive em Poni e dedica-se ao treinamento de seus Pokémon. Seu objetivo é proteger sua ilha e honrar as tradições de Alola, tornando-se uma Kahuna respeitada."
         }
     ]
 },
@@ -909,7 +968,8 @@ galar: {
             insignia: "Insígnia: Planta",
             imagem: "./assets/lideres/milo.png",
             imagemInsignia: "./assets/insignias/planta-galar.png",
-            cor: "#7AC74C"
+            cor: "#7AC74C",
+            descricao: "Milo é o Líder de Ginásio de Turffield, na região de Galar, especializado no tipo Grama. Seu principal Pokémon é Eldegoss, conhecido por suas habilidades defensivas. De personalidade gentil, tranquila e determinada, Milo possui um físico forte e costuma demonstrar grande dedicação ao treinamento. Ele trabalha como fazendeiro e valoriza a força e a resistência de seus Pokémon. Seu objetivo é continuar aprimorando suas habilidades como treinador e inspirar outros a reconhecerem o verdadeiro potencial dos Pokémon do tipo Grama."
         },
 
         {
@@ -919,7 +979,8 @@ galar: {
             insignia: "Insígnia: Água",
             imagem: "./assets/lideres/nessa.png",
             imagemInsignia: "./assets/insignias/agua-galar.png",
-            cor: "#6390F0"
+            cor: "#6390F0",
+            descricao: "Nessa é a Líder de Ginásio de Hulbury, na região de Galar, especializada no tipo Água. Sua principal parceira é Drednaw, embora seu Pokémon mais característico seja Goldeen? Não, seu principal parceiro em batalhas importantes é Drednaw, e ela também utiliza Pokémon como Goldeen e Arrokuda. De personalidade confiante, determinada e competitiva, Nessa também trabalha como modelo, sendo admirada por sua beleza e elegância. Apesar do sucesso na carreira de modelo, ela leva os combates Pokémon muito a sério. Seu objetivo é aperfeiçoar suas habilidades como treinadora e provar sua força no desafio dos ginásios de Galar."
         },
 
         {
@@ -929,7 +990,8 @@ galar: {
             insignia: "Insígnia: Fogo",
             imagem: "./assets/lideres/kabu.png",
             imagemInsignia: "./assets/insignias/fogo-galar.png",
-            cor: "#EE8130"
+            cor: "#EE8130",
+            descricao: "Kabu é o Líder de Ginásio de Motostoke, na região de Galar, especializado no tipo Fogo. Seu principal Pokémon é Centiskorch, conhecido por sua força e seus ataques poderosos. De personalidade séria, disciplinada e experiente, Kabu é um treinador veterano que valoriza a perseverança e o treinamento constante. Mesmo sendo muito habilidoso, ele acredita que a dedicação é essencial para alcançar o sucesso. Seu objetivo é continuar aprimorando suas habilidades e inspirar os treinadores mais jovens a nunca desistirem de seus sonhos."
         },
 
         {
@@ -939,7 +1001,8 @@ galar: {
             insignia: "Insígnia: Luta / Fantasma",
             imagem: "./assets/lideres/bea-allister.png",
             imagemInsignia: "./assets/insignias/luta-fantasma.png",
-            cor: "#C22E28"
+            cor: "#C22E28",
+            descricao: "Bea é a Líder de Ginásio de Stow-on-Side, na região de Galar, especializada no tipo Lutador. Sua principal parceira é Machamp. Séria, disciplinada e competitiva, é uma atleta dedicada às artes marciais. Seu objetivo é aperfeiçoar suas habilidades e se tornar uma treinadora cada vez mais forte.  Allister é o Líder de Ginásio de Stow-on-Side em Pokémon Shield, especializado no tipo Fantasma. Seu principal Pokémon é Gengar. Tímido e misterioso, usa uma máscara para esconder o rosto e prefere evitar multidões. Seu objetivo é fortalecer seus Pokémon e aprimorar suas habilidades nas batalhas."
         },
 
         {
@@ -949,7 +1012,8 @@ galar: {
             insignia: "Insígnia: Fada",
             imagem: "./assets/lideres/opal.png",
             imagemInsignia: "./assets/insignias/fada-galar.png",
-            cor: "#D685AD"
+            cor: "#D685AD",
+            descricao: "Opal é a Líder de Ginásio de Ballonlea, na região de Galar, especializada no tipo Fada. Sua principal parceira é Alcremie, conhecida por sua aparência delicada e seus poderes especiais. De personalidade excêntrica, elegante e exigente, Opal adora testar os treinadores com perguntas durante os desafios do ginásio. Apesar de seu jeito peculiar, é uma treinadora experiente que busca alguém capaz de sucedê-la. Seu objetivo é encontrar um sucessor digno e preservar a tradição dos Pokémon do tipo Fada."
         },
 
         {
@@ -959,7 +1023,8 @@ galar: {
             insignia: "Insígnia: Pedra / Gelo",
             imagem: "./assets/lideres/gordie-melony.png",
             imagemInsignia: "./assets/insignias/pedra-gelo.png",
-            cor: "#B6A136"
+            cor: "#B6A136",
+            descricao: "Gordie é o Líder de Ginásio de Circhester em Pokémon Sword, especializado no tipo Pedra. Seu principal Pokémon é Coalossal. Confiante e competitivo, é filho de Melony e busca se tornar um treinador cada vez mais forte. Melony é a Líder de Ginásio de Circhester em Pokémon Shield, especializada no tipo Gelo. Sua principal parceira é Lapras. Protetora e experiente, valoriza a resistência e a estratégia, buscando demonstrar a força dos Pokémon do tipo Gelo."
         },
 
         {
@@ -969,7 +1034,8 @@ galar: {
             insignia: "Insígnia: Sombrio",
             imagem: "./assets/lideres/piers.png",
             imagemInsignia: "./assets/insignias/sombrio.png",
-            cor: "#705746"
+            cor: "#705746",
+            descricao: "Piers é o Líder de Ginásio de Spikemuth, na região de Galar, especializado no tipo Sombrio. Seu principal Pokémon é Obstagoon. De personalidade séria, rebelde e reservada, é também músico e líder da banda que se apresenta em sua cidade. Apesar de seu jeito durão, Piers se preocupa muito com os moradores e com sua irmã mais nova, Marnie. Seu objetivo é proteger Spikemuth e apoiar sua irmã em sua jornada como treinadora."
         },
 
         {
@@ -979,7 +1045,8 @@ galar: {
             insignia: "Insígnia: Dragão",
             imagem: "./assets/lideres/raihan.png",
             imagemInsignia: "./assets/insignias/dragao.png",
-            cor: "#6F35FC"
+            cor: "#6F35FC",
+            descricao: "Raihan é o Líder de Ginásio de Hammerlocke, na região de Galar, especializado no tipo Dragão. Seu principal Pokémon é Duraludon, capaz de utilizar a forma Gigantamax. Confiante, competitivo e carismático, Raihan também é conhecido por sua paixão por fotografia e por compartilhar suas experiências nas redes sociais. Apesar de ser um dos treinadores mais fortes de Galar, considera Leon seu maior rival. Seu objetivo é se tornar o campeão da região e superar os desafios que encontra pelo caminho."
         }
     ]
 },
@@ -1028,7 +1095,8 @@ hisui: {
             insignia: "Guardião de Wyrdeer",
             imagem: "./assets/lideres/mai.png",
             imagemInsignia: "./assets/insignias/wyrdeer.png",
-            cor: "#A8A77A"
+            cor: "#A8A77A",
+            descricao: "Mai é uma das guardiãs das ilhas de Hisui, na região de Hisui, em Pokémon Legends: Arceus. Ela é responsável por cuidar de Wyrdeer, um Pokémon nobre da região. De personalidade séria, responsável e dedicada, Mai demonstra grande respeito pelas tradições e pelos Pokémon. Apesar de seu jeito reservado, preocupa-se com o bem-estar das pessoas e das criaturas que protege. Seu objetivo é preservar o equilíbrio da região e cumprir seus deveres como guardiã."
         },
 
         {
@@ -1038,7 +1106,8 @@ hisui: {
             insignia: "Guardião de Kleavor",
             imagem: "./assets/lideres/lian.png",
             imagemInsignia: "./assets/insignias/kleavor.png",
-            cor: "#B6A136"
+            cor: "#B6A136",
+            descricao: "Lian é um dos guardiões das terras de Hisui, em Pokémon Legends: Arceus, responsável por cuidar de Kleavor, um Pokémon nobre do tipo Inseto e Pedra. Jovem, inteligente e dedicado, ele demonstra grande respeito pelas tradições e pelos Pokémon da região. Apesar de sua pouca idade, leva suas responsabilidades muito a sério. Seu objetivo é proteger Kleavor e ajudar a manter o equilíbrio natural de Hisui."
         },
 
         {
@@ -1048,7 +1117,8 @@ hisui: {
             insignia: "Guardiã de Lilligant",
             imagem: "./assets/lideres/arezu.png",
             imagemInsignia: "./assets/insignias/lilligant-hisui.png",
-            cor: "#7AC74C"
+            cor: "#7AC74C",
+            descricao: "Arezu é uma integrante do Clã Diamante em Pokémon Legends: Arceus, responsável por cuidar de Lilligant, um Pokémon nobre do tipo Planta e Lutador. De personalidade independente, determinada e trabalhadora, ela também atua como cabeleireira na Vila Jubilife. Apesar de sua confiança, às vezes se preocupa em cumprir suas responsabilidades corretamente. Seu objetivo é proteger Lilligant e ajudar a manter a paz e o equilíbrio na região de Hisui."
         },
 
         {
@@ -1058,7 +1128,8 @@ hisui: {
             insignia: "Guardiã de Ursaluna",
             imagem: "./assets/lideres/calaba.png",
             imagemInsignia: "./assets/insignias/ursaluna.png",
-            cor: "#E2BF65"
+            cor: "#E2BF65",
+            descricao: "Calaba é uma anciã do Clã Pérola em Pokémon Legends: Arceus, responsável por proteger Ursaluna, um Pokémon nobre do tipo Terra e Normal. De personalidade séria, reservada e tradicional, ela valoriza os costumes de Hisui e demonstra grande respeito pelos Pokémon. Apesar de desconfiar inicialmente do protagonista, aos poucos passa a confiar nele. Seu objetivo é proteger Ursaluna e preservar as tradições de seu clã."
         },
 
         {
@@ -1068,7 +1139,8 @@ hisui: {
             insignia: "Guardião de Basculegion",
             imagem: "./assets/lideres/iscan.png",
             imagemInsignia: "./assets/insignias/basculegion.png",
-            cor: "#6390F0"
+            cor: "#6390F0",
+            descricao: "Iscan é um dos guardiões do Clã Pérola em Pokémon Legends: Arceus, responsável por cuidar de Basculegion, um Pokémon nobre do tipo Água e Fantasma. De personalidade gentil, tímida e cuidadosa, ele tem medo de Pokémon do tipo Fantasma, apesar de suas responsabilidades. Mesmo assim, demonstra coragem quando precisa ajudar os outros. Seu objetivo é proteger Basculegion e garantir a segurança das pessoas e dos Pokémon da região de Hisui."
         },
 
         {
@@ -1078,7 +1150,8 @@ hisui: {
             insignia: "Guardiã de Arcanine",
             imagem: "./assets/lideres/palina.png",
             imagemInsignia: "./assets/insignias/arcanine-hisui.png",
-            cor: "#EE8130"
+            cor: "#EE8130",
+            descricao: "Palina é uma guardiã do Clã Pérola em Pokémon Legends: Arceus, responsável por proteger Growlithe de Hisui e seu filhote, que futuramente se torna o Pokémon nobre Arcanine de Hisui. De personalidade gentil, responsável e dedicada, ela vive na Costa dos Cobaltos e valoriza profundamente os Pokémon sob seus cuidados. Apesar de enfrentar dificuldades após perder o antigo Arcanine nobre, demonstra coragem e determinação. Seu objetivo é proteger os Growlithe e honrar a memória de seu antecessor."
         },
 
         {
@@ -1088,7 +1161,8 @@ hisui: {
             insignia: "Guardião de Electrode",
             imagem: "./assets/lideres/melli.png",
             imagemInsignia: "./assets/insignias/electrode-hisui.png",
-            cor: "#F7D02C"
+            cor: "#F7D02C",
+            descricao: "Melli é um dos guardiões do Clã Diamante em Pokémon Legends: Arceus, responsável por cuidar de Electrode de Hisui, um Pokémon nobre dos tipos Elétrico e Planta. De personalidade arrogante, provocadora e teimosa, gosta de demonstrar sua importância e defender as tradições de seu clã. Apesar de seu comportamento difícil, leva suas responsabilidades a sério. Seu objetivo é proteger Electrode e preservar o equilíbrio da região de Hisui."
         },
 
         {
@@ -1098,7 +1172,8 @@ hisui: {
             insignia: "Guardião de Sneasler",
             imagem: "./assets/lideres/ingo.png",
             imagemInsignia: "./assets/insignias/sneasler.png",
-            cor: "#C22E28"
+            cor: "#C22E28",
+            descricao: "Ingo é um dos guardiões da região de Hisui em Pokémon Legends: Arceus, responsável por orientar os treinadores nas batalhas do Túnel Subterrâneo. Ele também cuida de Sneasler, um Pokémon nobre dos tipos Lutador e Veneno. De personalidade séria, educada e disciplinada, Ingo sofre de amnésia e não se lembra de seu passado. Apesar disso, dedica-se a ajudar os outros e a aprimorar suas habilidades como treinador, buscando encontrar respostas sobre sua origem."
         },
 
         {
@@ -1108,7 +1183,8 @@ hisui: {
             insignia: "Guardiã de Braviary",
             imagem: "./assets/lideres/sabi.png",
             imagemInsignia: "./assets/insignias/braviary-hisui.png",
-            cor: "#A98FF3"
+            cor: "#A98FF3",
+            descricao: "Sabi é uma guardiã do Clã Diamante em Pokémon Legends: Arceus, responsável por cuidar de Braviary de Hisui, um Pokémon nobre dos tipos Psíquico e Voador. Apesar de sua aparência infantil, é esperta, brincalhona e possui habilidades especiais que lhe permitem perceber a presença de outras pessoas. Gosta de testar o protagonista com desafios e enigmas. Seu objetivo é proteger Braviary e ajudar a manter o equilíbrio da região de Hisui."
         },
 
         {
@@ -1118,7 +1194,8 @@ hisui: {
             insignia: "Guardião de Avalugg",
             imagem: "./assets/lideres/gaeric.png",
             imagemInsignia: "./assets/insignias/avalugg-hisui.png",
-            cor: "#96D9D6"
+            cor: "#96D9D6",
+            descricao: "Gaeric é um dos guardiões do Clã Pérola em Pokémon Legends: Arceus, responsável por cuidar de Avalugg de Hisui, um Pokémon nobre dos tipos Gelo e Pedra. De personalidade forte, corajosa e disciplinada, ele vive nas regiões geladas de Hisui e valoriza a resistência física e o treinamento intenso. Apesar de sua aparência intimidadora, demonstra respeito pelos Pokémon e pelas tradições. Seu objetivo é proteger Avalugg e garantir a segurança da região."
         }
     ]
 },
@@ -1168,7 +1245,8 @@ paldea: {
             insignia: "Insígnia: Inseto",
             imagem: "./assets/lideres/katy.png",
             imagemInsignia: "./assets/insignias/inseto-paldea.png",
-            cor: "#A6B91A"
+            cor: "#A6B91A",
+            descricao: "Katy é a Líder de Ginásio de Cortondo, na região de Paldea, especializada no tipo Inseto. Sua principal parceira é Teddiursa, que pode utilizar a Terastalização para assumir o tipo Inseto. De personalidade gentil, trabalhadora e dedicada, Katy é confeiteira e administra sua própria padaria, demonstrando paixão tanto pela culinária quanto pelos Pokémon. Apesar de seu jeito acolhedor, leva os combates muito a sério. Seu objetivo é aperfeiçoar suas habilidades e mostrar a força dos Pokémon do tipo Inseto."
         },
 
         {
@@ -1178,7 +1256,8 @@ paldea: {
             insignia: "Insígnia: Planta",
             imagem: "./assets/lideres/brassius.png",
             imagemInsignia: "./assets/insignias/planta-paldea.png",
-            cor: "#7AC74C"
+            cor: "#7AC74C",
+            descricao: "Brassius é o Líder de Ginásio de Artazon, na região de Paldea, especializado no tipo Planta. Seu principal Pokémon é Sudowoodo, que pode utilizar a Terastalização para assumir o tipo Planta. De personalidade artística, expressiva e dedicada, Brassius trabalha como escultor e utiliza Pokémon como inspiração para suas obras. Conhecido como o “Verdejante Verossímil”, busca expressar emoções por meio da arte e das batalhas. Seu objetivo é aperfeiçoar suas criações artísticas e demonstrar a força dos Pokémon do tipo Planta."
         },
 
         {
@@ -1188,7 +1267,8 @@ paldea: {
             insignia: "Insígnia: Elétrico",
             imagem: "./assets/lideres/iono.png",
             imagemInsignia: "./assets/insignias/eletrico-paldea.png",
-            cor: "#F7D02C"
+            cor: "#F7D02C",
+            descricao: "Iono é a Líder de Ginásio de Levincia, na região de Paldea, especializada no tipo Elétrico. Sua principal parceira é Bellibolt, conhecido por sua aparência arredondada e habilidades elétricas. Alegre, energética e carismática, Iono é uma influenciadora digital e apresentadora de transmissões ao vivo, conhecida como a “Influenciadora Elétrica”. Ela adora interagir com seus fãs e transformar suas batalhas em grandes espetáculos. Seu objetivo é conquistar popularidade e mostrar a força dos Pokémon do tipo Elétrico."
         },
 
         {
@@ -1198,7 +1278,8 @@ paldea: {
             insignia: "Insígnia: Água",
             imagem: "./assets/lideres/kofu.png",
             imagemInsignia: "./assets/insignias/agua-paldea.png",
-            cor: "#6390F0"
+            cor: "#6390F0",
+            descricao: "Kofu é o Líder de Ginásio de Cascarrafa, na região de Paldea, especializado no tipo Água. Seu principal Pokémon é Crabominable, que pode utilizar a Terastalização para assumir o tipo Água. De personalidade alegre, descontraída e generosa, Kofu é um chef de cozinha apaixonado por ingredientes e pela culinária. Apesar de seu jeito divertido e distraído, é um treinador experiente que leva as batalhas a sério. Seu objetivo é fortalecer seus Pokémon e compartilhar sua paixão pela culinária com as pessoas de Paldea."
         },
 
         {
@@ -1208,7 +1289,8 @@ paldea: {
             insignia: "Insígnia: Normal",
             imagem: "./assets/lideres/larry.png",
             imagemInsignia: "./assets/insignias/normal-paldea.png",
-            cor: "#A8A77A"
+            cor: "#A8A77A",
+            descricao: "Larry é o Líder de Ginásio de Medali, na região de Paldea, especializado no tipo Normal. Seu principal Pokémon é Dudunsparce, que pode utilizar a Terastalização para assumir o tipo Normal. De personalidade séria, reservada e aparentemente cansada, Larry é um trabalhador dedicado que também atua como membro da Elite dos Quatro, especializado no tipo Voador. Apesar de sua rotina exigente, demonstra grande habilidade e profissionalismo nas batalhas. Seu objetivo é cumprir suas responsabilidades e mostrar que até os Pokémon mais comuns podem ser poderosos."
         },
 
         {
@@ -1218,7 +1300,8 @@ paldea: {
             insignia: "Insígnia: Fantasma",
             imagem: "./assets/lideres/ryme.png",
             imagemInsignia: "./assets/insignias/fantasma-paldea.png",
-            cor: "#735797"
+            cor: "#735797",
+            descricao: "Ryme é a Líder de Ginásio de Montenevera, na região de Paldea, especializada no tipo Fantasma. Sua principal parceira é Toxtricity, que pode utilizar a Terastalização para assumir o tipo Fantasma. De personalidade confiante, energética e carismática, Ryme é uma rapper famosa que combina música e batalhas Pokémon em seus espetáculos. Ela valoriza o ritmo, a criatividade e a conexão com seus Pokémon. Seu objetivo é animar o público por meio da música e demonstrar a força dos Pokémon do tipo Fantasma."
         },
 
         {
@@ -1228,7 +1311,8 @@ paldea: {
             insignia: "Insígnia: Psíquico",
             imagem: "./assets/lideres/tulip.png",
             imagemInsignia: "./assets/insignias/psiquico-paldea.png",
-            cor: "#F95587"
+            cor: "#F95587",
+            descricao: "Tulip é a Líder de Ginásio de Alfornada, na região de Paldea, especializada no tipo Psíquico. Sua principal parceira é Florges, que pode utilizar a Terastalização para assumir o tipo Psíquico. Elegante, confiante e vaidosa, Tulip trabalha como modelo e especialista em beleza, valorizando a aparência e a determinação. Apesar de seu jeito exigente, é uma treinadora habilidosa que leva os combates a sério. Seu objetivo é aperfeiçoar suas habilidades e demonstrar o poder dos Pokémon do tipo Psíquico."
         },
 
         {
@@ -1238,7 +1322,8 @@ paldea: {
             insignia: "Insígnia: Gelo",
             imagem: "./assets/lideres/grusha.png",
             imagemInsignia: "./assets/insignias/gelo-paldea.png",
-            cor: "#96D9D6"
+            cor: "#96D9D6",
+            descricao: "Grusha é o Líder de Ginásio de Glaseado, na região de Paldea, especializado no tipo Gelo. Seu principal Pokémon é Cetitan, que pode utilizar a Terastalização para assumir o tipo Gelo. De personalidade séria, reservada e exigente, Grusha foi um snowboarder profissional antes de se tornar Líder de Ginásio. Após sofrer uma lesão que encerrou sua carreira esportiva, passou a dedicar-se às batalhas Pokémon. Seu objetivo é testar a determinação dos treinadores e provar que a perseverança é essencial para superar desafios."
         }
     ]
 },
@@ -1416,7 +1501,7 @@ function renderizarCard(pokemon) {
     container.appendChild(card);
 }
 function abrirPokemon(nome){
-    window.open(`http://127.0.0.1:5500/pokemon.html?nome=${nome}`, '_self');
+    window.open(`http://127.0.0.1:5500/pokedex/pokemon.html?nome=${nome}`, '_self');
 }
 
 // Adiciona um evento de clique no botão para disparar a função de carregar mais Pokémon
