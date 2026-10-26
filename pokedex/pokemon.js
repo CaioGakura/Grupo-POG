@@ -1,3 +1,45 @@
+const coresTipos = {
+    normal: "#A8A77A",
+    fire: "#EE8130",
+    water: "#6390F0",
+    electric: "#F7D02C",
+    grass: "#7AC74C",
+    ice: "#96D9D6",
+    fighting: "#C22E28",
+    poison: "#A33EA1",
+    ground: "#E2BF65",
+    flying: "#A98FF3",
+    psychic: "#F95587",
+    bug: "#A6B91A",
+    rock: "#B6A136",
+    ghost: "#735797",
+    dragon: "#6F35FC",
+    dark: "#705746",
+    steel: "#B7B7CE",
+    fairy: "#D685AD"
+};
+
+const tiposTraduzidos = {
+    normal: "Normal",
+    fire: "Fogo",
+    water: "Água",
+    electric: "Elétrico",
+    grass: "Planta",
+    ice: "Gelo",
+    fighting: "Lutador",
+    poison: "Veneno",
+    ground: "Terra",
+    flying: "Voador",
+    psychic: "Psíquico",
+    bug: "Inseto",
+    rock: "Pedra",
+    ghost: "Fantasma",
+    dragon: "Dragão",
+    dark: "Sombrio",
+    steel: "Aço",
+    fairy: "Fada"
+};
+
 // 1. ÁREAS DO HTML
 let ladoDaFoto = document.getElementById('LOUD');
 let ladoDireito = document.getElementById('PRX');
@@ -76,6 +118,9 @@ async function mostrarPokemon(pokemon){
 
     const idFormatado = `#${String(pokemon.id).padStart(3, '0')}`;
     const tipoPrincipal = pokemon.types[0].type.name;
+    const tipoTraduzido = tiposTraduzidos[tipoPrincipal] || tipoPrincipal;
+    const corTipo = coresTipos[tipoPrincipal] || "#A8A77A";
+    ladoDaFoto.style.backgroundColor = corTipo;
     const linhaEvolutiva = await mostrarLinhaDeEvolucao(pokemon);
     linkEvolucao.addEventListener('click', () =>  buscarFotoDaLinhaEvolutiva(linhaEvolutiva));
     const status = puxarStatus(pokemon);
@@ -94,7 +139,7 @@ async function mostrarPokemon(pokemon){
      <div class='informacoesGerais'>
         <div class='numeroNomeTipo'>
             <p>${idFormatado} | ${pokemon.name}</p>
-            <p>${tipoPrincipal}</p>
+            <p>${tipoTraduzido}</p>
         </div>
 
         <div class='alturaPeso'>
@@ -115,14 +160,23 @@ async function mostrarPokemon(pokemon){
     </div>
     `
     ladoDireito.innerHTML = HtmlLadoDireito
+    
+    ladoDireito.querySelectorAll(
+        ".numeroNomeTipo, .alturaPeso, .areaStatus, .areaDescricao"
+    ).forEach((caixa) => {
+        caixa.style.setProperty("background-color", corTipo, "important");
+        caixa.style.setProperty("color", "#FFFFFF", "important");
+    });
+
     ladoDaFoto.innerHTML = `
     <div class='areaFotoDoPokemon'>
         <img  src="${urlImagem}" alt="Foto do ${pokemon.name}" >
     </div>
-    <div class='areaGifDoPokemon'>
-        <img class='gifPokemon'  src="${gifDoPokemon}" alt="Gif do ${pokemon.name}" height="200px">
-    </div>
     `
+//<div class='areaGifDoPokemon'>
+   //     <img class='gifPokemon'  src="${gifDoPokemon}" alt="Gif do ${pokemon.name}" height="200px">
+   //</img> </div>
+
     linkCombate.addEventListener('click', () => mostrarCombate(pokemon, status, tipoPrincipal));  
 }
 
@@ -234,11 +288,17 @@ function mostrarCombate(pokemon, status, tipo ){
     <div class='informacoesGerais'>
         <div class='numeroNomeTipo'>
                 <p>${idFormatado} | ${pokemon.name}</p>
-                <p>${tipo}</p>
+                <p>${tiposTraduzidos[tipo] || tipo}</p>
         </div>
-        <div id='tabela-container'>
+        <div class='alturaPeso'>
+            <p>Altura: ${pokemon.height/10} metros</p>
+            <p>Peso: ${pokemon.weight/10} Kg</p>
+        </div>
+        
+  
+    <div id='tabela-container'>
 
-        </div>
+    </div>
     </div>
     <div class='areaStatus'>
         <h1>Status:</h1>
@@ -253,6 +313,15 @@ function mostrarCombate(pokemon, status, tipo ){
     
     `
     ladoDireito.innerHTML = htmlDoCombate;
+
+    const corTipo = coresTipos[tipo] || "#A8A77A";
+
+    ladoDireito.querySelectorAll(
+        ".numeroNomeTipo, .areaStatus, .areaTabela th"
+    ).forEach((caixa) => {
+        caixa.style.backgroundColor = corTipo;
+    });
+
 }
 function tabelaAtaques(ataques){
     let htmlAtaques = [];

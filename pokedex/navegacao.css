@@ -65,11 +65,18 @@ nav img {
     pointer-events: none;
 }
 
+.chat{
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    border-radius: 50px;
+}
+
 footer{
     background-color: red;
     padding-top: 10px;
     display: flex;
-
 }
 
 footer img{

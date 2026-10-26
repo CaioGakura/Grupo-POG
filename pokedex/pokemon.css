@@ -96,50 +96,101 @@ nav a{transition: 300ms; color:rgb(0, 0, 0); text-decoration:none; display: flex
 nav a:hover{transition: 300ms; color:rgb(255, 255, 255);}
 
 #LOUD{
+    width: 47%;
+    min-width: 0;
+    position: relative;
+    align-self: stretch;
+    box-sizing: border-box;
+    margin-left: -22px;
+    margin-top: -120px;
+    margin-bottom: -20px;
     padding-top: 120px;
-    width: 50vw;
-
+    padding-bottom: 20px;
 }
 
 #PRX{
-    padding-top: 120px;
-    width: 50vw;
+    position: relative;
+    width: 53%;
+    min-width: 0;
+    padding: 10px 0 0 15px;
+    box-sizing: border-box; 
 }
 .informacoesGerais{
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    gap: 2vh;
-
+    align-items: flex-start;
+    gap: 10px;
+    width: 48%;
+    box-sizing: border-box;
 }
+
 p{
-    color: black;
+    color: rgb(255, 255, 255);
 }
 .numeroNomeTipo, .alturaPeso{
     display: flex;
     flex-direction: column;
-    background-color: #D6D6D6;
-    padding: 2vh;
-    border-radius: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 80px;
+    padding: 12px;
+    margin: 0px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    box-shadow: 5px 5px black;
+    border-radius: 5px;
+    justify-content: center;
+    text-align: center;
+}
+
+.areaFotoDoPokemon {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    font-size: large;
+    overflow: hidden;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+.areaFotoDoPokemon img {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: contain;
 }
 
 .areaStatus{
-    display: flex;
-    flex-direction: column;
-    background-color: #D6D6D6;
-    border-radius: 20px;
-    align-items: center;
-    width: fit-content;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 42%;
+    height: 55%;
+    min-height: 215px;
+    padding: 12px 16px;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: left;
+    border-radius: 25px;
+    box-shadow: none;
+    box-shadow: 5px 5px black;
+    border-radius: 5px;
+    text-align: center;
 }
 #containerPrincipal{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0;
+    padding: 120px 22px 20px;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 650px;
 }
 .FotoDoPokemonNaLinhaEvolutiva{
     background-image: url(assets/pagina/pokebola-cinza.png);
@@ -157,13 +208,15 @@ p{
     overflow-x: hidden;
     max-height: 200px;
     background-color: red;
-    margin: 2vh;
+    margin-top: 140px;
+
 }
 .areaTabela th{
     background-color: red;
     padding: 15px;
     margin: 0;
     width: 100vw;
+    font-size: 40px;
 }
 .areaTabela tbody{
     gap: 15px;
@@ -188,15 +241,100 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 69%;
+    width: 80%;
 }
-.areaGifDoPokemon{
+
+.areaDescricao {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    box-shadow: 5px 5px black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.numeroNomeTipo p:first-child {
+    font-size: 40px;
+    margin: 0px;
+}
+
+.numeroNomeTipo p:last-child {
+    font-size: 40px;
+    margin: 0px;
+}
+
+.alturaPeso p {
+    font-size: 40px;
+    margin: 0px;
+}
+
+.areaStatus h1 {
+    font-size: 40px;
+    margin: 0px;
+}
+
+.areaStatus p {
+    font-size: 40px;
+    margin: 0px;
+}
+
+.areaDescricao p {
+    font-size: 40px;
+    margin: 0px;
+}
+
+.numeroNomeTipo p,
+.alturaPeso p {
+    font-size: 40px;
+    margin: 0px;
+}
+
+
+
+.linhaEvolutivaPokemon {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.imagensPokemon {
+    width: 120%;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: fit-content;
-    max-height: fit-content;
-    background-image: url(assets/pagina/pokebola-cinza.png);
-    background-position: center;
+    gap: 40px;
+}
+
+.FotoDoPokemonNaLinhaEvolutiva {
+    width: 330px;
+    height: 330px;
+    object-fit: contain;
+
+    background-image: url("./assets/pagina/pokebola-cinza.png");
     background-repeat: no-repeat;
-    background-size: 110%;
+    background-position: center;
+    background-size: contain;
+
+    flex: 0 1 280px;
+}
+
+.nomesPokemons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+}
+
+.nomesPokemons span {
+    flex: 0 1 200px;
+    font-size: 20px;
+    text-align: center;
 }
