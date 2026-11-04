@@ -619,3 +619,30 @@ footer img {
     }
 
 }
+
+
+.areaPesquisa {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#campoPesquisa {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid red;
+    color: black;
+    width: 250px;
+}
+
+#botaoPesquisar {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

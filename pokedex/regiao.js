@@ -1579,3 +1579,34 @@ document.getElementById("historiaImagem").src =
 
 document.getElementById("fnflPiedad").src =
     regiaoAtual.fnflPiedade;
+
+const campoPesquisa = document.getElementById('campoPesquisa');
+const botaoPesquisar = document.getElementById('botaoPesquisar');
+
+async function pesquisarPokemon() {
+    const nomeDigitado = campoPesquisa.value.toLowerCase().trim();
+    if (!nomeDigitado) {
+        return;
+    }
+
+    try {
+        const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nomeDigitado}`);
+        if (!resposta.ok) {
+            alert('Pokemon nao encontrado!');
+            return;
+        }
+        const pokemon = await resposta.json();
+        container.innerHTML = '';
+        botaoPegarDados.style.display = 'none';
+        renderizarCard(pokemon);
+    } catch (erro) {
+        alert('Erro ao buscar o pokemon');
+    }
+}
+
+botaoPesquisar.addEventListener('click', pesquisarPokemon);
+campoPesquisa.addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') {
+        pesquisarPokemon();
+    }
+});

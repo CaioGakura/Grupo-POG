@@ -66,9 +66,10 @@
              src="./assets/pagina/fundo.jpg"
              alt="Pokédex">
 
-        <img id="pesquisa"
-             src=""
-             alt="">
+        <div class="caixa-busca-navegacao">
+            <input type="text" id="campoBusca" placeholder="Pesquisar pokemon...">
+            <button id="botaoBusca" onclick="buscarPokemon()">BUSCAR</button>
+        </div>
 
         <ul>
 
@@ -166,6 +167,20 @@
 
     </footer>
 
+
+    <script>
+        function buscarPokemon() {
+            var nome = document.getElementById("campoBusca").value.toLowerCase().trim();
+            if (nome != "") {
+                window.location.href = "pokemon.html?nome=" + nome;
+            }
+        }
+        document.getElementById("campoBusca").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                buscarPokemon();
+            }
+        });
+    </script>
 </body>
 
 </html>

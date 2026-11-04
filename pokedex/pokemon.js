@@ -134,25 +134,29 @@ async function mostrarPokemon(pokemon){
     const gifDoPokemon =  pokemon.sprites.versions['generation-v']['black-white'].animated.front_default || pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default;
     const urlImagem = pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default;
     let HtmlLadoDireito =  `
-     <div class='informacoesGerais'>
-        <div class='numeroNomeTipo'>
-            <p>${idFormatado} | ${pokemon.name}</p>
-            <p>${tipoTraduzido}</p>
+    <div class='linhaDeCima'>
+        <div class='informacoesGerais'>
+            <div class='numeroNomeTipo'>
+                <p>${idFormatado} | ${pokemon.name}</p>
+                <p>${tipoTraduzido}</p>
+            </div>
+
+            <div class='alturaPeso'>
+                <p>Altura: ${pokemon.height/10} metros</p>
+                <p>Peso: ${pokemon.weight/10} Kg</p>
+            </div>
         </div>
 
-        <div class='alturaPeso'>
-            <p>Altura: ${pokemon.height/10} metros</p>
-            <p>Peso: ${pokemon.weight/10} Kg</p>
+        <div class='areaStatus'>
+            <h1>Status:</h1>
+            <p>HP: ${status.hp} </p>
+            <p>Ataque: ${status.attack} </p>
+            <p>Defesa: ${status.defense} </p>
+            <p>espe. Ataque: ${status.specialAttack} </p>
+            <p>espe. Defesa: ${status.specialDefense} </p>
         </div>
     </div>
-    <div class='areaStatus'>
-        <h1>Status:</h1>
-        <p>HP: ${status.hp} </p>
-        <p>Ataque: ${status.attack} </p>
-        <p>Defesa: ${status.defense} </p>
-        <p>espe. Ataque: ${status.specialAttack} </p>
-        <p>espe. Defesa: ${status.specialDefense} </p>
-    </div>
+
     <div class='areaDescricao'>
         <p>${descricao}</p>
     </div>
