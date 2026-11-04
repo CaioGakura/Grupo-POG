@@ -22,24 +22,38 @@ main {
 * {
     color: white;
     font-family: "Jersey 20", sans-serif;
+    overflow-x: hidden;
+
 }
 
-nav{
+nav {
     display: flex;
-    top: 0px;
-    background-color: red;
-    margin: 0px;
-    padding-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+
+    top: 0;
     left: 0;
+
     width: 100%;
+    box-sizing: border-box;
+
+    background-color: red;
+
+    margin: 0;
+    padding: 0 20px 20px;
+
     z-index: 1000;
     position: fixed;
 }
 
 nav img {
-    display: flex;
+    display: block;
+
     width: 200px;
     height: auto;
+
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .linha-nav {
@@ -84,7 +98,7 @@ footer img{
     position: relative;
     top: 25px;
     font-size: 50px;
-    margin-left: 400px;
+    
 }
 
 .enfi{
@@ -338,3 +352,107 @@ p{
     font-size: 20px;
     text-align: center;
 }
+#menu {
+    display: none;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    /* BODY */
+
+    body {
+        padding-top: 150px;
+
+        border-left: 10px solid red;
+        border-right: 10px solid red;
+    }
+    
+
+   
+    /* NAVBAR */
+
+    .navbar {
+        justify-content: space-between;
+
+        padding: 15px;
+    }
+
+    /* LOGO */
+
+    .navbar img {
+        width: 80px;
+    }
+
+    /* BOTÃO MENU */
+
+    .menu-mobile {
+        margin-right: 50px;
+        display: block;
+
+        font-size: 35px;
+
+        color: black;
+
+        cursor: pointer;
+    }
+
+    /* ESCONDER INÍCIO */
+
+    .navbar .inicio {
+        display: none;
+    }
+
+    /* MENU FECHADO */
+
+    .navbar .sub {
+        display: none;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        width: 100%;
+
+        margin: 20px;
+        padding: 0;
+
+        gap: 10px;
+
+        font-size: 30px;
+    }
+
+    .linha-nav {
+        display: none;
+    }
+
+    /* MENU ABERTO */
+
+    #menu:checked ~ .sub {
+        display: flex;
+    }
+
+    /* ESCONDER SEPARADORES */
+
+    .navbar .enfi {
+        display: none;
+    }
+
+    /* LINHA DECORATIVA */
+
+    .linha-nav {
+        height: 40px;
+    }
+
+    /* ESCONDER LINHA COM MENU ABERTO */
+
+    #menu:checked ~ .linha-nav {
+        display: none;
+    }
+
+    
+}
+    
