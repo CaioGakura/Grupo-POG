@@ -1,17 +1,32 @@
-body{  
-    padding-top: 150px;
-    margin: 0px;
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    padding-top: 180px;
+    margin: 0;
+
     min-height: 100vh;
+
     border-left: 25px solid red;
     border-right: 25px solid red;
+
     box-sizing: border-box;
+
     background-image: url("./assets/pagina/imagem1.jpeg");
     background-size: contain;
     background-position: center;
     background-repeat: repeat;
+
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
+
+/* =========================
+   GERAL
+========================= */
 
 main {
     flex: 1;
@@ -22,26 +37,105 @@ main {
     font-family: "Jersey 20", sans-serif;
 }
 
-nav{
-    display: flex;
-    top: 0px;
-    background-color: red;
-    margin: 0px;
-    padding-bottom: 20px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    position: fixed;
-}
-nav ul{ list-style:none; margin:0; padding:0; display:flex; margin-left: 10px; margin-top: 20px; font-size:70px; } 
-nav a{transition: 300ms; color:rgb(0, 0, 0); text-decoration:none; display: flex;} 
-nav a:hover{transition: 300ms; color:rgb(255, 255, 255);}
+/* =========================
+   NAVBAR
+========================= */
 
-nav img {
+.navbar {
     display: flex;
-    width: 200px;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background-color: red;
+
+    margin: 0;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    z-index: 1000;
+}
+
+/* LOGO */
+
+.navbar img {
+    display: flex;
+
+    width: 150px;
     height: auto;
 }
+
+/* LISTAS */
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+
+    margin: 50px 0 0 10px;
+    padding: 0;
+
+    font-size: 40px;
+}
+
+/* LINKS */
+
+.navbar a {
+    color: black;
+
+    text-decoration: none;
+
+    transition: 300ms;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+/* LINK INÍCIO */
+
+.navbar .inicio {
+    margin-left: 20px;
+}
+
+/* LINKS SECUNDÁRIOS */
+
+.navbar .sub {
+    position: static;
+
+    margin-left: auto;
+
+    font-size: 35px;
+
+    gap: 15px;
+}
+
+/* SEPARADORES */
+
+.navbar .enfi {
+    color: black;
+}
+
+/* MENU MOBILE */
+
+#menu {
+    display: none;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+/* LINHA DECORATIVA */
 
 .linha-nav {
     position: absolute;
@@ -55,214 +149,317 @@ nav img {
     pointer-events: none;
 }
 
+/* =========================
+   LINHA FOOTER
+========================= */
+
 .linha-footer {
     position: relative;
 
-    right:-25px;
+    right: -25px;
     bottom: 0;
-    margin: 0px;
+
+    margin: 0;
+
     width: 100%;
     height: 70px;
 
     pointer-events: none;
 }
 
-.size{
+/* =========================
+   TÍTULOS
+========================= */
+
+.size {
     margin: 0;
     margin-left: 20px;
+
     padding: 0;
+
     font-size: 50px;
 }
 
-.kanto{
-    margin-top: 0px;
-    margin: 0px;
+.kanto {
+    margin: 0;
     margin-bottom: 70px;
     margin-left: 50px;
-    padding: 0px;
+
+    padding: 0;
+
     font-size: 115px;
 }
 
-.texto{
+/* =========================
+   TEXTOS
+========================= */
+
+.texto {
     font-size: 35px;
+
     justify-content: center;
+
     display: flex;
+
     margin-right: 490px;
     margin-left: 80px;
-    padding: 0px;
+
+    padding: 0;
+
     margin-bottom: 15px;
+
     text-align: justify;
 }
 
-footer{
-    background-color: red;
-    padding-top: 10px;
-    display: flex;
+/* =========================
+   FOOTER
+========================= */
 
+footer {
+    background-color: red;
+
+    padding-top: 10px;
+
+    display: flex;
 }
 
-footer img{
+footer img {
     display: flex;
+
     width: 60px;
     height: auto;
+
     margin-bottom: 10px;
 }
 
-.sub{
-    position: relative;
-    top: 25px;
-    font-size: 50px;
-    margin-left: 400px;
-}
-
-.enfi{
-    color: black;
-}
+/* =========================
+   POKÉMON
+========================= */
 
 #pokemon-cards {
     margin: 15px;
+
     display: flex;
     flex-wrap: wrap;
+
     justify-content: center;
+
     border-radius: 30px;
     border: 3px solid white;
+
     gap: 24px;
+
     padding: 20px;
+
     background-image: url("./assets/pagina/imagem2.jpeg");
     background-size: contain;
     background-position: center;
     background-repeat: repeat;
 }
 
+/* CARD POKÉMON */
+
 .card {
     transition: 300ms;
+
     text-align: center;
+
     margin: 15px;
-    padding: 10px; /* DiminuÃ­mos o padding interno para encurtar o card */
+    padding: 10px;
+
     border-radius: 20px;
+
     background-color: rgb(211, 211, 211);
-    
-    /* Definimos a largura e altura iguais para virar um quadrado */
+
     width: 200px;
-    height: 200px; 
-    
+    height: 200px;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
-    justify-content: space-between; /* Distribui os elementos para preencher o quadrado perfeitamente */
-    box-sizing: border-box; /* Garante que o padding nÃĢo estoure o tamanho */
+    justify-content: space-between;
+
+    box-sizing: border-box;
 }
+
+/* HOVER CARD */
 
 .card:hover {
     transition: 300ms;
+
     background-color: rgb(165, 165, 165);
+
     transform: scale(1.1);
+
     box-shadow: 10px 10px black;
+
     cursor: pointer;
 }
 
+/* IMAGEM CARD */
+
 .card img {
-    width: 80px;  /* Reduzimos um pouco a imagem para caber no quadrado */
+    width: 80px;
     height: 80px;
+
     object-fit: contain;
 }
 
-.card h2 {
-    font-size: 30px; /* DiminuÃ­mos um pouco a fonte do nome */
-    margin: 0;       /* Removemos margens extras para nÃĢo esticar o card */
-}
+/* NOME CARD */
 
-.card p {
-    font-size: 24px;
+.card h2 {
+    font-size: 30px;
+
     margin: 0;
 }
 
+/* TEXTO CARD */
+
+.card p {
+    font-size: 24px;
+
+    margin: 0;
+}
+
+/* =========================
+   BOTÃO CARREGAR MAIS
+========================= */
+
 .localDoBotao {
     display: flex;
+
     justify-content: start;
 }
 
 #botaoDeCarregarMais {
     transition: 300ms;
+
     padding: 1vw;
+
     border: none;
     border-radius: 15px;
+
     font-size: 120%;
+
     margin: 30px;
+
     background-color: red;
+
     color: black;
 }
 
+/* HOVER BOTÃO */
+
 #botaoDeCarregarMais:hover {
     color: white;
+
     transition: 300ms;
+
     transform: scale(1.2);
+
     background-color: red;
+
     cursor: pointer;
+
     box-shadow: 10px 10px black;
 }
 
-.mew{
+/* =========================
+   REGIÃO
+========================= */
+
+.mew {
     width: 240px;
+
     right: 150px;
+
     position: absolute;
 }
 
-.mew2{
+.mew2 {
     display: flex;
+
     align-items: center;
 }
 
+/* =========================
+   GINÁSIOS
+========================= */
+
 #ginasios-cards {
     margin: 19px;
+
     display: flex;
     flex-wrap: wrap;
+
     justify-content: center;
+
     border-radius: 30px;
     border: 3px solid white;
+
     gap: 24px;
+
     padding: 30px;
+
     background-image: url("./assets/pagina/imagem2.jpeg");
     background-size: contain;
     background-position: center;
     background-repeat: repeat;
 }
 
+/* CARD GINÁSIO */
+
 .card-ginasio-front {
     transition: 300ms;
+
     width: 250px;
     min-height: 350px;
 
     background-color: rgb(211, 211, 211);
 
     border-radius: 20px;
+
     padding: 20px;
 
     text-align: center;
 
     box-sizing: border-box;
-
-    transition: 300ms;
 }
+
+/* HOVER GINÁSIO */
 
 .card-ginasio-front:hover {
     transform: scale(1.05);
+
     box-shadow: 10px 10px black;
+
     cursor: pointer;
 }
-.card-ginasio-front.virado{
+
+/* CARD VIRADO */
+
+.card-ginasio-front.virado {
     transition: 300ms;
+
     transform: rotate3d(0, 1, 0, 180deg);
+
     box-shadow: -10px 10px black;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
-
-
 }
-.descricao-do-lider{
+
+/* DESCRIÇÃO LÍDER */
+
+.descricao-do-lider {
     transform: rotate3d(0, 1, 0, 180deg);
 }
+
+/* IMAGEM LÍDER */
+
 .lider-img {
     width: 150px;
     height: 180px;
@@ -270,9 +467,143 @@ footer img{
     object-fit: contain;
 }
 
+/* INSÍGNIA */
+
 .insignia-img {
     width: 60px;
     height: 60px;
 
     object-fit: contain;
+}
+
+/* =========================
+   RESPONSIVIDADE TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        flex-wrap: wrap;
+
+        padding: 20px 15px;
+    }
+
+    /* LOGO */
+
+    .navbar img {
+        width: 100px;
+    }
+
+    /* LISTAS */
+
+    .navbar ul {
+        font-size: 25px;
+    }
+
+    /* LINKS SECUNDÁRIOS */
+
+    .navbar .sub {
+        font-size: 25px;
+
+        gap: 10px;
+    }
+
+}
+
+/* =========================
+   RESPONSIVIDADE CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    /* BODY */
+
+    body {
+        padding-top: 150px;
+
+        border-left: 10px solid red;
+        border-right: 10px solid red;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+        justify-content: space-between;
+
+        padding: 15px;
+    }
+
+    /* LOGO */
+
+    .navbar img {
+        width: 80px;
+    }
+
+    /* BOTÃO MENU */
+
+    .menu-mobile {
+        display: block;
+
+        font-size: 35px;
+
+        color: black;
+
+        cursor: pointer;
+    }
+
+    /* ESCONDER INÍCIO */
+
+    .navbar .inicio {
+        display: none;
+    }
+
+    /* MENU FECHADO */
+
+    .navbar .sub {
+        display: none;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        width: 100%;
+
+        margin: 20px 0 0;
+        padding: 0;
+
+        gap: 10px;
+
+        font-size: 30px;
+    }
+
+    .linha-nav {
+        display: none;
+    }
+
+    /* MENU ABERTO */
+
+    #menu:checked ~ .sub {
+        display: flex;
+    }
+
+    /* ESCONDER SEPARADORES */
+
+    .navbar .enfi {
+        display: none;
+    }
+
+    /* LINHA DECORATIVA */
+
+    .linha-nav {
+        height: 40px;
+    }
+
+    /* ESCONDER LINHA COM MENU ABERTO */
+
+    #menu:checked ~ .linha-nav {
+        display: none;
+    }
+
 }

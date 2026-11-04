@@ -64,11 +64,8 @@ linkGeral.addEventListener('click', () => mostrarPokemon(dadosDoPokemonGlobal));
 async function inicializarPagina() {
     const nomePokemon = puxarNomePokemon();
     if (nomePokemon) {
-        // Aguarda a API responder e salvar os dados na global
-        await pegarDados(nomePokemon); 
         
-        // 5. AGORA SIM! A partir deste ponto a variável global está preenchida
-        // E você pode chamar o mostrarPokemon passando a global se quiser
+        await pegarDados(nomePokemon); 
         mostrarPokemon(dadosDoPokemonGlobal);
     }
 }
@@ -83,6 +80,7 @@ function puxarNomePokemon(){
     }   
     return pokemon;
 }
+
 
 // 4. ADAPTANDO O PEGAR DADOS PARA ALIMENTAR A GLOBAL
 async function pegarDados(id) {

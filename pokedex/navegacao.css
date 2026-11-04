@@ -1,131 +1,510 @@
-body{
-        
-    padding-top: 150px;
-    margin: 0px;
-    min-height: 100vh;
-    border-left: 25px solid red;
-    border-right: 25px solid red;
-    box-sizing: border-box;
-    background-image: url("./assets/pagina/imagem2.jpeg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: repeat;
-    display: flex;
-    flex-direction: column;
-}
 
-main {
-    flex: 1;
-}
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
 
 * {
+    box-sizing: border-box;
+
     color: white;
+
     font-family: "Jersey 20", sans-serif;
 }
 
-nav{
+body {
+
+    margin: 0;
+
+    padding-top: 150px;
+
+    min-height: 100vh;
+
+    border-left: 25px solid red;
+    border-right: 25px solid red;
+
+    background-image: url("./assets/pagina/imagem2.jpeg");
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+
     display: flex;
-    top: 0px;
-    background-color: red;
-    margin: 0px;
-    padding-bottom: 20px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    position: fixed;
+    flex-direction: column;
+
 }
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+
+    flex: 1;
+
+    width: 100%;
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+
+    display: flex;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    min-height: 100px;
+
+    background-color: red;
+
+    padding: 10px;
+
+    padding-bottom: 20px;
+
+    z-index: 1000;
+
+}
+
+
+/* LOGO DA NAVBAR */
 
 nav img {
-    display: flex;
+
+    display: block;
+
     width: 200px;
+
+    max-width: 100%;
+
     height: auto;
+
+    object-fit: contain;
+
 }
 
+
+/* LINHA DECORATIVA DA NAVBAR */
+
 .linha-nav {
+
     position: absolute;
 
     left: 0;
     bottom: 0;
 
     width: 100%;
+
     height: 100px;
 
     pointer-events: none;
+
 }
 
+
+/* =========================
+   IMAGEM PRINCIPAL
+========================= */
+
+.chat {
+
+    display: block;
+
+    width: 50%;
+
+    max-width: 100%;
+
+    height: auto;
+
+    margin: auto;
+
+    border-radius: 50px;
+
+}
+
+
+/* =========================
+   LISTA DAS REGIÕES
+========================= */
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 20px 10px;
+    padding: 10px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+    font-size: 50px;
+
+}
+
+
+/* REMOVE MARGENS PADRÃO DOS LI */
+
+ul li {
+
+    min-width: 0;
+
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+
+    transition: 300ms;
+
+    color: black;
+
+    text-decoration: none;
+
+    display: block;
+
+    background-color: red;
+
+    margin: 10px;
+
+    padding: 5px;
+
+    border-radius: 5px;
+
+    text-align: center;
+
+    overflow-wrap: break-word;
+
+}
+
+
+/* EFEITO HOVER */
+
+a:hover {
+
+    color: white;
+
+    transform: scale(1.05);
+
+    box-shadow: 10px 10px black;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+#pesquisa {
+
+    border-radius: 15px;
+
+    max-width: 100%;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background-color: red;
+
+    padding-top: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+}
+
+
+/* IMAGEM DO FOOTER */
+
+footer img {
+
+    display: block;
+
+    width: 60px;
+
+    max-width: 100%;
+
+    height: auto;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* LINHA DECORATIVA DO FOOTER */
+
 .linha-footer {
+
     position: relative;
 
-    right:-25px;
-    bottom: 0;
-    margin: 0px;
+    margin: 0;
+
     width: 100%;
+
     height: 70px;
 
     pointer-events: none;
+
 }
 
-.chat{
-    display: block;
-    width: 50%;
-    height: auto;
-    margin: auto;
-    border-radius: 50px;
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 900px) {
+
+    /* NAVBAR */
+
+    nav {
+
+        min-height: 90px;
+
+    }
+
+
+    nav img {
+
+        width: 150px;
+
+    }
+
+
+    .linha-nav {
+
+        height: 70px;
+
+    }
+
+
+    /* IMAGEM PRINCIPAL */
+
+    .chat {
+
+        width: 70%;
+
+    }
+
+
+    /* REGIÕES */
+
+    ul {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+
+        font-size: 40px;
+
+    }
+
+
+    /* FOOTER */
+
+    footer img {
+
+        width: 50px;
+
+    }
+
 }
 
-footer{
-    background-color: red;
-    padding-top: 10px;
-    display: flex;
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 600px) {
+
+    /* BODY */
+
+    body {
+
+        padding-top: 110px;
+
+        border-left: 8px solid red;
+        border-right: 8px solid red;
+
+    }
+
+
+    /* NAVBAR */
+
+    nav {
+
+        min-height: 75px;
+
+        padding: 8px;
+
+        padding-bottom: 15px;
+
+    }
+
+
+    nav img {
+
+        width: 100px;
+
+    }
+
+
+    .linha-nav {
+
+        height: 50px;
+
+    }
+
+
+    /* IMAGEM PRINCIPAL */
+
+    .chat {
+
+        width: 90%;
+
+        border-radius: 20px;
+
+    }
+
+
+    /* REGIÕES */
+
+    ul {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin: 10px 0;
+
+        padding: 5px;
+
+        font-size: 35px;
+
+    }
+
+
+    ul li {
+
+        width: 100%;
+
+    }
+
+
+    /* LINKS */
+
+    a {
+
+        margin: 5px;
+
+        padding: 10px;
+
+    }
+
+
+    a:hover {
+
+        transform: none;
+
+        box-shadow: none;
+
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        padding-top: 8px;
+
+    }
+
+
+    footer img {
+
+        width: 45px;
+
+    }
+
+
+    .linha-footer {
+
+        height: 50px;
+
+    }
+
 }
 
-footer img{
-    display: flex;
-    width: 60px;
-    height: auto;
-    margin-bottom: 10px;
-}
 
-ul{
-    list-style:none;
-    margin:10px;
-    padding:10px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 60px;
-    margin-left: 10px;
-    margin-top: 20px;
-    font-size:70px;
-} 
+/* =========================
+   CELULARES PEQUENOS
+========================= */
 
-ul li:nth-last-child(2){
-    grid-column: 2;
-}
+@media (max-width: 380px) {
 
-ul li:last-child{
-    grid-column: 3;
-}
+    /* BODY */
 
-a{
-    transition: 300ms;
-    color:rgb(0, 0, 0);
-    text-decoration:none;
-    display: block;
-    background-color: red;
-    margin: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    text-align: center;    
-} 
+    body {
 
-a:hover{
-    transition: 300ms;
-    color:rgb(255, 255, 255);
-    transform: scale(1.1);
-    box-shadow: 10px 10px black;
-    cursor: pointer;
-}
+        padding-top: 100px;
 
-#pesquisa{
-    border-radius: 15px;
+    }
+
+
+    /* NAVBAR */
+
+    nav img {
+
+        width: 80px;
+
+    }
+
+
+    /* IMAGEM PRINCIPAL */
+
+    .chat {
+
+        width: 95%;
+
+    }
+
+
+    /* REGIÕES */
+
+    ul {
+
+        font-size: 28px;
+
+        gap: 8px;
+
+    }
+
+
+    /* LINKS */
+
+    a {
+
+        padding: 8px;
+
+    }
+
 }
