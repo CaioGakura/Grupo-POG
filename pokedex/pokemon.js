@@ -318,11 +318,21 @@ function mostrarCombate(pokemon, status, tipo ){
 
     const corTipo = coresTipos[tipo] || "#A8A77A";
 
+    // Aplicar a cor do tipo do Pokémon
     ladoDireito.querySelectorAll(
-        ".numeroNomeTipo, .areaStatus, .areaTabela th"
+        ".numeroNomeTipo, .alturaPeso, .areaStatus, .areaTabela td"
     ).forEach((caixa) => {
-        caixa.style.backgroundColor = corTipo;
+        caixa.style.setProperty("background-color", corTipo, "important");
+        caixa.style.setProperty("color", "#FFFFFF", "important");
     });
+
+// Título dos ataques com fundo preto
+const tituloAtaques = ladoDireito.querySelector(".areaTabela th");
+
+    if (tituloAtaques) {
+        tituloAtaques.style.setProperty("background-color", corTipo, "important");
+        tituloAtaques.style.setProperty("color", "#FFFFFF", "important");
+    }
 
 }
 function tabelaAtaques(ataques){
