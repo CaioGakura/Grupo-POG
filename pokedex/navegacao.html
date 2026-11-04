@@ -62,12 +62,15 @@
 
     <main>
 
-        <img class="chat"
-             src="./assets/pagina/fundo.jpg"
-             alt="Pokédex">
+        <div class="container-imagem-chat">
+            <img class="chat"
+                 src="./assets/pagina/fundo.jpg"
+                 alt="Pokédex">
+            <div id="respostaIA" style="display: none;"></div>
+        </div>
 
         <div class="caixa-busca-navegacao">
-            <input type="text" id="campoBusca" placeholder="Pesquisar pokemon...">
+            <input type="text" id="campoBusca" placeholder="Pergunte sobre Pokemon ou digite um nome...">
             <button id="botaoBusca" onclick="buscarPokemon()">BUSCAR</button>
         </div>
 
@@ -169,12 +172,51 @@
 
 
     <script>
-        function buscarPokemon() {
-            var nome = document.getElementById("campoBusca").value.toLowerCase().trim();
-            if (nome != "") {
-                window.location.href = "pokemon.html?nome=" + nome;
+        var chaveGemini = "AQ.Ab8RN6LO3Hi-zHrR-dQ8eO0Gs9_6ZlD6T5o42qfJrSQd81FqYg";
+
+        async function buscarPokemon() {
+            var input = document.getElementById("campoBusca");
+            var texto = input.value.trim();
+            var respostaDiv = document.getElementById("respostaIA");
+
+            if (!texto) return;
+
+            if (!texto.includes(" ") && !texto.includes("?") && texto.length < 15) {
+                window.location.href = "pokemon.html?nome=" + texto.toLowerCase();
+                return;
+            }
+
+            respostaDiv.style.display = "block";
+            respostaDiv.innerHTML = "Professor Carvalho pensando...";
+
+            try {
+                var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent?key=" + chaveGemini;
+                var corpo = {
+                    contents: [{ parts: [{ text: texto }] }],
+                    systemInstruction: {
+                        parts: [{
+                            text: "Voce e o Professor Carvalho da Pokedex. Voce so responde perguntas sobre o universo Pokemon. Seja conciso e amigavel em portugues. Se o usuario perguntar algo que NAO seja sobre Pokemon, diga educadamente: 'Desculpe, so posso falar sobre o universo Pokemon!'"
+                        }]
+                    }
+                };
+
+                var resp = await fetch(url, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(corpo)
+                });
+
+                var dados = await resp.json();
+                if (dados.candidates && dados.candidates[0].content.parts[0].text) {
+                    respostaDiv.innerHTML = "<strong>Professor Carvalho:</strong> " + dados.candidates[0].content.parts[0].text;
+                } else {
+                    respostaDiv.innerHTML = "Nao consegui responder agora, tente novamente!";
+                }
+            } catch (erro) {
+                respostaDiv.innerHTML = "Erro ao conectar com a Pokedex.";
             }
         }
+
         document.getElementById("campoBusca").addEventListener("keyup", function(event) {
             if (event.key === "Enter") {
                 buscarPokemon();
