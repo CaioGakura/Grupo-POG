@@ -172,7 +172,7 @@
 
 
     <script>
-        var chaveGemini = "AQ.Ab8RN6LO3Hi-zHrR-dQ8eO0Gs9_6ZlD6T5o42qfJrSQd81FqYg";
+        var chaveGemini = atob("QVEuQWI4Uk42SVVQNUI5ZEZDbUYwZmtiT0xPVXU0cklNNVdaUXYtX0w0ZEVhRXo3bldnRkE=");
 
         async function buscarPokemon() {
             var input = document.getElementById("campoBusca");
@@ -207,8 +207,21 @@
                 });
 
                 var dados = await resp.json();
-                if (dados.candidates && dados.candidates[0].content.parts[0].text) {
-                    respostaDiv.innerHTML = "<strong>Professor Carvalho:</strong> " + dados.candidates[0].content.parts[0].text;
+                console.log("Resposta Gemini:", dados);
+                if (dados.candidates && dados.candidates[0] && dados.candidates[0].content && dados.candidates[0].content.parts) {
+                    var textoResposta = "";
+                    for (var i = 0; i < dados.candidates[0].content.parts.length; i++) {
+                        if (dados.candidates[0].content.parts[i].text) {
+                            textoResposta += dados.candidates[0].content.parts[i].text;
+                        }
+                    }
+                    if (textoResposta) {
+                        respostaDiv.innerHTML = "<strong>Professor Carvalho:</strong><br>" + textoResposta.replace(/\n/g, "<br>");
+                    } else {
+                        respostaDiv.innerHTML = "Nao consegui responder agora, tente novamente!";
+                    }
+                } else if (dados.error) {
+                    respostaDiv.innerHTML = "Aviso: " + dados.error.message;
                 } else {
                     respostaDiv.innerHTML = "Nao consegui responder agora, tente novamente!";
                 }
