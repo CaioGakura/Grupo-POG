@@ -1501,7 +1501,7 @@ function renderizarCard(pokemon) {
     container.appendChild(card);
 }
 function abrirPokemon(nome){
-    window.open(`/pokemon.html?nome=${nome}`, '_self');
+    window.open(`./pokemon.html?nome=${nome}`, '_self');
 }
 
 // Adiciona um evento de clique no botão para disparar a função de carregar mais Pokémon
