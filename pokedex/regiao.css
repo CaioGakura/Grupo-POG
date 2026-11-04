@@ -2,7 +2,9 @@
 /* =========================
    BODY
 ========================= */
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     padding-top: 180px;
     margin: 0;
