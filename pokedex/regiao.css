@@ -526,6 +526,13 @@ footer img {
         border-left: 10px solid red;
         border-right: 10px solid red;
     }
+    #geografiaImagem , #historiaImagem, #fnflPiedade{
+        display: none;
+    }
+    .texto, .size{
+        display: flex;
+        justify-content: center;
+    }
 
     /* NAVBAR */
 
