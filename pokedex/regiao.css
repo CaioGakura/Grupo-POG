@@ -34,8 +34,11 @@ main {
 
 * {
     color: white;
+    overflow-x: hidden;
     font-family: "Jersey 20", sans-serif;
 }
+
+
 
 /* =========================
    NAVBAR
@@ -51,8 +54,7 @@ main {
     top: 0;
     left: 0;
 
-    width: 100%;
-
+    width: 100vw;
     background-color: red;
 
     margin: 0;
@@ -181,13 +183,8 @@ main {
 }
 
 .kanto {
-    margin: 0;
-    margin-bottom: 70px;
-    margin-left: 50px;
-
-    padding: 0;
-
-    font-size: 115px;
+    text-align: center;
+    font-size: 5vw;
 }
 
 /* =========================
@@ -201,8 +198,7 @@ main {
 
     display: flex;
 
-    margin-right: 490px;
-    margin-left: 80px;
+    margin: 5vw;
 
     padding: 0;
 
@@ -237,17 +233,16 @@ footer img {
 ========================= */
 
 #pokemon-cards {
-    margin: 15px;
+    margin: 1vh;
 
     display: flex;
     flex-wrap: wrap;
-
     justify-content: center;
 
     border-radius: 30px;
     border: 3px solid white;
 
-    gap: 24px;
+    
 
     padding: 20px;
 
@@ -261,6 +256,7 @@ footer img {
 
 .card {
     transition: 300ms;
+    overflow: hidden;
 
     text-align: center;
 
@@ -271,8 +267,7 @@ footer img {
 
     background-color: rgb(211, 211, 211);
 
-    width: 200px;
-    height: 200px;
+    width: 150px;
 
     display: flex;
     flex-direction: column;
@@ -300,8 +295,8 @@ footer img {
 /* IMAGEM CARD */
 
 .card img {
-    width: 80px;
-    height: 80px;
+    width: 100%;
+    overflow: hidden;
 
     object-fit: contain;
 }
@@ -309,7 +304,8 @@ footer img {
 /* NOME CARD */
 
 .card h2 {
-    font-size: 30px;
+    font-size: 120%;
+    overflow: hidden;
 
     margin: 0;
 }
@@ -318,10 +314,14 @@ footer img {
 
 .card p {
     font-size: 24px;
+    overflow: hidden;
 
     margin: 0;
 }
+.tipos-container{
+    overflow: hidden;
 
+}
 /* =========================
    BOTÃO CARREGAR MAIS
 ========================= */
@@ -370,11 +370,9 @@ footer img {
 ========================= */
 
 .mew {
-    width: 240px;
+    width: 100vw;
 
-    right: 150px;
-
-    position: absolute;
+    
 }
 
 .mew2 {
@@ -388,8 +386,9 @@ footer img {
 ========================= */
 
 #ginasios-cards {
-    margin: 19px;
-
+    margin: 1vh;
+    
+     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
 
@@ -398,9 +397,9 @@ footer img {
     border-radius: 30px;
     border: 3px solid white;
 
-    gap: 24px;
+    gap: 2vw;
 
-    padding: 30px;
+
 
     background-image: url("./assets/pagina/imagem2.jpeg");
     background-size: contain;
@@ -530,10 +529,14 @@ footer img {
         display: none;
     }
     .texto, .size{
-        display: flex;
-        justify-content: center;
+        display: flex !important;
+        justify-content: center !important; 
+        z-index: 999;
     }
 
+    .card{
+        width: 30vw;
+    }
     /* NAVBAR */
 
     .navbar {
