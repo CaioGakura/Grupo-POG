@@ -1,3 +1,4 @@
+/*teste*/
 const coresTipos = {
     normal: "#A8A77A",
     fire: "#EE8130",
