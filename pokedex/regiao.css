@@ -193,6 +193,12 @@ main {
     margin-top: 10px;
 }
 
+.retangulo {
+    width: 5000px;
+    height: 150px;
+    background-color: red;
+    margin-top: -210px;
+}
 
 
 /* =========================
