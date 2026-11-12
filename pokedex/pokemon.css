@@ -227,6 +227,7 @@ p{
     display: flex;
     justify-content: space-evenly;
 }
+
 .areaTabela{
     overflow-y: auto;
     scrollbar-width: thin;
@@ -351,8 +352,9 @@ p{
 .nomesPokemons span {
     flex: 0 1 200px;
     font-size: 20px;
-    text-align: center;
+    text-align: center;    
 }
+
 #menu {
     display: none;
 }

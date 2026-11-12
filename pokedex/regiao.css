@@ -35,7 +35,7 @@ main {
 }
 
 * {
-    color: white;
+    color: #FAF9F6;
     overflow-x: hidden;
     font-family: "Jersey 20", sans-serif;
 }
@@ -102,7 +102,7 @@ main {
 }
 
 .navbar a:hover {
-    color: white;
+    color: #FAF9F6;
 }
 
 /* LINK INÍCIO */
@@ -177,17 +177,29 @@ main {
 
 .size {
     margin: 0;
-    margin-left: 20px;
-
-    padding: 0;
-
-    font-size: 50px;
+    margin-left: -340px;
+    text-align: center;
+    padding: 0;      
+    font-size: 70px;
 }
 
 .kanto {
     text-align: center;
-    font-size: 5vw;
+    font-size: 8vw;
+    margin-top: 10px;
 }
+
+.pokebosta {
+    margin-top: 10px;
+}
+
+.retangulo {
+    width: 5000px;
+    height: 150px;
+    background-color: red;
+    margin-top: -210px;
+}
+
 
 /* =========================
    TEXTOS
@@ -204,6 +216,7 @@ main {
 
     padding: 0;
 
+    margin-top: -8px;
     margin-bottom: 15px;
 
     text-align: justify;
@@ -236,15 +249,13 @@ footer img {
 
 #pokemon-cards {
     margin: 1vh;
-
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
     border-radius: 30px;
-    border: 3px solid white;
-
-    
+    border: 3px solid #FAF9F6;
 
     padding: 20px;
 
@@ -308,17 +319,19 @@ footer img {
 .card h2 {
     font-size: 120%;
     overflow: hidden;
-
+    color: #FAF9F6;
+    -webkit-text-stroke: 1px black;
+    font-size: 28px;
     margin: 0;
 }
 
 /* TEXTO CARD */
 
 .card p {
-    font-size: 24px;
+    font-size: 22px;
     overflow: hidden;
-
     margin: 0;
+    color: black;
 }
 .tipos-container{
     overflow: hidden;
@@ -354,7 +367,7 @@ footer img {
 /* HOVER BOTÃO */
 
 #botaoDeCarregarMais:hover {
-    color: white;
+    color: #FAF9F6;
 
     transition: 300ms;
 
@@ -389,19 +402,18 @@ footer img {
 
 #ginasios-cards {
     margin: 1vh;
+    margin-top: 40px;
     
-     overflow: hidden;
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
 
     justify-content: center;
 
     border-radius: 30px;
-    border: 3px solid white;
+    border: 3px solid #FAF9F6;
 
     gap: 2vw;
-
-
 
     background-image: url("./assets/pagina/imagem2.jpeg");
     background-size: contain;
@@ -420,12 +432,12 @@ footer img {
     background-color: rgb(211, 211, 211);
 
     border-radius: 20px;
-
     padding: 20px;
 
     text-align: center;
-
     box-sizing: border-box;
+    font-size: 20px;
+    
 }
 
 /* HOVER GINÁSIO */
@@ -457,6 +469,21 @@ footer img {
 
 .descricao-do-lider {
     transform: rotate3d(0, 1, 0, 180deg);
+    font-size: 20px;
+    color: black;
+}
+
+/* Nome dos treinadores */
+.card-ginasio-front h2 {
+    font-size: 30px;
+    color: black;
+    margin-top: 10px;
+}
+
+/* Informações dos treinadores */
+.card-ginasio-front p {
+    color: black;
+    font-size: 27px;
 }
 
 /* IMAGEM LÍDER */
@@ -471,8 +498,8 @@ footer img {
 /* INSÍGNIA */
 
 .insignia-img {
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
 
     object-fit: contain;
 }
@@ -626,6 +653,7 @@ footer img {
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 #campoPesquisa {
@@ -641,8 +669,25 @@ footer img {
     padding: 10px 20px;
     font-size: 20px;
     background-color: red;
-    color: white;
+    color: #FAF9F6;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.baracubaco {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 45px;
+    padding: 30px;
+}
+
+.GINASIOS {
+    margin-top: 60px;
+}
+
+.retangulo {
+    width: 5000px;
+    height: 150px;
+    background-color: red;
+    margin-top: -210px;
 }
