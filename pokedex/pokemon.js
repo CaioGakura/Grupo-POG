@@ -4,7 +4,7 @@ const coresTipos = {
     fire: "#EE8130",
     water: "#6390F0",
     electric: "#F7D02C",
-    grass: "#7AC74C",
+    grass: "#69b938",
     ice: "#96D9D6",
     fighting: "#C22E28",
     poison: "#A33EA1",
@@ -119,7 +119,7 @@ async function mostrarPokemon(pokemon){
     const tipoPrincipal = pokemon.types[0].type.name;
     const tipoTraduzido = tiposTraduzidos[tipoPrincipal] || tipoPrincipal;
     const corTipo = coresTipos[tipoPrincipal] || "#A8A77A";
-    ladoDaFoto.style.backgroundColor = corTipo;
+    ladoDaFoto.style.backgroundColor = corTipo + "99";
     const linhaEvolutiva = await mostrarLinhaDeEvolucao(pokemon);
     linkEvolucao.addEventListener('click', () =>  buscarFotoDaLinhaEvolutiva(linhaEvolutiva));
     const status = puxarStatus(pokemon);
@@ -168,7 +168,7 @@ async function mostrarPokemon(pokemon){
         ".numeroNomeTipo, .alturaPeso, .areaStatus, .areaDescricao"
     ).forEach((caixa) => {
         caixa.style.setProperty("background-color", corTipo, "important");
-        caixa.style.setProperty("color", "#FFFFFF", "important");
+        caixa.style.setProperty("color", "#ffffff", "important");
     });
 
     ladoDaFoto.innerHTML = `
