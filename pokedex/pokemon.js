@@ -44,8 +44,6 @@ const tiposTraduzidos = {
 // 1. ÁREAS DO HTML
 let ladoDaFoto = document.getElementById('LOUD');
 let ladoDireito = document.getElementById('PRX');
-const ulDoDropDown = document.getElementById('ulDoDropDownContent');
-
 
 const container = document.getElementById('containerPrincipal');
 
@@ -66,8 +64,11 @@ async function inicializarPagina() {
     const nomePokemon = puxarNomePokemon();
     if (nomePokemon) {
         
-        await pegarDados(nomePokemon); 
-        mostrarPokemon(dadosDoPokemonGlobal);
+        await pegarDados(nomePokemon);
+
+        if (dadosDoPokemonGlobal) {
+            await mostrarPokemon(dadosDoPokemonGlobal);
+}
     }
 }
 
@@ -121,12 +122,8 @@ async function mostrarPokemon(pokemon){
     const corTipo = coresTipos[tipoPrincipal] || "#A8A77A";
     ladoDaFoto.style.backgroundColor = corTipo + "99";
     const linhaEvolutiva = await mostrarLinhaDeEvolucao(pokemon);
-    linkEvolucao.addEventListener('click', () =>  buscarFotoDaLinhaEvolutiva(linhaEvolutiva));
+    linkEvolucao.onclick = () => buscarFotoDaLinhaEvolutiva(linhaEvolutiva);
     const status = puxarStatus(pokemon);
-    const abilities = pokemon.abilities;
-    const nomesAbilities = abilities.map(item => item.ability.name);
-    adicionarAoDropDownContent(nomesAbilities);
-    console.log(nomesAbilities);
     console.log(status);
     const descricao = await puxarDescricao(pokemon.name);
     console.log(descricao);
@@ -180,7 +177,7 @@ async function mostrarPokemon(pokemon){
    //     <img class='gifPokemon'  src="${gifDoPokemon}" alt="Gif do ${pokemon.name}" height="200px">
    //</img> </div>
 
-    linkCombate.addEventListener('click', () => mostrarCombate(pokemon, status, tipoPrincipal));  
+    linkCombate.onclick = () => mostrarCombate(pokemon, status, tipoPrincipal); 
 }
 
 async function puxarDescricao(nome) {
@@ -278,64 +275,88 @@ function mostrarLinhaImagemDaLinhaEvolutiva(UrlsDasImagens, nomes){
     
     console.log(HtmlDasImagens);
 }
-function adicionarAoDropDownContent(abilities){
-    for (let i = 0; i < abilities.length; i++) {
-        ulDoDropDown.innerHTML += `<li><p>${abilities[i]}</p></li>`;
-    }
-}
-function mostrarCombate(pokemon, status, tipo ){
+
+    async function mostrarCombate(pokemon, status, tipo ){
+
+    const abilities = pokemon.abilities;
+
+    const nomesAbilities = await Promise.all(
+        abilities.map(async item => item.ability.name)
+    );
+
     const listaAtaques = pokemon.moves.map(item => item.move.name);
     const idFormatado = `#${String(pokemon.id).padStart(3, '0')}`;
     const tabelaDeAtaques = tabelaAtaques(listaAtaques);
     let htmlDoCombate = `
-    <div class='informacoesGerais'>
-        <div class='numeroNomeTipo'>
-                <p>${idFormatado} | ${pokemon.name}</p>
-                <p>${tiposTraduzidos[tipo] || tipo}</p>
+    <div class="informacoesGerais">
+
+        <div class="numeroNomeTipo">
+            <p>${idFormatado} | ${pokemon.name}</p>
+            <p>${tiposTraduzidos[tipo] || tipo}</p>
         </div>
-        <div class='alturaPeso'>
-            <p>Altura: ${pokemon.height/10} metros</p>
-            <p>Peso: ${pokemon.weight/10} Kg</p>
+
+        <div class="linhaAlturaHabilidades">
+
+            <div class="alturaPeso">
+                <p>Altura: ${pokemon.height / 10} metros</p>
+                <p>Peso: ${pokemon.weight / 10} Kg</p>
+            </div>
+
+            <div class="areaHabilidades">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Habilidades:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${nomesAbilities.map(habilidade => `
+                            <tr>
+                                <td>${habilidade}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+
         </div>
-        
-  
-    <div id='tabela-container'>
 
     </div>
-    </div>
-    <div class='areaStatus'>
+
+    <div class="areaStatus">
         <h1>Status:</h1>
-        <p>HP: ${status.hp} </p>
-        <p>Ataque: ${status.attack} </p>
-        <p>Defesa: ${status.defense} </p>
-        <p>espe. Ataque: ${status.specialAttack} </p>
-        <p>espe. Defesa: ${status.specialDefense} </p>
+        <p>HP: ${status.hp}</p>
+        <p>Ataque: ${status.attack}</p>
+        <p>Defesa: ${status.defense}</p>
+        <p>espe. Ataque: ${status.specialAttack}</p>
+        <p>espe. Defesa: ${status.specialDefense}</p>
     </div>
+
     ${tabelaDeAtaques}
-    <div class='fraquezasEResistencias'>
-    
-    `
+`;
     ladoDireito.innerHTML = htmlDoCombate;
 
     const corTipo = coresTipos[tipo] || "#A8A77A";
 
     // Aplicar a cor do tipo do Pokémon
     ladoDireito.querySelectorAll(
-        ".numeroNomeTipo, .alturaPeso, .areaStatus, .areaTabela td"
+        ".numeroNomeTipo, .alturaPeso, .areaStatus, .areaTabela td, .areaHabilidades, .areaHabilidades td"
     ).forEach((caixa) => {
         caixa.style.setProperty("background-color", corTipo, "important");
         caixa.style.setProperty("color", "#FFFFFF", "important");
     });
 
-// Título dos ataques com fundo preto
-const tituloAtaques = ladoDireito.querySelector(".areaTabela th");
+    // Aplicar cor aos títulos das tabelas
+    const titulos = ladoDireito.querySelectorAll(
+        ".areaTabela th, .areaHabilidades th"
+    );
 
-    if (tituloAtaques) {
-        tituloAtaques.style.setProperty("background-color", corTipo, "important");
-        tituloAtaques.style.setProperty("color", "#FFFFFF", "important");
-    }
-
+    titulos.forEach(titulo => {
+        titulo.style.setProperty("background-color", corTipo, "important");
+        titulo.style.setProperty("color", "#FFFFFF", "important");
+    });
 }
+
 function tabelaAtaques(ataques){
     let htmlAtaques = [];
     for (const i in ataques) {

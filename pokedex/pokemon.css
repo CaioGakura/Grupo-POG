@@ -1,7 +1,6 @@
-
-body{  
-    padding-top: 0px;
-    margin: 0px;
+body {
+    padding-top: 0;
+    margin: 0;
     min-height: 100vh;
     border-left: 25px solid red;
     border-right: 25px solid red;
@@ -12,109 +11,127 @@ body{
     background-repeat: repeat;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 main {
-    
     flex: 1;
 }
 
 * {
     color: white;
     font-family: "Jersey 20", sans-serif;
-    overflow-x: hidden;
-
+    box-sizing: border-box;
 }
+
+/* NAVBAR */
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     top: 0;
     left: 0;
-
     width: 100%;
-    box-sizing: border-box;
-
     background-color: red;
-
     margin: 0;
     padding: 0 20px 20px;
-
     z-index: 1000;
     position: fixed;
 }
 
 nav img {
     display: block;
-
     width: 200px;
     height: auto;
-
     object-fit: contain;
     flex-shrink: 0;
 }
 
 .linha-nav {
     position: absolute;
-
     left: 0;
     bottom: 0;
-
     width: 100%;
     height: 100px;
-
     pointer-events: none;
 }
 
 .linha-footer {
     position: relative;
-
-    right:-25px;
+    right: -25px;
     bottom: 0;
-    margin: 0px;
+    margin: 0;
     width: 100%;
     height: 70px;
-
     pointer-events: none;
 }
 
-footer{
+footer {
     background-color: red;
     padding-top: 10px;
     display: flex;
-
 }
 
-footer img{
+footer img {
     display: flex;
     width: 60px;
     height: auto;
     margin-bottom: 10px;
 }
 
-.sub{
+.sub {
     position: relative;
     top: 25px;
     font-size: 50px;
-    
 }
 
-.enfi{
+.enfi {
     color: black;
 }
 
-nav ul{ list-style:none; margin:0; padding:0; display:flex; margin-left: 10px; margin-top: 20px; font-size:70px; } 
-nav a{transition: 300ms; color:rgb(0, 0, 0); text-decoration:none; display: flex;} 
-nav a:hover{transition: 300ms; color:rgb(255, 255, 255);}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 70px;
+}
 
-#LOUD{
+nav a {
+    transition: 300ms;
+    color: black;
+    text-decoration: none;
+    display: flex;
+}
+
+nav a:hover {
+    transition: 300ms;
+    color: white;
+}
+
+/* ÁREA PRINCIPAL */
+
+#containerPrincipal {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0;
+    padding: 120px 22px 20px;
+    position: relative;
+    min-height: 650px;
+}
+
+/* LADO DA IMAGEM */
+
+#LOUD {
     width: 47%;
     min-width: 0;
     position: relative;
     align-self: stretch;
-    box-sizing: border-box;
     margin-left: -22px;
     margin-top: -120px;
     margin-bottom: -20px;
@@ -125,59 +142,11 @@ nav a:hover{transition: 300ms; color:rgb(255, 255, 255);}
     align-items: center;
 }
 
-#PRX{
-    position: relative;
-    width: 53%;
-    min-width: 0;
-    padding: 40px 30px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-}
-
-.linhaDeCima {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    width: 100%;
-    align-items: stretch;
-}
-
-.informacoesGerais{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 50%;
-    box-sizing: border-box;
-}
-
-p{
-    color: rgb(255, 255, 255);
-}
-
-.numeroNomeTipo, .alturaPeso{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex: 1;
-    min-height: 85px;
-    padding: 15px;
-    margin: 0px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    box-shadow: 4px 4px black;
-    text-align: center;
-}
-
 .areaFotoDoPokemon {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(assets/pagina/pokebola-cinza.png);
+    background-image: url("assets/pagina/pokebola-cinza.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -193,11 +162,118 @@ p{
     object-fit: contain;
 }
 
-.areaStatus{
+/* LADO DIREITO */
+
+#PRX {
+    position: relative;
+    width: 53%;
+    min-width: 0;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.linhaDeCima {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.informacoesGerais {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    min-width: 0;
+}
+
+/* INFORMAÇÕES DO POKÉMON */
+
+p {
+    color: white;
+}
+
+.numeroNomeTipo,
+.alturaPeso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    min-height: 85px;
+    padding: 15px;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 4px 4px black;
+    text-align: center;
+}
+
+/* ALTURA, PESO E HABILIDADES */
+
+.linhaAlturaHabilidades {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    align-items: stretch;
+    overflow: visible;
+}
+
+.linhaAlturaHabilidades .alturaPeso {
+    width: 50%;
+    min-width: 0;
+    flex: 1;
+}
+
+.areaHabilidades {
+    width: 50%;
+    min-width: 0;
+    max-height: 140px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 8px;
+    box-shadow: 4px 4px black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1;
+}
+
+.areaHabilidades table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.areaHabilidades th {
+    padding: 10px 5px;
+    font-size: 25px;
+}
+
+.areaHabilidades td {
+    padding: 7px 5px;
+    text-align: center;
+    font-size: 20px;
+    border-top: 1px solid white;
+}
+
+/* COMBATE: INFORMAÇÕES OCUPAM TODA A LARGURA */
+
+#PRX > .informacoesGerais {
+    width: 100%;
+}
+
+/* STATUS */
+
+.areaStatus {
     width: 50%;
     padding: 15px;
     margin: 0;
-    box-sizing: border-box;
     border-radius: 8px;
     box-shadow: 4px 4px black;
     display: flex;
@@ -206,108 +282,120 @@ p{
     align-items: center;
     text-align: center;
 }
-#containerPrincipal{
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
-    gap: 0;
-    padding: 120px 22px 20px;
-    box-sizing: border-box;
-    position: relative;
-    min-height: 650px;
-}
-.FotoDoPokemonNaLinhaEvolutiva{
-    background-image: url(assets/pagina/pokebola-cinza.png);
-    background-repeat: no-repeat;
-    background-size: 105%;
-    width: 300px;
-}
-.nomesPokemons{
-    display: flex;
-    justify-content: space-evenly;
-}
 
-.areaTabela{
-    overflow-y: auto;
-    scrollbar-width: thin;
-    overflow-x: hidden;
+/* TABELA DE ATAQUES */
+
+/* TABELA DE ATAQUES */
+
+.areaTabela {
+    width: 100%;
     max-height: 200px;
-    background-color: rgb(255, 255, 255);
     margin-top: 140px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    box-sizing: border-box;
+}
 
+.areaTabela table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
-.areaTabela th{
-    background-color: rgb(0, 0, 0);
-    color: white;
+
+.areaTabela thead {
+    width: 100%;
+}
+
+.areaTabela th {
+    width: 100%;
     padding: 15px;
-    margin: 0;
-    width: 100vw;
     font-size: 40px;
+    text-align: center;
+    box-sizing: border-box;
 }
-.areaTabela tbody{
-    gap: 15px;
+
+.areaTabela tbody {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
 }
 
 .areaTabela tr {
-    border-radius: 150px;
-    margin: 0px 3px;
+    display: contents;
 }
 
 .areaTabela td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 5px 2px;
     text-align: center;
     color: white;
+    background-color: #EF812D;
+    border: 1px solid white;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
 }
 
-
+/* DESCRIÇÃO */
 
 .areaDescricao {
     width: 100%;
     margin-top: 10px;
     padding: 15px 20px;
-    box-sizing: border-box;
     border-radius: 8px;
     box-shadow: 4px 4px black;
     text-align: center;
 }
 
-.numeroNomeTipo p:first-child {
-    font-size: 28px;
-    margin: 0px;
-}
+/* FONTES */
 
+.numeroNomeTipo p:first-child,
 .numeroNomeTipo p:last-child {
     font-size: 28px;
-    margin: 0px;
+    margin: 0;
 }
 
 .alturaPeso p {
     font-size: 28px;
-    margin: 0px;
+    margin: 0;
 }
 
 .areaStatus h1 {
     font-size: 28px;
-    margin: 0px;
+    margin: 0;
 }
 
 .areaStatus p {
     font-size: 28px;
-    margin: 0px;
+    margin: 0;
 }
 
 .areaDescricao p {
     font-size: 28px;
-    margin: 0px;
+    margin: 0;
 }
 
 .numeroNomeTipo p,
 .alturaPeso p {
     font-size: 28px;
-    margin: 0px;
+    margin: 0;
 }
 
+/* LINHA EVOLUTIVA */
 
+.FotoDoPokemonNaLinhaEvolutiva {
+    background-image: url("assets/pagina/pokebola-cinza.png");
+    background-repeat: no-repeat;
+    background-size: 105%;
+    width: 300px;
+}
+
+.nomesPokemons {
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .linhaEvolutivaPokemon {
     width: 100%;
@@ -316,7 +404,6 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
     padding: 20px;
 }
 
@@ -332,12 +419,10 @@ p{
     width: 330px;
     height: 330px;
     object-fit: contain;
-
     background-image: url("./assets/pagina/pokebola-cinza.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-
     flex: 0 1 280px;
 }
 
@@ -352,8 +437,10 @@ p{
 .nomesPokemons span {
     flex: 0 1 200px;
     font-size: 20px;
-    text-align: center;    
+    text-align: center;
 }
+
+/* MENU MOBILE */
 
 #menu {
     display: none;
@@ -363,94 +450,60 @@ p{
     display: none;
 }
 
-@media (max-width: 600px) {
+/* RESPONSIVIDADE */
 
-    /* BODY */
+@media (max-width: 600px) {
 
     body {
         padding-top: 150px;
-
         border-left: 10px solid red;
         border-right: 10px solid red;
     }
-    
-
-   
-    /* NAVBAR */
 
     .navbar {
         justify-content: space-between;
-
         padding: 15px;
     }
-
-    /* LOGO */
 
     .navbar img {
         width: 80px;
     }
 
-    /* BOTÃO MENU */
-
     .menu-mobile {
         margin-right: 50px;
         display: block;
-
         font-size: 35px;
-
         color: black;
-
         cursor: pointer;
     }
-
-    /* ESCONDER INÍCIO */
 
     .navbar .inicio {
         display: none;
     }
 
-    /* MENU FECHADO */
-
     .navbar .sub {
         display: none;
-
         flex-direction: column;
-
         align-items: center;
-
         width: 100%;
-
         margin: 20px;
         padding: 0;
-
         gap: 10px;
-
         font-size: 30px;
     }
 
     .linha-nav {
         display: none;
+        height: 40px;
     }
-
-    /* MENU ABERTO */
 
     #menu:checked ~ .sub {
         display: flex;
     }
 
-    /* ESCONDER SEPARADORES */
-
     .navbar .enfi {
         display: none;
     }
-
-    /* LINHA DECORATIVA */
-
-    .linha-nav {
-        height: 40px;
-    }
-
-    /* ESCONDER LINHA COM MENU ABERTO */
 
     #menu:checked ~ .linha-nav {
         display: none;
@@ -482,7 +535,11 @@ p{
 
     .informacoesGerais {
         width: 100%;
-        margin-top: 0px;
+        margin-top: 0;
+    }
+
+    #PRX > .informacoesGerais {
+        width: 100%;
     }
 
     .areaStatus {
@@ -498,6 +555,64 @@ p{
         width: 180px;
     }
 
-    
+    .linhaAlturaHabilidades {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .linhaAlturaHabilidades .alturaPeso,
+    .linhaAlturaHabilidades .areaHabilidades {
+        width: 100%;
+        flex: none;
+    }
+
+    .areaHabilidades {
+        max-height: 160px;
+    }
+
+    .imagensPokemon {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .navbar .sub .inicio {
+        display: list-item !important;
+        position: static;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar .sub .inicio a {
+        display: block;
+        font-size: 30px;
+        color: black;
+        visibility: visible;
+    }
 }
-    
+
+/* POSICIONAMENTO DO MENU */
+
+nav {
+    justify-content: flex-start;
+}
+
+nav .sub {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 8px;
+}
+
+nav .inicio {
+    margin-right: auto;
+}
+
+nav .inicio a {
+    font-size: 50px;
+}
+
+nav .inicio {
+    position: relative;
+    top: -30px;
+}

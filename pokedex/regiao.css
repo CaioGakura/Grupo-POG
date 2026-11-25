@@ -691,3 +691,401 @@ footer img {
     background-color: red;
     margin-top: -210px;
 }
+
+
+/* =====================================
+   CORREÇÕES GERAIS
+===================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 180px;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    min-width: 0;
+}
+
+.retangulo {
+    width: 100%;
+    max-width: 100%;
+}
+
+.size {
+    margin-left: 0;
+    text-align: center;
+    font-size: clamp(32px, 5vw, 70px);
+}
+
+.kanto {
+    font-size: clamp(35px, 8vw, 100px);
+}
+
+/* =====================================
+   GEOGRAFIA, HISTÓRIA E FAUNA E FLORA
+===================================== */
+
+.mew2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 25px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.texto {
+    width: 55%;
+    min-width: 0;
+    margin: 10px;
+    font-size: clamp(18px, 2.5vw, 35px);
+    box-sizing: border-box;
+}
+
+.baracubaco {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.mew {
+    width: 40%;
+    max-width: 550px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =====================================
+   CARDS DE POKÉMON
+===================================== */
+
+#pokemon-cards {
+    width: calc(100% - 2vw);
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card {
+    width: 150px;
+    max-width: 100%;
+}
+
+/* =====================================
+   CARDS DE GINÁSIOS
+===================================== */
+
+#ginasios-cards {
+    width: calc(100% - 2vw);
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-ginasio-front {
+    width: 250px;
+    max-width: 100%;
+}
+
+/* =====================================
+   PESQUISA
+===================================== */
+
+.areaPesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+#campoPesquisa {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+    body {
+        padding-top: 150px;
+        border-left-width: 15px;
+        border-right-width: 15px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .navbar img {
+        width: 100px;
+    }
+
+    .navbar ul {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+
+    .navbar .sub {
+        gap: 10px;
+    }
+
+    .mew2 {
+        gap: 15px;
+    }
+
+    .texto {
+        width: 55%;
+        margin: 5px;
+    }
+
+    .mew {
+        width: 40%;
+    }
+
+    .card {
+        width: 130px;
+    }
+
+    .card-ginasio-front {
+        width: 220px;
+    }
+
+    .retangulo {
+        height: 100px;
+        margin-top: -130px;
+    }
+}
+
+/* =====================================
+   CELULAR
+===================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 110px;
+        border-left: 8px solid red;
+        border-right: 8px solid red;
+    }
+
+    /* MENU */
+
+    .navbar {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .navbar img {
+        width: 75px;
+    }
+
+    .menu-mobile {
+        display: block;
+        font-size: 35px;
+        color: black;
+        cursor: pointer;
+    }
+
+    .navbar .sub {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 10px 0 0;
+        padding: 10px 0;
+        gap: 12px;
+        font-size: 28px;
+    }
+
+    #menu:checked ~ .sub {
+        display: flex;
+    }
+
+    .navbar .enfi {
+        display: none;
+    }
+
+    .linha-nav {
+        display: none;
+    }
+
+    /* TÍTULOS */
+
+    .size {
+        margin: 20px 0;
+        font-size: 35px;
+    }
+
+    .kanto {
+        font-size: 42px;
+        margin: 20px 0;
+    }
+
+    /* GEOGRAFIA, HISTÓRIA E FAUNA E FLORA */
+
+    .mew2 {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .texto {
+        width: 100%;
+        margin: 0;
+        font-size: 21px;
+        text-align: justify;
+    }
+
+    .baracubaco {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .mew {
+        display: block;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    /* GINÁSIOS */
+
+    .GINASIOS {
+        margin-top: 35px;
+    }
+
+    #ginasios-cards {
+        margin: 10px 0;
+        width: 100%;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .card-ginasio-front {
+        width: min(100%, 280px);
+        min-height: 320px;
+    }
+
+    /* POKÉMONS */
+
+    #pokemon-cards {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .card {
+        width: calc(50% - 15px);
+        max-width: 160px;
+        margin: 5px;
+    }
+
+    .card h2 {
+        font-size: 23px;
+    }
+
+    .card p {
+        font-size: 18px;
+    }
+
+    /* PESQUISA */
+
+    .areaPesquisa {
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    #campoPesquisa {
+        width: 65%;
+        font-size: 17px;
+    }
+
+    #botaoPesquisar {
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    /* BOTÃO CARREGAR MAIS */
+
+    .localDoBotao {
+        justify-content: center;
+    }
+
+    #botaoDeCarregarMais {
+        margin: 20px auto;
+        padding: 12px 20px;
+        font-size: 20px;
+    }
+
+    /* RETÂNGULO DECORATIVO */
+
+    .retangulo {
+        width: 100%;
+        height: 60px;
+        margin-top: -85px;
+    }
+
+    /* RODAPÉ */
+
+    footer img {
+        width: 45px;
+    }
+
+    .linha-footer {
+        width: 100%;
+        right: 0;
+    }
+}
+
+/* =====================================
+   CELULARES MUITO ESTREITOS
+===================================== */
+
+@media (max-width: 380px) {
+
+    .card {
+        width: calc(50% - 10px);
+        margin: 3px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    .kanto {
+        font-size: 34px;
+    }
+
+    .texto {
+        font-size: 18px;
+    }
+
+    #campoPesquisa {
+        width: 100%;
+    }
+}
