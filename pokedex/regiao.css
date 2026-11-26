@@ -176,9 +176,6 @@ main {
 ========================= */
 
 .size {
-    margin: 0;
-    margin-left: -340px;
-    text-align: center;
     padding: 0;      
     font-size: 70px;
 }
@@ -717,8 +714,8 @@ main {
 }
 
 .size {
-    margin-left: 0;
-    text-align: center;
+    
+    margin: 5vw;
     font-size: clamp(32px, 5vw, 70px);
 }
 
