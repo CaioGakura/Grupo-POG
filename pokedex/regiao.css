@@ -190,7 +190,7 @@ main {
 }
 
 .pokebosta {
-    margin-top: 10px;
+    overflow: hidden;
 }
 
 .retangulo {
