@@ -3,7 +3,7 @@ const container = document.getElementById('pokemon-cards');
 
 // Seleciona o botão de "Carregar mais" para podermos controlar os cliques e o estado dele
 const botaoPegarDados = document.getElementById('botaoDeCarregarMais');
-
+let pokemonsFavoritados = JSON.parse(localStorage.getItem('pokemonFavoritos')) || [];
 
 const regioes = {
 
@@ -1470,25 +1470,29 @@ const coresTipos = {
 };
 
 function renderizarCard(pokemon) {
-    // Cria um elemento <article> no navegador para representar o card
     const card = document.createElement('article');
-    card.setAttribute("onclick",`abrirPokemon("${pokemon.name}")`);
-    const cardDoPokemon = document.getElementById('card-do-pokemon');
-    card.classList.add('card'); // Adiciona a classe CSS 'card' nele
-    const tipoPrincipal = pokemon.types[0].type.name;
-    card.style.backgroundColor = coresTipos[tipoPrincipal];
+    card.classList.add('card');
+    card.style.backgroundColor = coresTipos[pokemon.types[0].type.name];
 
-    // Formata o ID do Pokémon para ter 3 dígitos (ex: #1 vira #001)
+    card.addEventListener('click', () => {
+        abrirPokemon(pokemon.name);
+    });
+
     const idFormatado = `#${String(pokemon.id).padStart(3, '0')}`;
-
-    // Escolhe a imagem oficial de alta qualidade; se não houver, usa a imagem padrão
     const imagem = pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default;
-
-    // Cria os elementos HTML (parágrafos) para cada tipo que o Pokémon possui
     const tiposHtml = pokemon.types.map(t => `<p class="tipo-badge">${tiposTraduzidos[t.type.name]}</p>`).join('');
 
-    // Insere o conteúdo estruturado em HTML dentro do card recém-criado
+    // Caminhos das duas imagens (ajuste o nome do segundo arquivo se for diferente)
+    const imgFavoritado = 'assets/pagina/pokebolaFechada.png';
+    const imgNaoFavoritado = 'assets/pagina/pokebolaAberta.png';
+
+    // Verifica se este Pokémon já estava favoritado anteriormente
+    const jaFavoritado = pokemonsFavoritados.includes(pokemon.id);
+
     card.innerHTML = `
+        <img class="estrela ${jaFavoritado ? 'favorito' : ''}" 
+             src="${jaFavoritado ? imgFavoritado : imgNaoFavoritado}" 
+             alt="Favoritar">
         <p class="card-id">${idFormatado}</p>
         <img src="${imagem}" alt="${pokemon.name}">
         <h2 class="card-nome">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
@@ -1497,9 +1501,24 @@ function renderizarCard(pokemon) {
         </div>
     `;
 
-    // Adiciona o card pronto dentro do container principal na tela
+    const estrelaFavorito = card.querySelector('.estrela');
+
+    estrelaFavorito.addEventListener('click', (event) => {
+        event.stopPropagation();
+        
+        alternarFavorito(pokemon.id);
+        
+        // Alterna a classe e guarda true (adicionou) ou false (removeu)
+        const estaFavoritadoAgora = estrelaFavorito.classList.toggle('favorito');
+        
+        // Troca a imagem de acordo com o novo estado
+        estrelaFavorito.src = estaFavoritadoAgora ? imgFavoritado : imgNaoFavoritado;
+    });
+
     container.appendChild(card);
 }
+
+
 function abrirPokemon(nome){
     window.open(`./pokemon.html?nome=${nome}`, '_self');
 }
@@ -1610,3 +1629,20 @@ campoPesquisa.addEventListener('keyup', function(e) {
         pesquisarPokemon();
     }
 });
+
+
+function alternarFavorito(id) {
+    const index = pokemonsFavoritados.indexOf(id);
+
+    if (index === -1) {
+      
+        pokemonsFavoritados.push(id);
+    } else {
+       
+        pokemonsFavoritados.splice(index, 1);
+    }
+
+    
+    localStorage.setItem('pokemonFavoritos', JSON.stringify(pokemonsFavoritados));
+}
+

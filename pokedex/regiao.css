@@ -761,7 +761,7 @@ main {
     object-fit: contain;
 }
 
-/* =====================================
+/* e
    CARDS DE POKÉMON
 ===================================== */
 
@@ -777,6 +777,16 @@ main {
 .card {
     width: 150px;
     max-width: 100%;
+}
+.estrela{
+    transition: 300ms;
+    height: 30px;
+}
+
+.estrela:hover{
+    transform: scale(1.2);
+    transition: 300ms;
+  
 }
 
 /* =====================================

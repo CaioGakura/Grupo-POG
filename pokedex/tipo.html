@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Favoritos</title>
+    <link rel="stylesheet" href="tipo.css">
+    <link rel="icon" type="image/jpeg" href="./assets/pagina/pokemon-individual.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+
+    <a href="navegacao.html"><img src="./assets/pagina/download.png" alt="Logo"></a>
+
+    <input type="checkbox" id="menu">
+
+    <label for="menu" class="menu-mobile">
+        ☰
+    </label>
+
+    <ul class="sub">
+        <a href="navegacao.html">INÍCIO</a>
+    </ul>
+
+</ul>
+    
+
+    <svg class="linha-nav"
+         viewBox="0 0 1000 70"
+         preserveAspectRatio="none">
+
+        <polyline
+            points="0,60 390,60 430,15 1000,15"
+            fill="none"
+            stroke="black"
+            stroke-width="7"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+        />
+
+        <polyline
+            points="0,60 390,60 430,15 1000,15"
+            fill="none"
+            stroke="red"
+            stroke-width="3"
+        />
+
+    </svg>
+
+</nav>
+
+    <h1>Meus Pokémon Favoritos</h1>
+
+    <main id="pokemon-cards"></main>
+
+    <script src="tipo.js"></script>
+</body>
+</html>

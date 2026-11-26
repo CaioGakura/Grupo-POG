@@ -1,0 +1,347 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+    font-family: "Jersey 20", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 150px;
+    min-height: 100vh;
+
+    border-left: 25px solid red;
+    border-right: 25px solid red;
+
+    background-image: url("./assets/pagina/imagem1.jpeg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 20px;
+
+    background-color: red;
+    z-index: 1000;
+}
+
+.navbar img {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+.navbar a:hover {
+    color: #FAF9F6;
+}
+
+.navbar .sub {
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+    margin: 50px 0 0 auto;
+    padding: 0;
+
+    font-size: 35px;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+/* Linha decorativa */
+
+.linha-nav {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 70px;
+
+    pointer-events: none;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1 {
+    text-align: center;
+    font-size: clamp(35px, 5vw, 65px);
+    margin: 20px 10px;
+    color: #FAF9F6;
+}
+
+/* =========================
+   CONTAINER DOS FAVORITOS
+========================= */
+
+#pokemon-cards {
+    width: calc(100% - 2vw);
+    margin: 20px auto;
+
+    padding: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+
+    border: 3px solid #FAF9F6;
+    border-radius: 30px;
+
+    background-image: url("./assets/pagina/imagem2.jpeg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* =========================
+   CARDS POKÉMON
+========================= */
+
+.card {
+    width: 150px;
+    min-height: 230px;
+
+    margin: 10px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: center;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    box-shadow: 10px 10px black;
+}
+
+.card img {
+    width: 100%;
+    height: 120px;
+
+    object-fit: contain;
+}
+
+.card h2 {
+    margin: 5px 0;
+
+    color: black;
+    font-size: 28px;
+    overflow: hidden;
+}
+
+.card p {
+    margin: 0;
+    color: black;
+    font-size: 20px;
+}
+
+.tipos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+
+    overflow: hidden;
+}
+
+.tipo-badge {
+    padding: 5px 10px;
+
+    border: 1px solid black;
+    border-radius: 6px;
+
+    color: black;
+    font-size: 17px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    body {
+        padding-top: 130px;
+        border-left-width: 15px;
+        border-right-width: 15px;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .navbar img {
+        width: 100px;
+    }
+
+    .navbar .sub {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+
+    .card {
+        width: 130px;
+    }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 110px;
+        border-left-width: 8px;
+        border-right-width: 8px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .navbar img {
+        width: 75px;
+    }
+
+    .menu-mobile {
+        display: block;
+
+        color: black;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    .navbar .sub {
+        display: none;
+
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        margin: 10px 0 0;
+        padding: 10px 0;
+
+        font-size: 28px;
+    }
+
+    #menu:checked ~ .sub {
+        display: flex;
+    }
+
+    .linha-nav {
+        display: none;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    #pokemon-cards {
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .card {
+        width: calc(50% - 15px);
+        max-width: 160px;
+        min-height: 210px;
+        margin: 5px;
+    }
+
+    .card img {
+        height: 100px;
+    }
+
+    .card h2 {
+        font-size: 23px;
+    }
+
+    .card p {
+        font-size: 18px;
+    }
+
+    .tipo-badge {
+        font-size: 15px;
+    }
+
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* =========================
+   CELULARES ESTREITOS
+========================= */
+
+@media (max-width: 380px) {
+
+    .card {
+        width: calc(50% - 10px);
+        margin: 3px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    .tipo-badge {
+        padding: 4px 7px;
+        font-size: 14px;
+    }
+}
