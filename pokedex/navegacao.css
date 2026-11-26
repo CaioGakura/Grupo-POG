@@ -657,6 +657,17 @@ footer img {
     transform: scale(1.03);
 }
 
+#favoritos {
+    font-size: 12px;       
+    position: absolute;    
+    right: 12px;          
+    top: 50%;              
+    transform: translateY(-50%);
+}
+
+.lista-tipos-menu a:has(#favoritos) {
+    position: relative;
+}
 /* =====================================
    NAVBAR RESPONSIVA - CELULARES
 ===================================== */
