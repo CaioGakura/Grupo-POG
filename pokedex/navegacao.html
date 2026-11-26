@@ -32,33 +32,65 @@
 
     <nav>
 
-        <img src="./assets/pagina/download.png"
-             alt="Logo da Pokédex">
+    <img src="./assets/pagina/download.png"
+         alt="Logo da Pokédex">
 
-        <svg class="linha-nav"
-             viewBox="0 0 1000 70"
-             preserveAspectRatio="none">
+    <div class="pesquisa-topo">
 
-            <polyline
-                points="0,60 390,60 430,15 1000,15"
-                fill="none"
-                stroke="black"
-                stroke-width="7"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-            />
+        <input
+            type="text"
+            id="campoTipo"
+            placeholder="Escolha um tipo de Pokémon..."
+            readonly
+        >
 
-            <polyline
-                points="0,60 390,60 430,15 1000,15"
-                fill="none"
-                stroke="red"
-                stroke-width="3"
-            />
+        <div class="lista-tipos-menu" id="listaTiposMenu">
 
-        </svg>
+            <a href="tipo.html?tipo=normal">Normal</a>
+            <a href="tipo.html?tipo=fire">Fogo</a>
+            <a href="tipo.html?tipo=water">Água</a>
+            <a href="tipo.html?tipo=electric">Elétrico</a>
+            <a href="tipo.html?tipo=grass">Planta</a>
+            <a href="tipo.html?tipo=ice">Gelo</a>
+            <a href="tipo.html?tipo=fighting">Lutador</a>
+            <a href="tipo.html?tipo=poison">Veneno</a>
+            <a href="tipo.html?tipo=ground">Terra</a>
+            <a href="tipo.html?tipo=flying">Voador</a>
+            <a href="tipo.html?tipo=psychic">Psíquico</a>
+            <a href="tipo.html?tipo=bug">Inseto</a>
+            <a href="tipo.html?tipo=rock">Pedra</a>
+            <a href="tipo.html?tipo=ghost">Fantasma</a>
+            <a href="tipo.html?tipo=dragon">Dragão</a>
+            <a href="tipo.html?tipo=dark">Sombrio</a>
+            <a href="tipo.html?tipo=steel">Aço</a>
+            <a href="tipo.html?tipo=fairy">Fada</a>
 
-    </nav>
+        </div>
+    </div>
 
+    <svg class="linha-nav"
+         viewBox="0 0 1000 70"
+         preserveAspectRatio="none">
+
+        <polyline
+            points="0,60 390,60 430,15 1000,15"
+            fill="none"
+            stroke="black"
+            stroke-width="7"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+        />
+
+        <polyline
+            points="0,60 390,60 430,15 1000,15"
+            fill="none"
+            stroke="red"
+            stroke-width="3"
+        />
+
+    </svg>
+
+</nav>
 
     <main>
 
@@ -170,72 +202,7 @@
 
     </footer>
 
-
-    <script>
-        var chaveGemini = atob("QVEuQWI4Uk42SVVQNUI5ZEZDbUYwZmtiT0xPVXU0cklNNVdaUXYtX0w0ZEVhRXo3bldnRkE=");
-
-        async function buscarPokemon() {
-            var input = document.getElementById("campoBusca");
-            var texto = input.value.trim();
-            var respostaDiv = document.getElementById("respostaIA");
-
-            if (!texto) return;
-
-            if (!texto.includes(" ") && !texto.includes("?") && texto.length < 15) {
-                window.location.href = "pokemon.html?nome=" + texto.toLowerCase();
-                return;
-            }
-
-            respostaDiv.style.display = "block";
-            respostaDiv.innerHTML = "Professor Carvalho pensando...";
-
-            try {
-                var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent?key=" + chaveGemini;
-                var corpo = {
-                    contents: [{ parts: [{ text: texto }] }],
-                    systemInstruction: {
-                        parts: [{
-                            text: "Voce e o Professor Carvalho da Pokedex. Voce so responde perguntas sobre o universo Pokemon. Seja conciso e amigavel em portugues. Se o usuario perguntar algo que NAO seja sobre Pokemon, diga educadamente: 'Desculpe, so posso falar sobre o universo Pokemon!'"
-                        }]
-                    }
-                };
-
-                var resp = await fetch(url, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(corpo)
-                });
-
-                var dados = await resp.json();
-                console.log("Resposta Gemini:", dados);
-                if (dados.candidates && dados.candidates[0] && dados.candidates[0].content && dados.candidates[0].content.parts) {
-                    var textoResposta = "";
-                    for (var i = 0; i < dados.candidates[0].content.parts.length; i++) {
-                        if (dados.candidates[0].content.parts[i].text) {
-                            textoResposta += dados.candidates[0].content.parts[i].text;
-                        }
-                    }
-                    if (textoResposta) {
-                        respostaDiv.innerHTML = "<strong>Professor Carvalho:</strong><br>" + textoResposta.replace(/\n/g, "<br>");
-                    } else {
-                        respostaDiv.innerHTML = "Nao consegui responder agora, tente novamente!";
-                    }
-                } else if (dados.error) {
-                    respostaDiv.innerHTML = "Aviso: " + dados.error.message;
-                } else {
-                    respostaDiv.innerHTML = "Nao consegui responder agora, tente novamente!";
-                }
-            } catch (erro) {
-                respostaDiv.innerHTML = "Erro ao conectar com a Pokedex.";
-            }
-        }
-
-        document.getElementById("campoBusca").addEventListener("keyup", function(event) {
-            if (event.key === "Enter") {
-                buscarPokemon();
-            }
-        });
-    </script>
+    <script src="navegacao.js"></script>
 </body>
 
 </html>

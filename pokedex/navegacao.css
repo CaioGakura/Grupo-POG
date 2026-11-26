@@ -465,60 +465,72 @@ footer img {
 }
 
 
-/* =========================
-   CELULARES PEQUENOS
-========================= */
+/* =================================
+   RESPONSIVIDADE DO SELETOR DE TIPOS
+================================= */
+
+@media (max-width: 900px) {
+
+    .pesquisa-topo {
+        position: absolute;
+        width: 300px;
+        max-width: 45%;
+        right: 30px;
+        top: 25px;
+    }
+
+    #campoTipo {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .pesquisa-topo {
+        position: absolute;
+        width: 58%;
+        max-width: 58%;
+        right: 10px;
+        top: 18px;
+    }
+
+    #campoTipo {
+        width: 100%;
+        font-size: 15px;
+        padding: 8px 5px;
+    }
+
+    .lista-tipos-menu {
+        width: 100%;
+        max-height: 280px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lista-tipos-menu a {
+        font-size: 16px;
+        padding: 7px 3px;
+    }
+}
 
 @media (max-width: 380px) {
 
-    /* BODY */
-
-    body {
-
-        padding-top: 100px;
-
+    .pesquisa-topo {
+        width: 58%;
+        max-width: 58%;
+        right: 5px;
+        top: 15px;
     }
 
-
-    /* NAVBAR */
-
-    nav img {
-
-        width: 80px;
-
+    #campoTipo {
+        font-size: 13px;
+        padding: 7px 4px;
     }
 
-
-    /* IMAGEM PRINCIPAL */
-
-    .chat {
-
-        width: 95%;
-
+    .lista-tipos-menu a {
+        font-size: 14px;
     }
-
-
-    /* REGIÕES */
-
-    ul {
-
-        font-size: 28px;
-
-        gap: 8px;
-
-    }
-
-
-    /* LINKS */
-
-    a {
-
-        padding: 8px;
-
-    }
-
 }
-
 
 /* PESQUISA */
 .caixa-busca-navegacao {
@@ -578,4 +590,164 @@ footer img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+
+/* =================================
+   SELETOR DE TIPOS NA NAVBAR
+================================= */
+
+.pesquisa-topo {
+    position: absolute;
+    width: 350px;
+    max-width: 45%;
+    right: 200px;
+    top: 48px;
+    margin: 0;
+    z-index: 1001;
+    transform: none;
+}
+
+#campoTipo {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 22px;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+.lista-tipos-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    max-height: 350px;
+    overflow-y: auto;
+    background-color: black;
+    border: 2px solid red;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 4px 4px black;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.lista-tipos-menu.aberta {
+    display: grid;
+}
+
+.lista-tipos-menu a {
+    display: block;
+    margin: 0;
+    padding: 8px 5px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.lista-tipos-menu a:hover {
+    background-color: red;
+    transform: scale(1.03);
+}
+
+/* =====================================
+   NAVBAR RESPONSIVA - CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        min-height: 90px;
+        padding: 8px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    nav img {
+        width: 75px;
+        max-width: 75px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .pesquisa-topo {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        left: 95px;
+        width: auto;
+        max-width: none;
+        margin: 0;
+        transform: none;
+        z-index: 1002;
+    }
+
+    #campoTipo {
+        display: block;
+        width: 100%;
+        height: 42px;
+        padding: 8px;
+        font-size: 17px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .lista-tipos-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: 55vh;
+        overflow-y: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .lista-tipos-menu a {
+        font-size: 16px;
+        padding: 8px 3px;
+        margin: 0;
+    }
+
+    .linha-nav {
+        height: 45px;
+    }
+}
+
+/* CELULARES MUITO PEQUENOS */
+
+@media (max-width: 380px) {
+
+    nav img {
+        width: 25px;
+        max-width: 35px;
+    }
+
+    .pesquisa-topo {
+        left: 80px;
+        right: 8px;
+        top: 12px;
+    }
+
+    #campoTipo {
+        font-size: 15px;
+    }
+
+    .lista-tipos-menu a {
+        font-size: 14px;
+    }
 }
