@@ -120,7 +120,6 @@ async function mostrarPokemon(pokemon){
     const tipoPrincipal = pokemon.types[0].type.name;
     const tipoTraduzido = tiposTraduzidos[tipoPrincipal] || tipoPrincipal;
     const corTipo = coresTipos[tipoPrincipal] || "#A8A77A";
-    ladoDaFoto.style.backgroundColor = corTipo + "99";
     const linhaEvolutiva = await mostrarLinhaDeEvolucao(pokemon);
     linkEvolucao.onclick = () => buscarFotoDaLinhaEvolutiva(linhaEvolutiva);
     const status = puxarStatus(pokemon);
@@ -160,13 +159,6 @@ async function mostrarPokemon(pokemon){
     </div>
     `
     ladoDireito.innerHTML = HtmlLadoDireito
-    
-    ladoDireito.querySelectorAll(
-        ".numeroNomeTipo, .alturaPeso, .areaStatus, .areaDescricao"
-    ).forEach((caixa) => {
-        caixa.style.setProperty("background-color", corTipo, "important");
-        caixa.style.setProperty("color", "#ffffff", "important");
-    });
 
     ladoDaFoto.innerHTML = `
     <div class='areaFotoDoPokemon'>
@@ -231,52 +223,91 @@ function limparTela(){
    ladoDireito.innerHTML = '';
 }
 
-async function buscarFotoDaLinhaEvolutiva(pokemons){
-const promessas = pokemons.map(async (nome) => {
-    const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
-    const dados = await resposta.json();
 
-    return dados.sprites.other['official-artwork'].front_default || dados.sprites.front_default;;
-});
+async function buscarFotoDaLinhaEvolutiva(pokemons) {
+    const promessas = pokemons.map(async (nome) => {
+        const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
 
-const imagens = await Promise.all(promessas);
+        if (!resposta.ok) {
+            throw new Error(`Erro ao buscar ${nome}`);
+        }
 
-mostrarLinhaImagemDaLinhaEvolutiva(imagens, pokemons);
+        return await resposta.json();
+    });
+
+    const dadosPokemons = await Promise.all(promessas);
+
+    mostrarLinhaImagemDaLinhaEvolutiva(dadosPokemons);
 }
-function mostrarLinhaImagemDaLinhaEvolutiva(UrlsDasImagens, nomes){
-    limparTela();
-    const HtmlDasImagens = [];
-    const HtmlDosNomes = [];
 
-    
-    for (let i = 0; i < UrlsDasImagens.length; i++) {
-        HtmlDosNomes.push(`<span>${nomes[i]}</span>`);
-        HtmlDasImagens.push(`
-                <img class="FotoDoPokemonNaLinhaEvolutiva" src="${UrlsDasImagens[i]}" alt="Foto do ${i}">
 
-            `);
-            /*   
-             */
-    }
-    
-    // Unimos as imagens e envelopamos tudo dentro da div de uma só vez
-    const htmlCompleto = `
-    <div class='linhaEvolutivaPokemon'>
-    <div class='imagensPokemon'>
-     ${HtmlDasImagens.join('')}
-    </div>
-    <div class='nomesPokemons'>
-     ${HtmlDosNomes.join(' ')}
-     </div>
-    </div>`;
-    
-    // Fazemos apenas UMA inserção no DOM
-    container.innerHTML = htmlCompleto; 
-    
-    console.log(HtmlDasImagens);
+function mostrarLinhaImagemDaLinhaEvolutiva(pokemons) {
+    const htmlCards = pokemons.map(pokemon => {
+        const tipoPrincipal = pokemon.types[0].type.name;
+        const corTipo = coresTipos[tipoPrincipal] || "#A8A77A";
+
+        const idFormatado = `#${String(pokemon.id).padStart(3, '0')}`;
+
+        const imagem = pokemon.sprites.other['official-artwork'].front_default
+            || pokemon.sprites.front_default;
+
+        const tiposHtml = pokemon.types.map(item => `
+            <span class="tipo-badge"
+                style="background-color: ${coresTipos[item.type.name]}">
+                ${tiposTraduzidos[item.type.name] || item.type.name}
+            </span>
+        `).join('');
+
+        return `
+            <article class="card"
+                style="background-color: ${corTipo}"
+                onclick="window.location.href='./pokemon.html?nome=${pokemon.name}'">
+
+                <p class="card-id">${idFormatado}</p>
+
+                <img src="${imagem}" alt="${pokemon.name}">
+
+                <h2 class="card-nome">
+                    ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+                </h2>
+
+                <div class="tipos-container">
+                    ${tiposHtml}
+                </div>
+            </article>
+        `;
+    }).join('');
+
+    container.innerHTML = `
+        <div class="cardsLinhaEvolutiva">
+            ${htmlCards}
+        </div>
+    `;
 }
+sole.log(HtmlDasImagens);
 
     async function mostrarCombate(pokemon, status, tipo ){
+
+        // Reconstruir as áreas caso a tela esteja na evolução
+    if (!document.getElementById('LOUD') || !document.getElementById('PRX')) {
+        container.innerHTML = `
+            <div id="LOUD"></div>
+            <div id="PRX"></div>
+        `;
+
+        ladoDaFoto = document.getElementById('LOUD');
+        ladoDireito = document.getElementById('PRX');
+    }
+
+    // Restaurar a imagem do Pokémon
+    const urlImagem = pokemon.sprites.other['official-artwork'].front_default
+        || pokemon.sprites.front_default;
+
+    ladoDaFoto.innerHTML = `
+        <div class="areaFotoDoPokemon">
+            <img src="${urlImagem}" alt="Foto do ${pokemon.name}">
+        </div>
+    `;
 
     const abilities = pokemon.abilities;
 
@@ -287,6 +318,7 @@ function mostrarLinhaImagemDaLinhaEvolutiva(UrlsDasImagens, nomes){
     const listaAtaques = pokemon.moves.map(item => item.move.name);
     const idFormatado = `#${String(pokemon.id).padStart(3, '0')}`;
     const tabelaDeAtaques = tabelaAtaques(listaAtaques);
+    const relacoes = await calcularRelacoesDeDano(pokemon);
     let htmlDoCombate = `
     <div class="informacoesGerais">
 
@@ -323,6 +355,52 @@ function mostrarLinhaImagemDaLinhaEvolutiva(UrlsDasImagens, nomes){
 
     </div>
 
+        <div class="areaRelacoesTipo">
+
+        <div class="caixaRelacao">
+            <h2>Fraquezas</h2>
+            <div class="listaTipos">
+                ${relacoes.fraquezas.length
+                    ? relacoes.fraquezas.map(tipo => `
+                        <span style="background-color: ${coresTipos[tipo]}">
+                            ${tiposTraduzidos[tipo]}
+                        </span>
+                    `).join('')
+                    : '<span>Nenhuma</span>'
+                }
+            </div>
+        </div>
+
+        <div class="caixaRelacao">
+            <h2>Resistências</h2>
+            <div class="listaTipos">
+                ${relacoes.resistencias.length
+                    ? relacoes.resistencias.map(tipo => `
+                        <span style="background-color: ${coresTipos[tipo]}">
+                            ${tiposTraduzidos[tipo]}
+                        </span>
+                    `).join('')
+                    : '<span>Nenhuma</span>'
+                }
+            </div>
+        </div>
+
+        <div class="caixaRelacao">
+            <h2>Imunidades</h2>
+            <div class="listaTipos">
+                ${relacoes.imunidades.length
+                    ? relacoes.imunidades.map(tipo => `
+                        <span style="background-color: ${coresTipos[tipo]}">
+                            ${tiposTraduzidos[tipo]}
+                        </span>
+                    `).join('')
+                    : '<span>Nenhuma</span>'
+                }
+            </div>
+        </div>
+
+    </div>
+
     <div class="areaStatus">
         <h1>Status:</h1>
         <p>HP: ${status.hp}</p>
@@ -338,23 +416,46 @@ function mostrarLinhaImagemDaLinhaEvolutiva(UrlsDasImagens, nomes){
 
     const corTipo = coresTipos[tipo] || "#A8A77A";
 
-    // Aplicar a cor do tipo do Pokémon
-    ladoDireito.querySelectorAll(
-        ".numeroNomeTipo, .alturaPeso, .areaStatus, .areaTabela td, .areaHabilidades, .areaHabilidades td"
-    ).forEach((caixa) => {
-        caixa.style.setProperty("background-color", corTipo, "important");
-        caixa.style.setProperty("color", "#FFFFFF", "important");
-    });
+}
 
-    // Aplicar cor aos títulos das tabelas
-    const titulos = ladoDireito.querySelectorAll(
-        ".areaTabela th, .areaHabilidades th"
+async function calcularRelacoesDeDano(pokemon) {
+    const tiposPokemon = pokemon.types.map(item => item.type.name);
+
+    const respostas = await Promise.all(
+        tiposPokemon.map(async tipo => {
+            const resposta = await fetch(`https://pokeapi.co/api/v2/type/${tipo}`);
+            if (!resposta.ok) throw new Error("Erro ao buscar relações de tipos");
+            return resposta.json();
+        })
     );
 
-    titulos.forEach(titulo => {
-        titulo.style.setProperty("background-color", corTipo, "important");
-        titulo.style.setProperty("color", "#FFFFFF", "important");
+    const multiplicadores = {};
+
+    Object.keys(tiposTraduzidos).forEach(tipo => {
+        multiplicadores[tipo] = 1;
     });
+
+    respostas.forEach(dados => {
+        const relacoes = dados.damage_relations;
+
+        relacoes.double_damage_from.forEach(item => {
+            multiplicadores[item.name] *= 2;
+        });
+
+        relacoes.half_damage_from.forEach(item => {
+            multiplicadores[item.name] *= 0.5;
+        });
+
+        relacoes.no_damage_from.forEach(item => {
+            multiplicadores[item.name] = 0;
+        });
+    });
+
+    return {
+        fraquezas: Object.keys(multiplicadores).filter(tipo => multiplicadores[tipo] > 1),
+        resistencias: Object.keys(multiplicadores).filter(tipo => multiplicadores[tipo] > 0 && multiplicadores[tipo] < 1),
+        imunidades: Object.keys(multiplicadores).filter(tipo => multiplicadores[tipo] === 0)
+    };
 }
 
 function tabelaAtaques(ataques){

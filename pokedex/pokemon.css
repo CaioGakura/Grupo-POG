@@ -19,7 +19,7 @@ main {
 }
 
 * {
-    color: white;
+    color: black;
     font-family: "Jersey 20", sans-serif;
     box-sizing: border-box;
 }
@@ -295,6 +295,7 @@ p {
     overflow-x: hidden;
     scrollbar-width: thin;
     box-sizing: border-box;
+    border-radius: 8px;
 }
 
 .areaTabela table {
@@ -615,4 +616,201 @@ nav .inicio a {
 nav .inicio {
     position: relative;
     top: -30px;
+}
+
+.areaRelacoesTipo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin: 25px 0;
+}
+
+.caixaRelacao {
+    flex: 1 1 200px;
+    min-width: 0;
+    max-width: 300px;
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #333;
+    box-sizing: border-box;
+}
+
+.caixaRelacao h2 {
+    margin: 0 0 15px;
+    font-size: 28px;
+    color: white;
+}
+
+.listaTipos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    
+}
+
+.listaTipos span {
+    padding: 7px 12px;
+    border-radius: 6px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .areaRelacoesTipo {
+        gap: 10px;
+    }
+
+    .caixaRelacao {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* =================================
+   PADRÃO VISUAL PRETO — CARTÕES E TABELAS
+================================= */
+
+#PRX .numeroNomeTipo,
+#PRX .alturaPeso,
+#PRX .areaHabilidades,
+#PRX .areaStatus,
+#PRX .areaDescricao,
+#PRX .areaTabela,
+#PRX .caixaRelacao {
+    background-color: red !important;
+    color: black !important;
+    border: 1px solid black !important;
+    box-shadow: 4px 4px 0 black !important;
+    box-sizing: border-box;
+}
+
+/* FUNDO E TEXTO DAS TABELAS */
+
+#PRX .areaHabilidades table,
+#PRX .areaHabilidades thead,
+#PRX .areaHabilidades tbody,
+#PRX .areaHabilidades tr,
+#PRX .areaHabilidades th,
+#PRX .areaHabilidades td,
+#PRX .areaTabela table,
+#PRX .areaTabela thead,
+#PRX .areaTabela tbody,
+#PRX .areaTabela tr,
+#PRX .areaTabela th,
+#PRX .areaTabela td {
+    background-color: red !important;
+    color: black !important;
+    border: 1px solid black !important;
+}
+
+/* TEXTOS DOS CARTÕES */
+
+#PRX .numeroNomeTipo *,
+#PRX .alturaPeso *,
+#PRX .areaHabilidades *,
+#PRX .areaStatus *,
+#PRX .areaDescricao *,
+#PRX .caixaRelacao h2 {
+    color: black !important;
+}
+
+/* RELAÇÕES ENTRE TIPOS */
+
+#PRX .caixaRelacao {
+    background-color: red !important;
+    color: black !important;
+    border: 1px solid black !important;
+    box-shadow: 4px 4px 0 black !important;
+}
+
+/* ETIQUETAS DOS TIPOS: MANTER AS CORES ORIGINAIS */
+
+#PRX .listaTipos span {
+    color: rgb(255, 255, 255) !important;
+}
+
+
+/* CARDS DA LINHA EVOLUTIVA */
+
+.cardsLinhaEvolutiva {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+}
+
+.cardsLinhaEvolutiva .card {
+    width: 200px;
+    min-height: 270px;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    transition: 300ms;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 5px 5px black;
+}
+
+.cardsLinhaEvolutiva .card:hover {
+    transform: scale(1.08);
+    box-shadow: 10px 10px black;
+}
+
+.cardsLinhaEvolutiva .card img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+}
+
+.cardsLinhaEvolutiva .card-id {
+    font-size: 20px;
+    margin: 0;
+}
+
+.cardsLinhaEvolutiva .card-nome {
+    font-size: 28px;
+    margin: 5px 0;
+    color: #000000;
+}
+
+.cardsLinhaEvolutiva .tipos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.cardsLinhaEvolutiva .tipo-badge {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #000000;
+    border: 1px solid black;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .cardsLinhaEvolutiva .card {
+        width: 140px;
+        min-height: 220px;
+    }
+
+    .cardsLinhaEvolutiva .card img {
+        height: 100px;
+    }
 }
